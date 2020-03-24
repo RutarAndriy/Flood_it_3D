@@ -1,0 +1,95 @@
+<resources>
+
+    <string name="app_name">Flood it 3D</string>
+
+    <string name="s_0">ходів</string>
+    <string name="s_31">Кількість трикутників:</string>
+
+    <string name="n_01">Почати гру</string>
+    <string name="n_02">Таблиця рекордів</string>
+    <string name="n_03">Налаштування</string>
+    <string name="n_04">Про гру</string>
+    <string name="n_05">Вихід</string>
+    <string name="n_06">Ви дійсно хочете вийти з гри ?</string>
+    <string name="n_07">Ні</string>
+    <string name="n_08">Так</string>
+    <string name="n_09">Flood it 3D</string>
+    <string name="n_10">v %1$s\nУкраїна, 2016\n\nJMonkey Engine 3.2\n\nЗвуки взяті з www.playonloop.com</string>
+    <string name="n_11">Назад</string>
+    <string name="n_12">Налаштування</string>
+    <string name="n_13_0">Звуки: Вимкнені</string>
+    <string name="n_13_1">Звуки: Увімкнені</string>
+    <string name="n_14_0">Чутнивість введення: 1</string>
+    <string name="n_14_1">Чутнивість введення: 2</string>
+    <string name="n_14_2">Чутнивість введення: 3</string>
+    <string name="n_14_3">Чутнивість введення: 4</string>
+    <string name="n_14_4">Чутнивість введення: 5</string>
+    <string name="n_15_0">Мова: Англійська</string>
+    <string name="n_15_1">Мова: Українська</string>
+    <string name="n_15_2">Мова: Російська</string>
+    <string name="n_16_0">Назад</string>
+    <string name="n_16_1">Рестарт</string>
+    <string name="n_17">Таблиця рекордів</string>
+    <string name="n_18">Назад</string>
+    <string name="n_19_0">Малий куб</string>
+    <string name="n_19_1">Октаедр</string>
+    <string name="n_19_2">Зірка</string>
+    <string name="n_19_3">Тріакістетраедр</string>
+    <string name="n_19_4">Ромбоікосододекаедр</string>
+    <string name="n_19_5">Кубооктаедр</string>
+    <string name="n_19_6">Дельтоїдальний гексеконтаедр</string>
+    <string name="n_19_7">Шахова дошка</string>
+    <string name="n_19_8">Малий тетраедр</string>
+    <string name="n_19_9">Мале кільце</string>
+    <string name="n_19_10">Діамант</string>
+    <string name="n_19_11">Малий вузол</string>
+    <string name="n_19_12">Додекаедр</string>
+    <string name="n_19_13">Модифіковане кільце</string>
+    <string name="n_19_14">Модифікована губка Менгера</string>
+    <string name="n_19_15">Усічений ікосододекаедр</string>
+    <string name="n_19_16">Модифікована ікосфера</string>
+    <string name="n_19_17">Бжолині соти</string>
+    <string name="n_19_18">Вигнутий куб</string>
+    <string name="n_19_19">Увігнутий куб</string>
+    <string name="n_19_20">Усічений додекаедр</string>
+    <string name="n_19_21">Середнє кільце</string>
+    <string name="n_19_22">Великий вузол</string>
+    <string name="n_19_23">Шестірня</string>
+    <string name="n_19_24">Велике кільце</string>
+    <string name="n_19_25">Велика ікосфера</string>
+    <string name="n_19_26">Великий тетраедр</string>
+    <string name="n_19_27">Спіраль</string>
+    <string name="n_19_28">Замкнута спіраль</string>
+    <string name="n_19_29">Супер вузол</string>
+    <string name="n_20">Назад</string>
+    <string name="n_21_0">Легко</string>
+    <string name="n_21_1">Нормально</string>
+    <string name="n_21_2">Важко</string>
+    <string name="n_22">Почати</string>
+    <string name="n_23">Рівень завершено</string>
+    <string name="n_24">Кількість ходів:</string>
+    <string name="n_25">Пауза</string>
+    <string name="n_26">/</string>
+    <string name="n_27">Кількість ходів:</string>
+    <string name="n_28">Вийти в меню</string>
+    <string name="n_29">Повернутися до гри</string>
+    <string name="n_30_0">Завершіть попередній рівень менш ніж за</string>
+    <string name="n_30_1">ходів щоб розблокувати цей рівень</string>
+    <string name="n_30_2">Цей рівень доступний лише в повній версії гри</string>
+    <string name="n_31">Ласкаво просимо до Flood it 3D</string>
+    <string name="n_32">Flood it 3D - це захоплююча логічна гра, яка є реінкарнацією старої доброї гри Flood it в новому форматі.</string>
+    <string name="n_33">Мета гри - заповнити всю фігуру одним кольором за найменшу кількість ходів. Замальовування починається з трикутника, який позначено відміткою. Сусідні трикутники того ж кольору стануть активними і будуть змінювати інші трикутники за аналогічним принципом. Спробуйте - це не так просто як здається :)</string>
+    <string name="n_34">Зрозуміло</string>
+
+    <string name="l_01">«</string>
+    <string name="l_02">»</string>
+
+    <string name="rate_text">Якщо вам сподобалася програма %1$s, будь ласка, знайдіть хвилинку щоб оцінити її.</string>
+    <string name="rate_error">Play Market не знайдено</string>
+    <string name="rate_later">Пізніше</string>
+    <string name="rate_yes">Оцінити</string>
+    <string name="rate_no">Ніколи</string>
+
+    <string name="PM_Error">Play Market не встановлено</string>
+
+</resources>

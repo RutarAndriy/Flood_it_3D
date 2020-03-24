@@ -1,0 +1,95 @@
+<resources>
+
+    <string name="app_name">Flood it 3D</string>
+
+    <string name="s_0">ходов</string>
+    <string name="s_31">Количество треугольников:</string>
+
+    <string name="n_01">Начать игру</string>
+    <string name="n_02">Таблица рекордов</string>
+    <string name="n_03">Настройки</string>
+    <string name="n_04">Про игру</string>
+    <string name="n_05">Виход</string>
+    <string name="n_06">Ви хотите вийти з игри ?</string>
+    <string name="n_07">Нет</string>
+    <string name="n_08">Да</string>
+    <string name="n_09">Flood it 3D</string>
+    <string name="n_10">v %1$s\nУкраина, 2016\n\nJMonkey Engine 3.2\n\nЗвуки взяты из www.playonloop.com</string>
+    <string name="n_11">Назад</string>
+    <string name="n_12">Настройки</string>
+    <string name="n_13_0">Звуки: Выключены</string>
+    <string name="n_13_1">Звуки: Включены</string>
+    <string name="n_14_0">Чуствительность ввода: 1</string>
+    <string name="n_14_1">Чуствительность ввода: 2</string>
+    <string name="n_14_2">Чуствительность ввода: 3</string>
+    <string name="n_14_3">Чуствительность ввода: 4</string>
+    <string name="n_14_4">Чуствительность ввода: 5</string>
+    <string name="n_15_0">Язык: Английский</string>
+    <string name="n_15_1">Язык: Украинский</string>
+    <string name="n_15_2">Язык: Русский</string>
+    <string name="n_16_0">Назад</string>
+    <string name="n_16_1">Рестарт</string>
+    <string name="n_17">Таблица рекордов</string>
+    <string name="n_18">Назад</string>
+    <string name="n_19_0">Малый куб</string>
+    <string name="n_19_1">Восьмигранник</string>
+    <string name="n_19_2">Звезда</string>
+    <string name="n_19_3">Триакистетраэдр</string>
+    <string name="n_19_4">Ромбоикосододекаэдр</string>
+    <string name="n_19_5">Кубооктаэдр</string>
+    <string name="n_19_6">Дельтоидальний гексеконтаедр</string>
+    <string name="n_19_7">Шахматная доска</string>
+    <string name="n_19_8">Малый тетраэдр</string>
+    <string name="n_19_9">Малое кольцо</string>
+    <string name="n_19_10">Бриллиант</string>
+    <string name="n_19_11">Малый узел</string>
+    <string name="n_19_12">Додекаэдр</string>
+    <string name="n_19_13">Модифицированное кольцо</string>
+    <string name="n_19_14">Модифицированная губка Менгера</string>
+    <string name="n_19_15">Усеченный икосододекаэдр</string>
+    <string name="n_19_16">Модифицированная икосфера</string>
+    <string name="n_19_17">Пчелиные соты</string>
+    <string name="n_19_18">Выпуклый куб</string>
+    <string name="n_19_19">Вогнутый куб</string>
+    <string name="n_19_20">Усеченный додекаэдр</string>
+    <string name="n_19_21">Среднее кольцо</string>
+    <string name="n_19_22">Большой узел</string>
+    <string name="n_19_23">Шестерня</string>
+    <string name="n_19_24">Большое кольцо</string>
+    <string name="n_19_25">Большая икосфера</string>
+    <string name="n_19_26">Большой тетраэдр</string>
+    <string name="n_19_27">Спираль</string>
+    <string name="n_19_28">Замкнутая спираль</string>
+    <string name="n_19_29">Супер узел</string>
+    <string name="n_20">Назад</string>
+    <string name="n_21_0">Легко</string>
+    <string name="n_21_1">Нормально</string>
+    <string name="n_21_2">Трудно</string>
+    <string name="n_22">Начать</string>
+    <string name="n_23">Уровень завершен</string>
+    <string name="n_24">Количество ходов:</string>
+    <string name="n_25">Пауза</string>
+    <string name="n_26">/</string>
+    <string name="n_27">Количество ходов:</string>
+    <string name="n_28">Выйти в меню</string>
+    <string name="n_29">Вернуться к игре</string>
+    <string name="n_30_0">Пройдите предыдущий уровень менее чем за</string>
+    <string name="n_30_1">ходов, чтобы разблокировать этот уровень</string>
+    <string name="n_30_2">Этот уровень доступен только в полной версии игры</string>
+    <string name="n_31">Добро пожаловать к Flood it 3D</string>
+    <string name="n_32">Flood it 3D - это увлекательная логическая игра, которая является реинкарнацией старой доброй игры Flood it в новом формате.</string>
+    <string name="n_33">Цель игры - заполнить всю фигуру одним цветом за наименьшее количество ходов. Зарисовка начинается с треугольника с отметкой. Соседние треугольники того же цвета станут активными и будут изменять другие треугольники по аналогичному принципу. Попробуйте - это не так просто как кажется :)</string>
+    <string name="n_34">Понятно</string>
+
+    <string name="l_01">«</string>
+    <string name="l_02">»</string>
+
+    <string name="rate_text">Если вам понравилась программа %1$s, пожалуйста, найдите минутку чтобы оценить ее.</string>
+    <string name="rate_error">Play Market не найдено</string>
+    <string name="rate_later">Позже</string>
+    <string name="rate_yes">Оценить</string>
+    <string name="rate_no">Никогда</string>
+
+    <string name="PM_Error">Play Market не установлено</string>
+
+</resources>
