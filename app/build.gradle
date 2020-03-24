@@ -1,0 +1,27 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
+
+    defaultConfig {
+        applicationId "com.rutar.flood_it_3d"
+        minSdkVersion 9
+        targetSdkVersion 28
+        versionCode 20
+        versionName "4.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            //proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    //compile fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'org.jmonkeyengine:jme3-core:3.2.3-stable'
+    implementation 'org.jmonkeyengine:jme3-android:3.2.3-stable'
+    implementation 'org.jmonkeyengine:jme3-android-native:3.2.3-stable'
+}

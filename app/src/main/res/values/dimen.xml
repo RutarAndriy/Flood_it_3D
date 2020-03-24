@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <dimen name="text_size_s"> 20sp </dimen>
+    <dimen name="text_size_n"> 30sp </dimen>
+    <dimen name="text_size_l"> 120sp </dimen>
+
+    <dimen name="s_margin_h"> 10sp </dimen>
+    <dimen name="s_margin_v">  1sp </dimen>
+
+    <dimen name="n_margin_h"> 15sp </dimen>
+    <dimen name="n_margin_v">  5sp </dimen>
+
+    <dimen name="l_margin_h"> 30sp </dimen>
+    <dimen name="l_margin_v"> 10sp </dimen>
+
+    <dimen name="b_margin">    3sp </dimen>
+
+</resources>

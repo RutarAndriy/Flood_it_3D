@@ -1,0 +1,95 @@
+<resources>
+
+    <string name="app_name">Flood it 3D</string>
+
+    <string name="s_0">steps</string>
+    <string name="s_31">Triangle count:</string>
+
+    <string name="n_01">Play game</string>
+    <string name="n_02">High score</string>
+    <string name="n_03">Settings</string>
+    <string name="n_04">About</string>
+    <string name="n_05">Exit</string>
+    <string name="n_06">Do you really want to exit ?</string>
+    <string name="n_07">No</string>
+    <string name="n_08">Yes</string>
+    <string name="n_09">Flood it 3D</string>
+    <string name="n_10">v %1$s\nUkraine, 2016\n\nJMonkey Engine 3.2\n\nSounds by www.playonloop.com</string>
+    <string name="n_11">Back</string>
+    <string name="n_12">Settings</string>
+    <string name="n_13_0">Sound: Off</string>
+    <string name="n_13_1">Sound: On</string>
+    <string name="n_14_0">Touch sensitive: 1</string>
+    <string name="n_14_1">Touch sensitive: 2</string>
+    <string name="n_14_2">Touch sensitive: 3</string>
+    <string name="n_14_3">Touch sensitive: 4</string>
+    <string name="n_14_4">Touch sensitive: 5</string>
+    <string name="n_15_0">Language: English</string>
+    <string name="n_15_1">Language: Ukrainian</string>
+    <string name="n_15_2">Language: Russian</string>
+    <string name="n_16_0">Back</string>
+    <string name="n_16_1">Restart</string>
+    <string name="n_17">High Score</string>
+    <string name="n_18">Back</string>
+    <string name="n_19_0">Small cube</string>
+    <string name="n_19_1">Octahedron</string>
+    <string name="n_19_2">Star</string>
+    <string name="n_19_3">Triakis tetrahedron</string>
+    <string name="n_19_4">Rhombicosidodecahedron</string>
+    <string name="n_19_5">Cuboctahedron</string>
+    <string name="n_19_6">Deltoidal hexecontahedron</string>
+    <string name="n_19_7">Chess board</string>
+    <string name="n_19_8">Small tetrahedron</string>
+    <string name="n_19_9">Small torus</string>
+    <string name="n_19_10">Diamond</string>
+    <string name="n_19_11">Small torus knot</string>
+    <string name="n_19_12">Dodecahedron</string>
+    <string name="n_19_13">Modified torus</string>
+    <string name="n_19_14">Modified Menger sponge</string>
+    <string name="n_19_15">Truncated icosidodecahedron</string>
+    <string name="n_19_16">Modified icosphere</string>
+    <string name="n_19_17">Honeycomb</string>
+    <string name="n_19_18">Curved cube</string>
+    <string name="n_19_19">Concave cube</string>
+    <string name="n_19_20">Truncated dodecahedron</string>
+    <string name="n_19_21">Medium torus</string>
+    <string name="n_19_22">Large torus knot</string>
+    <string name="n_19_23">Gear</string>
+    <string name="n_19_24">Large torus</string>
+    <string name="n_19_25">Large icosphere</string>
+    <string name="n_19_26">Large tetrahedron</string>
+    <string name="n_19_27">Spiral</string>
+    <string name="n_19_28">Closed spring</string>
+    <string name="n_19_29">Super torus knot</string>
+    <string name="n_20">Back</string>
+    <string name="n_21_0">Easy</string>
+    <string name="n_21_1">Normal</string>
+    <string name="n_21_2">Hard</string>
+    <string name="n_22">Start</string>
+    <string name="n_23">Level complete</string>
+    <string name="n_24">Step count:</string>
+    <string name="n_25">Pause</string>
+    <string name="n_26">/</string>
+    <string name="n_27">Step count:</string>
+    <string name="n_28">Exit to menu</string>
+    <string name="n_29">Back to game</string>
+    <string name="n_30_0">Complete previous level in less than</string>
+    <string name="n_30_1">steps to unlock this level</string>
+    <string name="n_30_2">This level is available only in full version of the game</string>
+    <string name="n_31">Welcome to Flood it 3D</string>
+    <string name="n_32">Flood it 3D - is an exciting puzzle game that is the reincarnation of the good old game Flood it in the new format.</string>
+    <string name="n_33">The goal of the game - fill the model one color for the least amount of moves. Filling begins with a triangle marked by mark. Neighboring triangles of the same color will become active and will change more triangles on a similar principle. Try it - it\'s not as easy as it seems :)</string>
+    <string name="n_34">Understand</string>
+
+    <string name="l_01">«</string>
+    <string name="l_02">»</string>
+
+    <string name="rate_text">If you enjoyed %1$s, please take a moment to rate it.</string>
+    <string name="rate_error">Play Market not found</string>
+    <string name="rate_later">Later</string>
+    <string name="rate_yes">Rate</string>
+    <string name="rate_no">Never</string>
+
+    <string name="PM_Error">Play Market not found</string>
+
+</resources>
