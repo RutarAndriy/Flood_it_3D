@@ -20,7 +20,7 @@ import java.util.logging.*;
 
 import static com.rutar.flood_it_3d.Listener.*;
 import static com.rutar.flood_it_3d.Unificator.*;
-import static com.rutar.flood_it_3d.Game_Updator.*;
+import static com.rutar.flood_it_3d.Game_Update.*;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -82,7 +82,6 @@ public static boolean pause_is_on = false;
 public static boolean level_is_lock = false;
 public static SharedPreferences.Editor editor;
 
-public static int[] scores = new int[30];
 public static boolean thread_is_alive;
 
 public static boolean anim_is_running = false;
@@ -193,7 +192,7 @@ super.onResume();
 if (game_state == 4) {
 
 pause_is_on = true;
-text_Views_Normal[25].setText(String.format("%d/%d", dinamic_parts.size(), triangle_count));
+text_Views_Normal[25].setText(String.format("%d/%d", dynamic_index_list.size(), triangle_count));
 text_Views_Normal[26].setText(String.format("%s %d", get_String(R.string.n_27), step_count));
 l_pause.setVisibility(View.VISIBLE);
 
@@ -352,7 +351,7 @@ case 1: if (!pause_is_on) {
         public void onAnimationRepeat (Animation animation) {}
         });
 
-        text_Views_Normal[25].setText(String.format("%d/%d", dinamic_parts.size(), triangle_count));
+        text_Views_Normal[25].setText(String.format("%d/%d", dynamic_index_list.size(), triangle_count));
         text_Views_Normal[26].setText(String.format("%s %d", get_String(R.string.n_27), step_count));
         l_pause.startAnimation(fade_in);
         l_pause.setVisibility(View.VISIBLE);

@@ -1,17 +1,12 @@
 package com.rutar.flood_it_3d;
 
-import android.net.*;
 import android.os.*;
-import android.util.*;
 import android.view.*;
-import android.widget.*;
-import android.content.*;
 import android.annotation.*;
 import android.view.animation.*;
 
 import static com.rutar.flood_it_3d.Unificator.*;
-import static com.rutar.flood_it_3d.Flood_it_3D.*;
-import static com.rutar.flood_it_3d.Game_Updator.*;
+import static com.rutar.flood_it_3d.Game_Update.*;
 import static com.rutar.flood_it_3d.Flood_it_Activity.*;
 
 public class Utils {
@@ -87,7 +82,7 @@ public static void click_processing (int id) {
 
 switch (id) {
 
-// Game -> Choice
+// Play Game -> Choice Model to play
 case -1: l_play.setVisibility(View.VISIBLE);
          model_Available_Test();
          update_Preview_Text();
@@ -96,6 +91,8 @@ case -1: l_play.setVisibility(View.VISIBLE);
          l_complete.setVisibility(View.GONE);
          l_pause.setVisibility(View.GONE);
          Utils.background_Fade_Out();
+         processing_time = -1;
+         optimizing_time = -1;
          pause_is_on = false;
          change_index = 3;
          game_state = 3;
@@ -165,8 +162,8 @@ case R.id.n_20: l_play.setVisibility(View.GONE);
 // Choice -> Game
 case R.id.n_22: l_play.setVisibility(View.GONE);
                 button_board.setVisibility(View.VISIBLE);
-                Unificator.set_Buttons_Width(model_index/10);
-                play_Sounds(model_index/10+1);
+                Unificator.set_Buttons_Width(model_index/model_per_level);
+                play_Sounds(model_index/model_per_level+1);
                 change_index = 4;
                 game_state = 4;
                 break;
@@ -246,14 +243,14 @@ case R.id.l_02: model_index += model_index < (model_count - 1) ? 1 : -model_coun
                 change_index = 3;
                 break;
 
-case R.id.b_01: color_index = 0; change_index = 5; break;
-case R.id.b_02: color_index = 1; change_index = 5; break;
-case R.id.b_03: color_index = 4; change_index = 5; break;
-case R.id.b_04: color_index = 6; change_index = 5; break;
-case R.id.b_05: color_index = 2; change_index = 5; break;
-case R.id.b_06: color_index = 3; change_index = 5; break;
-case R.id.b_07: color_index = 5; change_index = 5; break;
-case R.id.b_08: color_index = 7; change_index = 5; break;
+case R.id.b_01: if (is_done && color_index != 1) { color_index = 1; change_index = 5; } break;
+case R.id.b_02: if (is_done && color_index != 2) { color_index = 2; change_index = 5; } break;
+case R.id.b_03: if (is_done && color_index != 5) { color_index = 5; change_index = 5; } break;
+case R.id.b_04: if (is_done && color_index != 7) { color_index = 7; change_index = 5; } break;
+case R.id.b_05: if (is_done && color_index != 3) { color_index = 3; change_index = 5; } break;
+case R.id.b_06: if (is_done && color_index != 4) { color_index = 4; change_index = 5; } break;
+case R.id.b_07: if (is_done && color_index != 6) { color_index = 6; change_index = 5; } break;
+case R.id.b_08: if (is_done && color_index != 8) { color_index = 8; change_index = 5; } break;
 
 case R.id.n_28: handler.sendEmptyMessage(2);
                 break;
@@ -280,16 +277,6 @@ case R.id.n_29: if (pause_is_on) {
                 }
                 break;
 
-// Not used
-//case R.id.rate: try { Intent intent = new Intent(Intent.ACTION_VIEW);
-//                      intent.setData(Uri.parse("market://details?id=com.rutar.flood_it_3d"));
-//                      activity.startActivity(intent); }
-//                catch (Exception e) { Log.e(Flood_it_Activity.TAG, "PlayMarketApp not found");
-//                                      Toast.makeText(Flood_it_Activity.activity,
-//                                                     R.string.PM_Error,
-//                                                     Toast.LENGTH_SHORT).show(); }
-//                break;
-
 case R.id.lock: show_Lock_Message();
                 break;
 
@@ -304,10 +291,10 @@ case R.id.n_34: handler.sendEmptyMessage(7);
 public static void update_Preview_Text() {
 
 text_Views_Normal[18].setText(activity.get_String_Value("n_19_" + model_index));
-text_Views_Normal[20].setText(activity.get_String_Value("n_21_" + model_index/10));
+text_Views_Normal[20].setText(activity.get_String_Value("n_21_" + model_index/model_per_level));
 
 String triangle_count = activity.getResources().getString(R.string.s_31);
-text_Views_Small[30].setText(triangle_count + " " + model_triangles_count[model_index]);
+text_Views_Small[30].setText(String.format("%s %d", triangle_count, model_triangles_count[model_index]));
 
 }
 
@@ -317,7 +304,6 @@ private static void model_Available_Test() {
 
 if (model_index != 0 &&
    (scores[model_index-1] == 0 ||
-    model_index >= max_model_index ||
     scores[model_index-1] > max_steps_count[model_index-1])) {
 
 level_is_lock = true;
@@ -337,6 +323,7 @@ public static void show_Lock_Message() {
 
 anim_is_running = true;
 fade_in_out_annimation.setAnimationListener(new Animation.AnimationListener() {
+
     @Override
     public void onAnimationStart (Animation animation) {
         second_anim_run = true;
@@ -350,12 +337,9 @@ fade_in_out_annimation.setAnimationListener(new Animation.AnimationListener() {
     public void onAnimationRepeat (Animation animation) {}
 });
 
-if (model_index < max_model_index) {
-    text_Views_Normal[29].setText(activity.get_String(R.string.n_30_0) + " " +
-                                 (max_steps_count[model_index-1] + 1) + " " +
-                                  activity.get_String(R.string.n_30_1)); }
-
-else { text_Views_Normal[29].setText(R.string.n_30_2); }
+text_Views_Normal[29].setText(activity.get_String(R.string.n_30_0) + " " +
+                             (max_steps_count[model_index-1] + 1) + " " +
+                              activity.get_String(R.string.n_30_1));
 
 l_lock.startAnimation(fade_in_out_annimation);
 l_lock.setVisibility(View.VISIBLE);

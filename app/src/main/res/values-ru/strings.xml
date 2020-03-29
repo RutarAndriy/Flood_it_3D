@@ -1,6 +1,6 @@
 <resources>
 
-    <string name="app_name">Flood it 3D</string>
+    <string name="app_name">Flood it 3D Test</string>
 
     <string name="s_0">ходов</string>
     <string name="s_31">Количество треугольников:</string>
@@ -75,7 +75,6 @@
     <string name="n_29">Вернуться к игре</string>
     <string name="n_30_0">Пройдите предыдущий уровень менее чем за</string>
     <string name="n_30_1">ходов, чтобы разблокировать этот уровень</string>
-    <string name="n_30_2">Этот уровень доступен только в полной версии игры</string>
     <string name="n_31">Добро пожаловать к Flood it 3D</string>
     <string name="n_32">Flood it 3D - это увлекательная логическая игра, которая является реинкарнацией старой доброй игры Flood it в новом формате.</string>
     <string name="n_33">Цель игры - заполнить всю фигуру одним цветом за наименьшее количество ходов. Зарисовка начинается с треугольника с отметкой. Соседние треугольники того же цвета станут активными и будут изменять другие треугольники по аналогичному принципу. Попробуйте - это не так просто как кажется :)</string>
@@ -91,5 +90,24 @@
     <string name="rate_no">Никогда</string>
 
     <string name="PM_Error">Play Market не установлено</string>
+    <string name="n_19_30">a</string>
+    <string name="n_19_31">a</string>
+    <string name="n_19_32">a</string>
+    <string name="n_19_33">a</string>
+    <string name="n_19_34">a</string>
+    <string name="n_19_35">a</string>
+    <string name="n_19_37">a</string>
+    <string name="n_19_38">a</string>
+    <string name="n_19_39">a</string>
+    <string name="n_19_36">a</string>
+    <string name="n_19_40">a</string>
+    <string name="n_19_41">a</string>
+    <string name="n_19_42">a</string>
+    <string name="n_19_43">a</string>
+    <string name="n_19_44">a</string>
+    <string name="n_19_45">a</string>
+    <string name="n_19_46">a</string>
+    <string name="n_19_47">a</string>
+    <string name="n_21_3">Very Hard</string>
 
 </resources>

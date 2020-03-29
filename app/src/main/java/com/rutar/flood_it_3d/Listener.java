@@ -7,7 +7,7 @@ import com.jme3.input.event.*;
 import com.jme3.input.controls.*;
 
 import static com.rutar.flood_it_3d.Flood_it_3D.*;
-import static com.rutar.flood_it_3d.Game_Updator.*;
+import static com.rutar.flood_it_3d.Game_Update.*;
 import static com.rutar.flood_it_3d.Flood_it_Activity.*;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -143,7 +143,8 @@ break;
 
 case R.id.n_22: // Start Game -> Play
 
-if (level_is_lock) { Utils.show_Lock_Message(); }
+if (false) {}
+//if (level_is_lock) { Utils.show_Lock_Message(); }
 else { hide_off = false;
        Utils.background_Fade_In(view.getId());
        loading.setVisibility(View.VISIBLE);
