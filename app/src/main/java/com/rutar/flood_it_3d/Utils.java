@@ -230,6 +230,15 @@ case R.id.n_15: language += language < 2 ? 1 : -2;
                 else { text_Views_Normal[15].setText(R.string.n_16_1); }
                 break;
 
+// Easy or Normal or Hard
+case R.id.n_21: int index = (model_index / 10 + 1) * 10;
+                model_index = index < model_count ? index : 0;
+                background_Fade_Out();
+                model_Available_Test();
+                update_Preview_Text();
+                change_index = 3;
+                break;
+
 // Previous model - <<
 case R.id.l_01: model_index -= model_index > 0 ? 1 : -model_count + 1;
                 background_Fade_Out();
