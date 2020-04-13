@@ -145,6 +145,7 @@ case R.id.n_11: // About -> Back
 case R.id.n_16: // Settings -> Back
 case R.id.n_18: // High Score -> Back
 case R.id.n_20: // Start Game -> Back
+case R.id.n_21: // Start Game -> Easy or Normal or Hard
 case R.id.l_01: // <<
 case R.id.l_02: // >>
 
