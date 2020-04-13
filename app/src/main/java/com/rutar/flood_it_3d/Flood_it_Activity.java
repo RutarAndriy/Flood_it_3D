@@ -110,7 +110,6 @@ mouseEventsEnabled = true;
 keyEventsEnabled = false;
 
 finishOnAppStop = true;
-handleExitHook = false;
 
 splashPicID = 0;
 layoutRes = R.layout.flood_it_layout;
@@ -476,17 +475,7 @@ reload_Scores_Table();
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 @Override
-public void initialize() {
-
-super.initialize();
-
-my_Input_Manager = getJmeApplication().getInputManager();
-
-my_Input_Manager.addMapping("Back", new TouchTrigger(TouchInput.KEYCODE_BACK));
-my_Input_Manager.addMapping("Menu", new TouchTrigger(TouchInput.KEYCODE_MENU));
-my_Input_Manager.addListener(touchListener, new String[]{"Back", "Menu"});
-
-}
+public void initialize() { super.initialize(); }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 

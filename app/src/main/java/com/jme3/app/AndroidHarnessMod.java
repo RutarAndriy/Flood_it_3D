@@ -13,6 +13,8 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.jme3.audio.AudioRenderer;
 import com.jme3.input.JoyInput;
 import com.jme3.input.TouchInput;
@@ -25,6 +27,8 @@ import com.jme3.system.SystemListener;
 import com.jme3.system.android.JmeAndroidSystem;
 import com.jme3.system.android.OGLESContext;
 import com.jme3.util.AndroidLogHandler;
+import com.rutar.flood_it_3d.Listener;
+
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.logging.Handler;
@@ -39,8 +43,7 @@ import java.util.logging.Logger;
  * @author Kirill
  * @author larynx
  */
-public class AndroidHarnessMod extends Activity implements TouchListener,
-                                                           DialogInterface.OnClickListener,
+public class AndroidHarnessMod extends Activity implements DialogInterface.OnClickListener,
                                                            SystemListener {
 
     protected final static Logger logger = Logger.getLogger(AndroidHarnessMod.class.getName());
@@ -135,10 +138,7 @@ public class AndroidHarnessMod extends Activity implements TouchListener,
      * if true finish this activity when the jme app is stopped
      */
     protected boolean finishOnAppStop = true;
-    /**
-     * set to false if you don't want the harness to handle the exit hook
-     */
-    protected boolean handleExitHook = true;
+
     /**
      * Title of the exit dialog, default is "Do you want to exit?"
      */
@@ -176,7 +176,7 @@ public class AndroidHarnessMod extends Activity implements TouchListener,
     protected boolean isGLThreadPaused = true;
     protected ImageView splashImageView = null;
     protected FrameLayout frameLayout = null;
-    final private String ESCAPE_EVENT = "TouchEscape";
+
     private boolean firstDrawFrame = true;
     private boolean inConfigChange = false;
 
@@ -376,32 +376,6 @@ public class AndroidHarnessMod extends Activity implements TouchListener,
         }
     }
 
-    /**
-     * Gets called by the InputManager on all touch/drag/scale events
-     */
-    @Override
-    public void onTouch(String name, TouchEvent evt, float tpf) {
-        if (name.equals(ESCAPE_EVENT)) {
-            switch (evt.getType()) {
-                case KEY_UP:
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            AlertDialog dialog = new AlertDialog.Builder(AndroidHarnessMod.this) // .setIcon(R.drawable.alert_dialog_icon)
-                                    .setTitle(exitDialogTitle)
-                                    .setPositiveButton(exitDialogExitY, AndroidHarnessMod.this)
-                                    .setNegativeButton(exitDialogExitN, AndroidHarnessMod.this)
-                                    .setMessage(exitDialogMessage).create();
-                            dialog.show();
-                        }
-                    });
-                    break;
-                default:
-                    break;
-            }
-        }
-    }
-
     public void layoutDisplay() {
         logger.log(Level.FINE, "Splash Screen Picture Resource ID: {0}", splashPicID);
         if (view == null) {
@@ -488,17 +462,6 @@ public class AndroidHarnessMod extends Activity implements TouchListener,
 
     public void initialize() {
         app.initialize();
-        if (handleExitHook) {
-            // remove existing mapping from SimpleApplication that stops the app
-            // when the esc key is pressed (esc key = android back key) so that
-            // AndroidHarness can produce the exit app dialog box.
-            if (app.getInputManager().hasMapping(SimpleApplication.INPUT_MAPPING_EXIT)) {
-                app.getInputManager().deleteMapping(SimpleApplication.INPUT_MAPPING_EXIT);
-            }
-
-            app.getInputManager().addMapping(ESCAPE_EVENT, new TouchTrigger(TouchInput.KEYCODE_BACK));
-            app.getInputManager().addListener(this, new String[]{ESCAPE_EVENT});
-        }
     }
 
     public void reshape(int width, int height) {
@@ -589,4 +552,31 @@ public class AndroidHarnessMod extends Activity implements TouchListener,
         }
         isGLThreadPaused = true;
     }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// Власна реалізація прослуховування клавіш
+
+@Override
+public boolean onKeyUp (int key_Code, KeyEvent event) {
+
+switch (key_Code) {
+
+    // Кнопка "Назад"
+    case KeyEvent.KEYCODE_BACK:
+        Listener.touchListener.onTouch("Back", new TouchEvent(), 0);
+        break;
+
+    // Кнопка "Меню"
+    case KeyEvent.KEYCODE_MENU:
+        Listener.touchListener.onTouch("Menu", new TouchEvent(), 0);
+        break;
+
+}
+
+return false;
+
+}
+
+// Кінець класу <AndroidHarnessMod> ///////////////////////////////////////////////////////////////
+
 }
