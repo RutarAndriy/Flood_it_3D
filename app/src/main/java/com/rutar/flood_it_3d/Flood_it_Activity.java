@@ -13,12 +13,10 @@ import android.os.Handler;
 
 import com.jme3.app.*;
 import com.jme3.input.*;
-import com.jme3.input.controls.*;
 
 import java.util.*;
 import java.util.logging.*;
 
-import static com.rutar.flood_it_3d.Listener.*;
 import static com.rutar.flood_it_3d.Unificator.*;
 import static com.rutar.flood_it_3d.Game_Updator.*;
 
@@ -26,7 +24,7 @@ import static com.rutar.flood_it_3d.Game_Updator.*;
 
 public class Flood_it_Activity extends AndroidHarnessMod implements Animation.AnimationListener {
 
-public static String TAG = "Flood_it";
+public static String TAG = "Flood_it_3D";
 
 public static Flood_it_Activity activity;
 

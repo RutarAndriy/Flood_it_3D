@@ -43,10 +43,23 @@ game_node_child.setLocalScale(scale_factor);
 
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
+// ................................................................................................
 
+// Гра -> Назад або Гра -> Меню
 if ((key.equals("Back") || key.equals("Menu")) &&
      game_state == 4 && l_help.getVisibility() == View.GONE) { handler.sendEmptyMessage(1); }
+
+// Почати гру -> Назад
+else if (key.equals("Back") && game_state == 3)
+    { on_View_Click(activity.findViewById(R.id.n_20)); }
+
+// Меню -> Назад
+else if (key.equals("Back") && game_state == 2) {
+
+if (l_exit.getVisibility() == View.GONE) { on_View_Click(activity.findViewById(R.id.n_05)); }
+else                                     { on_View_Click(activity.findViewById(R.id.n_08)); }
+
+}
 
 }
 };
