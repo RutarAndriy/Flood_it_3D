@@ -13,6 +13,7 @@ import android.os.Handler;
 
 import com.jme3.app.*;
 import com.jme3.input.*;
+import com.jme3.input.event.*;
 import com.jme3.input.controls.*;
 
 import java.util.*;
@@ -24,13 +25,9 @@ import static com.rutar.flood_it_3d.Game_Update.*;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-public class Flood_it_Activity extends AndroidHarnessMod implements Animation.AnimationListener {
-
-public static String TAG = "Flood_it";
+public class Flood_it_Activity extends AndroidHarness implements Animation.AnimationListener {
 
 public static Flood_it_Activity activity;
-
-public static InputManager my_Input_Manager;
 
 public static Animation fade_in;
 public static Animation fade_out;
@@ -107,12 +104,10 @@ frameRate = -1;
 joystickEventsEnabled = false;
 mouseEventsEnabled = true;
 keyEventsEnabled = false;
-
-finishOnAppStop = true;
 handleExitHook = false;
+finishOnAppStop = true;
 
 splashPicID = 0;
-layoutRes = R.layout.flood_it_layout;
 appClass = Flood_it_3D.class.getCanonicalName();
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -155,6 +150,22 @@ getBaseContext().getResources().updateConfiguration(config,
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 super.onCreate(bundle);
+
+FrameLayout game_layout = new FrameLayout(this);
+FrameLayout keys_layout = (FrameLayout) LayoutInflater
+                          .from(this).inflate(R.layout.flood_it_layout, null);
+
+// Відкріплення GLSurfaceView від батьківського елемента
+((FrameLayout)view.getParent()).removeView(view);
+
+// Додавання GLSurfaceView та layout'а ігрових клавіш до загального layout'а
+game_layout.addView(view);
+game_layout.addView(keys_layout);
+
+// Відображення загального layout'а
+setContentView(game_layout);
+
+// Приховування наекранних клавіш
 hide_NavigationBar();
 
 // Визначення версії гри
@@ -320,130 +331,7 @@ Utils.background_Fade_Out();
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-handler = new Handler() {
-
-@Override
-public void handleMessage (Message msg) {
-
-switch (msg.what) {
-
-// Обертання усіх ігрових кнопок
-case 0: for (int z = 0; z < buttons.length; z++) {
-            if (Build.VERSION.SDK_INT > 10) {
-                buttons[z].setRotation(rotate_angle * (z%2 == 0 ? 1 : -1));
-            }
-        }
-        break;
-
-// Пауза - натискання кнопки назад або меню
-case 1: if (!pause_is_on) {
-
-        anim_is_running = true;
-        fade_in.setAnimationListener(new Animation.AnimationListener() {
-        @Override
-        public void onAnimationStart (Animation animation) {
-            pause_is_on = true;
-            if (Build.VERSION.SDK_INT > 10) { l_pause.setAlpha(1); }
-        }
-        @Override
-        public void onAnimationEnd (Animation animation) { anim_is_running = false; }
-        @Override
-        public void onAnimationRepeat (Animation animation) {}
-        });
-
-        text_Views_Normal[25].setText(String.format("%d/%d", dynamic_index_list.size(), triangle_count));
-        text_Views_Normal[26].setText(String.format("%s %d", get_String(R.string.n_27), step_count));
-        l_pause.startAnimation(fade_in);
-        l_pause.setVisibility(View.VISIBLE);
-        if (Build.VERSION.SDK_INT > 10) { l_pause.setAlpha(0); }
-
-        }
-        break;
-
-// Перехід з гри до меню вибору моделі
-case 2: hide_off = false;
-        Utils.background_Fade_In(-1);
-        break;
-
-// Анімація завантаження моделі
-case 3: anim_is_running = true;
-        loading.startAnimation(background_fade_out);
-        Utils.background_Fade_Out();
-        break;
-
-// Рівень завершено
-case 4: if (scores[model_index] == 0 ||
-            scores[model_index] > step_count) { scores[model_index] = step_count;
-                                                save_Settings("level_" + model_index, step_count); }
-
-        if (model_index < model_count - 1) { model_index++; }
-
-        anim_is_running = true;
-        complete_fade_in.setAnimationListener(new Animation.AnimationListener() {
-        @Override
-        public void onAnimationStart (Animation animation) {
-            if (Build.VERSION.SDK_INT > 10) { l_complete.setAlpha(1); }
-        }
-        @Override
-        public void onAnimationEnd (Animation animation) { new Thread(new Runnable() {
-                                                           @Override
-                                                           public void run() {
-                                                               try { Thread.sleep(2000); }
-                                                               catch (Exception e) {}
-                                                               handler.sendEmptyMessage(2);
-                                                           }}).start(); }
-        @Override
-        public void onAnimationRepeat (Animation animation) {}
-        });
-
-        text_Views_Normal[23].setText(get_String(R.string.n_24) + " " + step_count);
-        l_complete.startAnimation(complete_fade_in);
-        l_complete.setVisibility(View.VISIBLE);
-        if (Build.VERSION.SDK_INT > 10) { l_complete.setAlpha(0); }
-        break;
-
-// У даній версії гри не використовується
-case 5: break;
-
-// Показ меню допомоги
-case 6: anim_is_running = true;
-        help_fade_in.setAnimationListener(new Animation.AnimationListener() {
-            @Override
-            public void onAnimationStart (Animation animation) {
-                if (Build.VERSION.SDK_INT > 10) { l_help.setAlpha(1); }
-            }
-            @Override
-            public void onAnimationEnd (Animation animation) {}
-            @Override
-            public void onAnimationRepeat (Animation animation) {}
-        });
-
-        l_help.startAnimation(help_fade_in);
-        l_help.setVisibility(View.VISIBLE);
-        if (Build.VERSION.SDK_INT > 10) { l_help.setAlpha(0); }
-        break;
-
-// Закриття меню допомоги
-case 7: need_help = 0;
-        activity.save_Settings("help", 0);
-
-        fade_out.setAnimationListener(new Animation.AnimationListener() {
-            @Override
-            public void onAnimationStart (Animation animation) {}
-            @Override
-            public void onAnimationEnd (Animation animation) { anim_is_running = false;
-                l_help.setVisibility(View.GONE); }
-            @Override
-            public void onAnimationRepeat (Animation animation) {}
-        });
-
-        l_help.startAnimation(fade_out);
-        break;
-
-}
-
-}
-};
+handler = new Game_Handler();
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -479,11 +367,11 @@ public void initialize() {
 
 super.initialize();
 
-my_Input_Manager = getJmeApplication().getInputManager();
+InputManager input_manager = getJmeApplication().getInputManager();
 
-my_Input_Manager.addMapping("Back", new TouchTrigger(TouchInput.KEYCODE_BACK));
-my_Input_Manager.addMapping("Menu", new TouchTrigger(TouchInput.KEYCODE_MENU));
-my_Input_Manager.addListener(touchListener, new String[]{"Back", "Menu"});
+input_manager.addMapping("Back", new TouchTrigger(TouchInput.KEYCODE_BACK));
+input_manager.addMapping("Menu", new TouchTrigger(TouchInput.KEYCODE_MENU));
+input_manager.addListener(touchListener, "Back", "Menu");
 
 }
 
@@ -526,6 +414,7 @@ return getPreferences(MODE_PRIVATE).getInt(key, default_value);
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
+@SuppressLint("SetTextI18n")
 public void reload_Scores_Table() {
 
 for (int z = 0; z < 30; z++) {
@@ -546,5 +435,35 @@ public void onAnimationEnd (Animation animation) { anim_is_running = false; }
 public void onAnimationRepeat (Animation animation) {}
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
+// Власна реалізація прослуховування клавіш
+
+@Override
+public boolean onKeyUp (int key_Code, KeyEvent event) {
+
+// Обробка клавіш необхідна лише для Android 9.0+
+if (Build.VERSION.SDK_INT < Build.VERSION_CODES.P) { return false; }
+
+TouchEvent touch_event = new TouchEvent();
+touch_event.set(TouchEvent.Type.KEY_UP);
+
+switch (key_Code) {
+
+// Кнопка "Назад"
+case KeyEvent.KEYCODE_BACK:
+    touchListener.onTouch("Back", touch_event, 0);
+    break;
+
+// Кнопка "Меню"
+case KeyEvent.KEYCODE_MENU:
+    touchListener.onTouch("Menu", touch_event, 0);
+    break;
+
+}
+
+return false;
+
+}
+
+// Кінець класу <Flood_it_Activity> ///////////////////////////////////////////////////////////////
 
 }

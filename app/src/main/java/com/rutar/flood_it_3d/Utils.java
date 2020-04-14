@@ -9,11 +9,11 @@ import static com.rutar.flood_it_3d.Unificator.*;
 import static com.rutar.flood_it_3d.Game_Update.*;
 import static com.rutar.flood_it_3d.Flood_it_Activity.*;
 
-public class Utils {
+class Utils {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Метод затуманює фон
-public static void background_Fade_In (final int id) {
+static void background_Fade_In (final int id) {
 
 anim_is_running = true;
 background_fade_in.setAnimationListener(new Animation.AnimationListener() {
@@ -35,7 +35,7 @@ background.startAnimation(background_fade_in);
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Метод розвиднює фон
-public static void background_Fade_Out() {
+static void background_Fade_Out() {
 
 background_fade_out.setAnimationListener(new Animation.AnimationListener() {
 
@@ -57,7 +57,7 @@ background.startAnimation(background_fade_out);
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Метод виконується після розвиднення фону
-public static void post_Fade_Out() {
+static void post_Fade_Out() {
 
 switch (game_state) {
 
@@ -78,7 +78,7 @@ case 4: loading.setVisibility(View.GONE);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-public static void click_processing (int id) {
+static void click_processing (int id) {
 
 switch (id) {
 
@@ -227,6 +227,15 @@ case R.id.n_15: language += language < 2 ? 1 : -2;
                 else { text_Views_Normal[15].setText(R.string.n_16_1); }
                 break;
 
+// Easy or Normal or Hard
+case R.id.n_21: int index = (model_index / 10 + 1) * 10;
+                model_index = index < model_count ? index : 0;
+                background_Fade_Out();
+                model_Available_Test();
+                update_Preview_Text();
+                change_index = 3;
+                break;
+
 // Previous model - <<
 case R.id.l_01: model_index -= model_index > 0 ? 1 : -model_count + 1;
                 background_Fade_Out();
@@ -288,7 +297,7 @@ case R.id.n_34: handler.sendEmptyMessage(7);
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-public static void update_Preview_Text() {
+static void update_Preview_Text() {
 
 text_Views_Normal[18].setText(activity.get_String_Value("n_19_" + model_index));
 text_Views_Normal[20].setText(activity.get_String_Value("n_21_" + model_index/model_per_level));
@@ -319,7 +328,7 @@ else { level_is_lock = false;
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 @SuppressLint("SetTextI18n")
-public static void show_Lock_Message() {
+static void show_Lock_Message() {
 
 anim_is_running = true;
 fade_in_out_annimation.setAnimationListener(new Animation.AnimationListener() {
@@ -347,6 +356,6 @@ if (Build.VERSION.SDK_INT > 10) { l_lock.setAlpha(0); }
 
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
+// Кінець класу <Utils> ///////////////////////////////////////////////////////////////////////////
 
 }

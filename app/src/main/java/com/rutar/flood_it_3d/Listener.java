@@ -20,7 +20,8 @@ private static float distance;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Обробка Android клавіш - Back та Home а також обробка жестів
-public static TouchListener touchListener = new TouchListener() {
+static TouchListener touchListener = new TouchListener() {
+
 @Override
 public void onTouch (String key, TouchEvent event, float tpf) {
 
@@ -43,17 +44,28 @@ game_node_child.setLocalScale(scale_factor);
 
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
+// ................................................................................................
 
+// Прослуховуємо натискання клавіш, але не відпускання
+if (event.getType() != TouchEvent.Type.KEY_UP) { return; }
+
+// Гра -> Назад або Гра -> Меню
 if ((key.equals("Back") || key.equals("Menu")) &&
-     game_state == 4 && l_help.getVisibility() == View.GONE) { handler.sendEmptyMessage(1); }
+     game_state == 4 &&
+     l_help.getVisibility() == View.GONE) { handler.sendEmptyMessage(1); }
+
+// Почати гру -> Назад
+else if (key.equals("Back") && game_state == 3) { handler.sendEmptyMessage(8); }
+
+// Меню -> Назад
+else if (key.equals("Back") && game_state == 2) { handler.sendEmptyMessage(9); }
 
 }
 };
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Обробка довгих натискань
-public static final AnalogListener analog_Listener = new AnalogListener() {
+static final AnalogListener analog_Listener = new AnalogListener() {
 
 @Override
 public void onAnalog (String name, float value, float tpf) {
@@ -103,7 +115,7 @@ if (name.equals("y-")) {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Обробка натискань на view компоненти
-public static void on_View_Click (View view) {
+static void on_View_Click (View view) {
 
 if (view.getId() == R.id.n_34) { view.startAnimation(press_animation);
                                  Utils.click_processing(view.getId()); }
@@ -132,6 +144,7 @@ case R.id.n_11: // About -> Back
 case R.id.n_16: // Settings -> Back
 case R.id.n_18: // High Score -> Back
 case R.id.n_20: // Start Game -> Back
+case R.id.n_21: // Start Game -> Easy or Normal or Hard
 case R.id.l_01: // <<
 case R.id.l_02: // >>
 
@@ -168,6 +181,6 @@ break;
 }
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
+// Кінець класу <Listener> ////////////////////////////////////////////////////////////////////////
 
 }
