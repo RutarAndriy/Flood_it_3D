@@ -1,6 +1,7 @@
 package com.rutar.flood_it_3d;
 
 import android.os.*;
+import android.util.Log;
 import android.view.*;
 import android.widget.*;
 import android.content.*;
@@ -13,10 +14,13 @@ import android.os.Handler;
 
 import com.jme3.app.*;
 import com.jme3.input.*;
+import com.jme3.input.event.*;
+import com.jme3.input.controls.*;
 
 import java.util.*;
 import java.util.logging.*;
 
+import static com.rutar.flood_it_3d.Listener.*;
 import static com.rutar.flood_it_3d.Unificator.*;
 import static com.rutar.flood_it_3d.Game_Updator.*;
 
@@ -24,11 +28,7 @@ import static com.rutar.flood_it_3d.Game_Updator.*;
 
 public class Flood_it_Activity extends AndroidHarnessMod implements Animation.AnimationListener {
 
-public static String TAG = "Flood_it_3D";
-
 public static Flood_it_Activity activity;
-
-public static InputManager my_Input_Manager;
 
 public static Animation fade_in;
 public static Animation fade_out;
@@ -438,6 +438,16 @@ case 7: need_help = 0;
         l_help.startAnimation(fade_out);
         break;
 
+// Почати гру -> Назад
+case 8: on_View_Click(activity.findViewById(R.id.n_20)); break;
+
+// Меню -> Назад
+case 9: if (l_exit.getVisibility() == View.GONE)
+            { on_View_Click(activity.findViewById(R.id.n_05)); }
+        else
+            { on_View_Click(activity.findViewById(R.id.n_08)); }
+        break;
+
 }
 
 }
@@ -473,7 +483,17 @@ reload_Scores_Table();
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 @Override
-public void initialize() { super.initialize(); }
+public void initialize() {
+
+super.initialize();
+
+InputManager input_manager = getJmeApplication().getInputManager();
+
+input_manager.addMapping("Back", new TouchTrigger(TouchInput.KEYCODE_BACK));
+input_manager.addMapping("Menu", new TouchTrigger(TouchInput.KEYCODE_MENU));
+input_manager.addListener(touchListener, "Back", "Menu");
+
+}
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -534,5 +554,32 @@ public void onAnimationEnd (Animation animation) { anim_is_running = false; }
 public void onAnimationRepeat (Animation animation) {}
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
+// Власна реалізація прослуховування клавіш
+
+@Override
+public boolean onKeyUp (int key_Code, KeyEvent event) {
+
+// Обробка клавіш необхідна лише для Android 9.0+
+if (Build.VERSION.SDK_INT < Build.VERSION_CODES.P) { return false; }
+
+switch (key_Code) {
+
+// Кнопка "Назад"
+case KeyEvent.KEYCODE_BACK:
+    touchListener.onTouch("Back", new TouchEvent(), 0);
+    break;
+
+// Кнопка "Меню"
+case KeyEvent.KEYCODE_MENU:
+    touchListener.onTouch("Menu", new TouchEvent(), 0);
+    break;
+
+}
+
+return false;
+
+}
+
+// Кінець класу <Flood_it_Activity> ///////////////////////////////////////////////////////////////
 
 }
