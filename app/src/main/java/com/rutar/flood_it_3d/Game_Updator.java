@@ -18,28 +18,28 @@ import static com.rutar.flood_it_3d.Flood_it_3D.*;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-public class Game_Updator {
+class Game_Updator {
 
-public static int need_help;                                   // Необхідність показу меню допомоги
-public static int step_count;                                                    // Кількість ходів
-public static int model_index;                                                     // Індекс моделі
-public static int background_w;                                                      // Ширина фону
-public static int background_h;                                                      // Висота фону
-public static int triangle_count;                                          // Кількість трикутників
-public static int model_count = 30;                                            // Кількість моделей
-public static int color_index = -1;                                     // Індекс активного кольору
-public static int change_index = -1;                                      // Індекс зміни стану гри
-public static int sound_future = -1;                                 // Індекс перспективної музики
-public static int sound_current = -1;                                   // Індекс актуальної музики
-public static int rotate_index = 150;                               // Індекс повороту логотипу гри
-public static int max_model_index = 30;                               // Доступна кількість моделей
-public static int core_count = Runtime.getRuntime().availableProcessors();        // Кількість ядер
+static int need_help;                                          // Необхідність показу меню допомоги
+static int step_count;                                                           // Кількість ходів
+static int model_index;                                                            // Індекс моделі
+static int background_w;                                                             // Ширина фону
+static int background_h;                                                             // Висота фону
+static int triangle_count;                                                 // Кількість трикутників
+static int model_count = 30;                                                   // Кількість моделей
+static int color_index = -1;                                            // Індекс активного кольору
+static int change_index = -1;                                             // Індекс зміни стану гри
+static int sound_future = -1;                                        // Індекс перспективної музики
+static int sound_current = -1;                                          // Індекс актуальної музики
+static int rotate_index = 150;                                      // Індекс повороту логотипу гри
+static int max_model_index = 30;                                      // Доступна кількість моделей
+static int core_count = Runtime.getRuntime().availableProcessors();               // Кількість ядер
 
-public static int[] color_indexes;                                       // Масив індексів кольорів
-public static int[] neighborhoods;                                    // Масив сусідніх трикутників
-public static int[] vertex_indexes = { 0,1,2 };                        // Масив вершин в трикутнику
+static int[] color_indexes;                                              // Масив індексів кольорів
+static int[] neighborhoods;                                           // Масив сусідніх трикутників
+static int[] vertex_indexes = { 0,1,2 };                               // Масив вершин в трикутнику
 
-public static final int[] model_triangles_count = new int[] {       // Кількість трикутників моделі
+static final int[] model_triangles_count = new int[] {              // Кількість трикутників моделі
 
 48,   72,   80,   108,  140,  180,  240,  252,  324,  400,
 448,  500,  540,  576,  592,  600,  636,  720,  768,  828,
@@ -47,7 +47,7 @@ public static final int[] model_triangles_count = new int[] {       // Кіль�
 
 };
 
-public static final int[] start_points = new int[] {       // Індекси початкових трикутників моделі
+static final int[] start_points = new int[] {              // Індекси початкових трикутників моделі
 
 5,    51,   39,   3,    58,   42,   94,   26,   205,  8,
 350,  108,  180,  457,  84,   144,  186,  168,  21,   364,
@@ -55,7 +55,7 @@ public static final int[] start_points = new int[] {       // Індекси п�
 
 };
 
-public static final int[] max_steps_count = new int[] {    // Мax кількість ходів для кожної моделі
+static final int[] max_steps_count = new int[] {   // Максимальна кількість ходів для кожної моделі
 
 11,   14,   17,   17,   19,   24,   27,   27,   27,   59,
 59,   84,   64,   79,   59,   69,   64,   54,   69,   74,
@@ -63,60 +63,60 @@ public static final int[] max_steps_count = new int[] {    // Мax кількі�
 
 };
 
-public static long repaint_time;                                     // Час перемальовування моделі
-public static long processing_time;                                           // Час обробки моделі
+static long repaint_time;                                            // Час перемальовування моделі
+static long processing_time;                                                  // Час обробки моделі
 
-public static Mesh temp_mesh;                                                  // Тимчасовий каркас
-public static Mesh model_mesh;                                                     // Каркас моделі
+static Mesh temp_mesh;                                                         // Тимчасовий каркас
+static Mesh model_mesh;                                                            // Каркас моделі
 
-public static Vector3f local_scale;                                            // Значення масштабу
-public static Vector3f backgroung_position;                          // Позиція фонового зображення
+static Vector3f local_scale;                                                   // Значення масштабу
+static Vector3f backgroung_position;                                 // Позиція фонового зображення
 
-public static Vector3f[] normals;                                                 // Масив нормалей
-public static Vector3f[] vertices;                                                  // Масив вершин
-public static Vector3f[] vertices_temp;                                  // Тимчасовий масив вершин
+static Vector3f[] normals;                                                        // Масив нормалей
+static Vector3f[] vertices;                                                         // Масив вершин
+static Vector3f[] vertices_temp;                                         // Тимчасовий масив вершин
 
-public static boolean is_done = true;              // Перемінна вказує на завершення обробки моделі
-public static boolean game_is_running = false;                            // Якщо true - гра триває
+static boolean is_done = true;                     // Перемінна вказує на завершення обробки моделі
+static boolean game_is_running = false;                                   // Якщо true - гра триває
 
-public static Triangle temp_triangle;                                       // Типчасовий трикутник
-public static Triangle start_triangle;                                      // Початковий трикутник
+static Triangle temp_triangle;                                              // Тимчасовий трикутник
+static Triangle start_triangle;                                             // Початковий трикутник
 
-public static ParticleEmitter emitter;                                        // Генератор частинок
-public static Picture background_picture;                                      // Фонове зображення
+static ParticleEmitter emitter;                                               // Генератор частинок
+static Picture background_picture;                                             // Фонове зображення
 
-public static float preview_rotate_angle = 45;                  // Кут нахилу моделі передперегляду
-public static float[] sound_volume = new float[4];       // Масив гучностей окремих звукових вузлів
-public static float[] delta_volume = new float[4];                      // Перемінні зміни гучності
+static float preview_rotate_angle = 45;                         // Кут нахилу моделі передперегляду
+static float[] sound_volume = new float[4];              // Масив гучностей окремих звукових вузлів
+static float[] delta_volume = new float[4];                             // Перемінні зміни гучності
 
-public static AudioNode[] sounds = new AudioNode[4];                                  // Аудіовузли
+static AudioNode[] sounds = new AudioNode[4];                                         // Аудіовузли
 
-public static HashSet<Integer> static_parts = new HashSet<>();               // Статичні трикутники
-public static HashSet<Integer> dinamic_parts = new HashSet<>();             // Динамічні трикутники
+static HashSet<Integer> static_parts = new HashSet<>();                      // Статичні трикутники
+static HashSet<Integer> dinamic_parts = new HashSet<>();                    // Динамічні трикутники
 
-public static Quaternion quaternion = new Quaternion();             // Кватерніон повороту логотипу
-public static Quaternion[] quaternions = new Quaternion[3];                   // Масив кватерніонів
+static Quaternion quaternion = new Quaternion();                    // Кватерніон повороту логотипу
+static Quaternion[] quaternions = new Quaternion[3];                          // Масив кватерніонів
 
-public static Texture2D[] backgrounds = new Texture2D[3];                  // Масив фонових текстур
-public static Process[] threads = new Process[core_count];                 // Масив потоків обробки
+static Texture2D[] backgrounds = new Texture2D[3];                         // Масив фонових текстур
+static Process[] threads = new Process[core_count];                        // Масив потоків обробки
 
-public static Material[] materials = new Material[9];                           // Масив матеріалів
+static Material[] materials = new Material[9];                                  // Масив матеріалів
 
-public static Node[] clone_nodes = new Node[core_count];                         // Клоновані вузли
-public static Node[] original_nodes = new Node[core_count];                    // Оригінальні вузли
+static Node[] clone_nodes = new Node[core_count];                                // Клоновані вузли
+static Node[] original_nodes = new Node[core_count];                           // Оригінальні вузли
 
-public static Spatial logo;                                                          // Логотип гри
+static Spatial logo;                                                                 // Логотип гри
 
 // Неактуально починаючи з версії 2.1
 //public static Spatial[]  models_array_1 = new Spatial[model_count];    // Масив неігрових моделей
 //public static Geometry[] models_array_2 = new Geometry[model_count];     // Масив ігрових моделей
 
-public static Spatial preview_model;
-public static Geometry[] geometries;                                 // Масив геометрій трикутників
+static Spatial preview_model;
+static Geometry[] geometries;                                        // Масив геометрій трикутників
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Попередня ініціалізація головних компонентів
-public static void pre_Init (AssetManager manager) {
+static void pre_Init (AssetManager manager) {
 
 // Ініціалізація потоків та оригінальних вузлів
 
@@ -239,7 +239,7 @@ sounds[z].setVolume(0);
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Обробка моделей та підготовка ігрового вузла
-public static void load_Model (int index, AssetManager manager) {
+static void load_Model (int index, AssetManager manager) {
 
 step_count = 0;
 color_index = 8;
@@ -327,7 +327,7 @@ game_node_child.attachChild(emitter);
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Метод оновлює кольори трикутників в моделі
-public static void set_Color() {
+static void set_Color() {
 
 // Замальовування фігури кольорами із масиву
 for (int z = 0; z < triangle_count; z++) {

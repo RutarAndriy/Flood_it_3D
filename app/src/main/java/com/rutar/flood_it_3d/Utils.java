@@ -1,11 +1,7 @@
 package com.rutar.flood_it_3d;
 
-import android.net.*;
 import android.os.*;
-import android.util.*;
 import android.view.*;
-import android.widget.*;
-import android.content.*;
 import android.annotation.*;
 import android.view.animation.*;
 
@@ -14,11 +10,11 @@ import static com.rutar.flood_it_3d.Flood_it_3D.*;
 import static com.rutar.flood_it_3d.Game_Updator.*;
 import static com.rutar.flood_it_3d.Flood_it_Activity.*;
 
-public class Utils {
+class Utils {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Метод затуманює фон
-public static void background_Fade_In (final int id) {
+static void background_Fade_In (final int id) {
 
 anim_is_running = true;
 background_fade_in.setAnimationListener(new Animation.AnimationListener() {
@@ -40,7 +36,7 @@ background.startAnimation(background_fade_in);
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Метод розвиднює фон
-public static void background_Fade_Out() {
+static void background_Fade_Out() {
 
 background_fade_out.setAnimationListener(new Animation.AnimationListener() {
 
@@ -62,7 +58,7 @@ background.startAnimation(background_fade_out);
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Метод виконується після розвиднення фону
-public static void post_Fade_Out() {
+static void post_Fade_Out() {
 
 switch (game_state) {
 
@@ -83,7 +79,7 @@ case 4: loading.setVisibility(View.GONE);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-public static void click_processing (int id) {
+static void click_processing (int id) {
 
 switch (id) {
 
@@ -310,7 +306,7 @@ case R.id.n_34: handler.sendEmptyMessage(7);
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-public static void update_Preview_Text() {
+static void update_Preview_Text() {
 
 text_Views_Normal[18].setText(activity.get_String_Value("n_19_" + model_index));
 text_Views_Normal[20].setText(activity.get_String_Value("n_21_" + model_index/10));
@@ -342,7 +338,7 @@ else { level_is_lock = false;
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 @SuppressLint("SetTextI18n")
-public static void show_Lock_Message() {
+static void show_Lock_Message() {
 
 anim_is_running = true;
 fade_in_out_annimation.setAnimationListener(new Animation.AnimationListener() {
@@ -372,6 +368,6 @@ if (Build.VERSION.SDK_INT > 10) { l_lock.setAlpha(0); }
 
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
+// Кінець класу <Utils> ///////////////////////////////////////////////////////////////////////////
 
 }

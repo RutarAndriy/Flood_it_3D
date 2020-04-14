@@ -2,16 +2,14 @@ package com.rutar.flood_it_3d;
 
 // Created by Rutar_Andriy on 27.03.2017.
 
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.net.Uri;
-import android.widget.Button;
-import android.widget.Toast;
+import android.app.*;
+import android.net.*;
+import android.widget.*;
+import android.content.*;
 
 import static com.rutar.flood_it_3d.Flood_it_Activity.*;
+
+// ................................................................................................
 
 public class Rate_Dialog {
 
@@ -122,6 +120,6 @@ settings_writer.commit();
 
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
+// Кінець класу <Rate_Dialog> /////////////////////////////////////////////////////////////////////
 
 }

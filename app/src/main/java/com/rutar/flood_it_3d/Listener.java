@@ -1,6 +1,5 @@
 package com.rutar.flood_it_3d;
 
-import android.util.*;
 import android.view.*;
 
 import com.jme3.math.*;
@@ -21,7 +20,8 @@ private static float distance;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Обробка Android клавіш - Back та Home а також обробка жестів
-public static TouchListener touchListener = new TouchListener() {
+static TouchListener touchListener = new TouchListener() {
+
 @Override
 public void onTouch (String key, TouchEvent event, float tpf) {
 
@@ -65,7 +65,7 @@ else if (key.equals("Back") && game_state == 2) { handler.sendEmptyMessage(9); }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Обробка довгих натискань
-public static final AnalogListener analog_Listener = new AnalogListener() {
+static final AnalogListener analog_Listener = new AnalogListener() {
 
 @Override
 public void onAnalog (String name, float value, float tpf) {
@@ -115,7 +115,7 @@ if (name.equals("y-")) {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Обробка натискань на view компоненти
-public static void on_View_Click (View view) {
+static void on_View_Click (View view) {
 
 if (view.getId() == R.id.n_34) { view.startAnimation(press_animation);
                                  Utils.click_processing(view.getId()); }
@@ -180,6 +180,6 @@ break;
 }
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
+// Кінець класу <Listener> ////////////////////////////////////////////////////////////////////////
 
 }
