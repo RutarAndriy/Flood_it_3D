@@ -1,5 +1,6 @@
 package com.rutar.flood_it_3d;
 
+import android.util.*;
 import android.view.*;
 
 import com.jme3.math.*;
@@ -44,6 +45,9 @@ game_node_child.setLocalScale(scale_factor);
 }
 
 // ................................................................................................
+
+// Прослуховуємо натискання клавіш, але не відпускання
+if (event.getType() != TouchEvent.Type.KEY_UP) { return; }
 
 // Гра -> Назад або Гра -> Меню
 if ((key.equals("Back") || key.equals("Menu")) &&
