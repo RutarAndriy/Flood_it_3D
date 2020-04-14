@@ -26,7 +26,7 @@ import static com.rutar.flood_it_3d.Game_Updator.*;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-public class Flood_it_Activity extends AndroidHarnessMod implements Animation.AnimationListener {
+public class Flood_it_Activity extends AndroidHarness implements Animation.AnimationListener {
 
 public static Flood_it_Activity activity;
 
@@ -106,11 +106,10 @@ frameRate = -1;
 joystickEventsEnabled = false;
 mouseEventsEnabled = true;
 keyEventsEnabled = false;
-
+handleExitHook = false;
 finishOnAppStop = true;
 
 splashPicID = 0;
-layoutRes = R.layout.flood_it_layout;
 appClass = Flood_it_3D.class.getCanonicalName();
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -153,6 +152,22 @@ getBaseContext().getResources().updateConfiguration(config,
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 super.onCreate(bundle);
+
+FrameLayout game_layout = new FrameLayout(this);
+FrameLayout keys_layout = (FrameLayout) LayoutInflater
+                          .from(this).inflate(R.layout.flood_it_layout, null);
+
+// Відкріплення GLSurfaceView від батьківського елемента
+((FrameLayout)view.getParent()).removeView(view);
+
+// Додавання GLSurfaceView та layout'а ігрових клавіш до загального layout'а
+game_layout.addView(view);
+game_layout.addView(keys_layout);
+
+// Відображення загального layout'а
+setContentView(game_layout);
+
+// Приховування наекранних клавіш
 hide_NavigationBar();
 
 // Визначення версії гри
