@@ -553,30 +553,6 @@ public class AndroidHarnessMod extends Activity implements DialogInterface.OnCli
         isGLThreadPaused = true;
     }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-// Власна реалізація прослуховування клавіш
-
-@Override
-public boolean onKeyUp (int key_Code, KeyEvent event) {
-
-switch (key_Code) {
-
-    // Кнопка "Назад"
-    case KeyEvent.KEYCODE_BACK:
-        Listener.touchListener.onTouch("Back", new TouchEvent(), 0);
-        break;
-
-    // Кнопка "Меню"
-    case KeyEvent.KEYCODE_MENU:
-        Listener.touchListener.onTouch("Menu", new TouchEvent(), 0);
-        break;
-
-}
-
-return false;
-
-}
-
 // Кінець класу <AndroidHarnessMod> ///////////////////////////////////////////////////////////////
 
 }
