@@ -179,13 +179,28 @@ break;
 case 8: activity.on_View_Click(activity.findViewById(R.id.n_20));
         break;
 
-// Меню -> Назад
+// Перехід назад із різних пунктів меню
 case 9:
 
-if (l_exit.getVisibility() == View.GONE)
-    { activity.on_View_Click(activity.findViewById(R.id.n_05)); }
-else
+// Таблиця рекордів -> Назад
+if (l_score.getVisibility() == View.VISIBLE)
+    { activity.on_View_Click(activity.findViewById(R.id.n_18)); }
+
+// Налаштування -> Назад
+else if (l_settings.getVisibility() == View.VISIBLE)
+    { activity.on_View_Click(activity.findViewById(R.id.n_16)); }
+
+// Про програму -> Назад
+else if (l_about.getVisibility() == View.VISIBLE)
+    { activity.on_View_Click(activity.findViewById(R.id.n_11)); }
+
+// Вихід -> Назад
+else if (l_exit.getVisibility() == View.VISIBLE)
     { activity.on_View_Click(activity.findViewById(R.id.n_08)); }
+
+// Меню -> Назад
+else if (l_exit.getVisibility() == View.GONE)
+    { activity.on_View_Click(activity.findViewById(R.id.n_05)); }
 
 break;
 
