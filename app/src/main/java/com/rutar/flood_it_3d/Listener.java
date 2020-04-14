@@ -20,6 +20,7 @@ private static float distance;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Обробка Android клавіш - Back та Home а також обробка жестів
+
 static TouchListener touchListener = new TouchListener() {
 
 @Override

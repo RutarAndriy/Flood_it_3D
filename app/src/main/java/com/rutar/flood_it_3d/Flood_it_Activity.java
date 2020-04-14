@@ -36,7 +36,7 @@ public static Animation press_animation;
 public static Animation complete_fade_in;
 public static Animation background_fade_in;
 public static Animation background_fade_out;
-public static Animation fade_in_out_annimation;
+public static Animation fade_in_out_animation;
 
 public static ViewGroup l_menu;
 public static ViewGroup l_play;
@@ -302,7 +302,7 @@ background = findViewById(R.id.background);
 typeface = Typeface.createFromAsset(getAssets(), "fonts/v_Steadfast_Regular.ttf");
 
 press_animation = AnimationUtils.loadAnimation(this, R.anim.press_anim);
-fade_in_out_annimation = AnimationUtils.loadAnimation(this, R.anim.fade_in_out_anim);
+fade_in_out_animation = AnimationUtils.loadAnimation(this, R.anim.fade_in_out_anim);
 
 press_animation.setAnimationListener(this);
 

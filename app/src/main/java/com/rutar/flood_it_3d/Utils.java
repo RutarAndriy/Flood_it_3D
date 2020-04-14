@@ -228,7 +228,7 @@ case R.id.n_15: language += language < 2 ? 1 : -2;
                 break;
 
 // Easy or Normal or Hard
-case R.id.n_21: int index = (model_index / 10 + 1) * 10;
+case R.id.n_21: int index = (model_index / 12 + 1) * 12;
                 model_index = index < model_count ? index : 0;
                 background_Fade_Out();
                 model_Available_Test();
@@ -331,7 +331,7 @@ else { level_is_lock = false;
 static void show_Lock_Message() {
 
 anim_is_running = true;
-fade_in_out_annimation.setAnimationListener(new Animation.AnimationListener() {
+fade_in_out_animation.setAnimationListener(new Animation.AnimationListener() {
 
     @Override
     public void onAnimationStart (Animation animation) {
@@ -350,7 +350,7 @@ text_Views_Normal[29].setText(activity.get_String(R.string.n_30_0) + " " +
                              (max_steps_count[model_index-1] + 1) + " " +
                               activity.get_String(R.string.n_30_1));
 
-l_lock.startAnimation(fade_in_out_annimation);
+l_lock.startAnimation(fade_in_out_animation);
 l_lock.setVisibility(View.VISIBLE);
 if (Build.VERSION.SDK_INT > 10) { l_lock.setAlpha(0); }
 
