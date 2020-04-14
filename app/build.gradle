@@ -8,8 +8,8 @@ android {
         applicationId "com.rutar.flood_it_3d"
         minSdkVersion 9
         targetSdkVersion 28
-        versionCode 20
-        versionName "4.0"
+        versionCode 21
+        versionName "4.1"
     }
     buildTypes {
         release {
