@@ -1,7 +1,6 @@
 package com.rutar.flood_it_3d;
 
 import android.os.*;
-import android.util.Log;
 import android.view.*;
 import android.widget.*;
 import android.content.*;
@@ -416,6 +415,7 @@ return getPreferences(MODE_PRIVATE).getInt(key, default_value);
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
+@SuppressLint("SetTextI18n")
 public void reload_Scores_Table() {
 
 for (int z = 0; z < 30; z++) {

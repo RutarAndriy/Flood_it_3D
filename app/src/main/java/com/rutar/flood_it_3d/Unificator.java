@@ -10,25 +10,24 @@ import static com.rutar.flood_it_3d.Flood_it_Activity.*;
 
 public class Unificator {
 
-public static int W;
-public static int H;
-public static final int etalon_W = 960;
-public static final int etalon_H = 540;
+static int W;
+static int H;
+static final int etalon_W = 960;
+static final int etalon_H = 540;
 
-public static float w_coef;
-public static float h_coef;
+static float w_coef;
+static float h_coef;
 
 private static int s_index = 31;
 private static int n_index = 34;
 private static int l_index = 2;
 
-public static TextView[] text_Views_Small  = new TextView[s_index];
-public static TextView[] text_Views_Normal = new TextView[n_index];
-public static TextView[] text_Views_Large  = new TextView[s_index];
+static TextView[] text_Views_Small  = new TextView[s_index];
+static TextView[] text_Views_Normal = new TextView[n_index];
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-public static void init() {
+static void init() {
 
 DisplayMetrics metrics = new DisplayMetrics();
 activity.getWindowManager().getDefaultDisplay().getMetrics(metrics);
@@ -82,7 +81,7 @@ for (int l = 0; l < l_index; l++) {
 
 }
 
-public static void set_Buttons_Width (int index) {
+static void set_Buttons_Width (int index) {
 
 for (int z = 0; z < buttons.length; z++) {
     buttons[z].setVisibility(View.VISIBLE);
@@ -97,6 +96,6 @@ if (index < 1) { buttons[2].setVisibility(View.GONE);
 
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
+// Кінець класу <Unificator> //////////////////////////////////////////////////////////////////////
 
 }
