@@ -83,7 +83,8 @@ static void click_processing (int id) {
 switch (id) {
 
 // Play Game -> Choice Model to play
-case -1: l_play.setVisibility(View.VISIBLE);
+case -1: set_Background_Speed();
+         l_play.setVisibility(View.VISIBLE);
          model_Available_Test();
          update_Preview_Text();
          activity.save_Settings("model_index", model_index);
@@ -111,7 +112,8 @@ case 0: l_menu.setVisibility(View.VISIBLE);
         break;
 
 // Menu -> Choice
-case R.id.n_01: l_menu.setVisibility(View.GONE);
+case R.id.n_01: set_Background_Speed();
+                l_menu.setVisibility(View.GONE);
                 l_play.setVisibility(View.VISIBLE);
                 Utils.background_Fade_Out();
                 model_Available_Test();
@@ -120,7 +122,8 @@ case R.id.n_01: l_menu.setVisibility(View.GONE);
                 break;
 
 // Menu -> Score
-case R.id.n_02: l_menu.setVisibility(View.GONE);
+case R.id.n_02: set_Background_Speed();
+                l_menu.setVisibility(View.GONE);
                 l_score.setVisibility(View.VISIBLE);
                 activity.reload_Scores_Table();
                 Utils.background_Fade_Out();
@@ -128,28 +131,32 @@ case R.id.n_02: l_menu.setVisibility(View.GONE);
                 break;
 
 // Menu -> Settings
-case R.id.n_03: l_menu.setVisibility(View.GONE);
+case R.id.n_03: set_Background_Speed();
+                l_menu.setVisibility(View.GONE);
                 l_settings.setVisibility(View.VISIBLE);
                 Utils.background_Fade_Out();
                 change_index = 1;
                 break;
 
 // Menu -> About
-case R.id.n_04: l_menu.setVisibility(View.GONE);
+case R.id.n_04: set_Background_Speed();
+                l_menu.setVisibility(View.GONE);
                 l_about.setVisibility(View.VISIBLE);
                 Utils.background_Fade_Out();
                 change_index = 1;
                 break;
 
 // Menu -> Exit
-case R.id.n_05: l_menu.setVisibility(View.GONE);
+case R.id.n_05: set_Background_Speed();
+                l_menu.setVisibility(View.GONE);
                 l_exit.setVisibility(View.VISIBLE);
                 Utils.background_Fade_Out();
                 change_index = 1;
                 break;
 
 // Choice -> Menu
-case R.id.n_20: l_play.setVisibility(View.GONE);
+case R.id.n_20: set_Background_Speed();
+                l_play.setVisibility(View.GONE);
                 l_menu.setVisibility(View.VISIBLE);
                 Utils.background_Fade_Out();
                 lock.setVisibility(View.GONE);
@@ -160,7 +167,8 @@ case R.id.n_20: l_play.setVisibility(View.GONE);
                 break;
 
 // Choice -> Game
-case R.id.n_22: l_play.setVisibility(View.GONE);
+case R.id.n_22: set_Background_Speed();
+                l_play.setVisibility(View.GONE);
                 button_board.setVisibility(View.VISIBLE);
                 Unificator.set_Buttons_Width(model_index/model_per_level);
                 play_Sounds(model_index/model_per_level+1);
@@ -169,7 +177,8 @@ case R.id.n_22: l_play.setVisibility(View.GONE);
                 break;
 
 // Score -> Menu
-case R.id.n_18: l_score.setVisibility(View.GONE);
+case R.id.n_18: set_Background_Speed();
+                l_score.setVisibility(View.GONE);
                 l_menu.setVisibility(View.VISIBLE);
                 Utils.background_Fade_Out();
                 change_index = 2;
@@ -177,7 +186,8 @@ case R.id.n_18: l_score.setVisibility(View.GONE);
                 break;
 
 // Settings -> Menu
-case R.id.n_16: l_settings.setVisibility(View.GONE);
+case R.id.n_16: set_Background_Speed();
+                l_settings.setVisibility(View.GONE);
                 l_menu.setVisibility(View.VISIBLE);
                 if (text_Views_Normal[15].getText().
                     equals(activity.getString(R.string.n_16_1))) { System.exit(0); }
@@ -188,7 +198,8 @@ case R.id.n_16: l_settings.setVisibility(View.GONE);
                 break;
 
 // About -> Menu
-case R.id.n_11: l_about.setVisibility(View.GONE);
+case R.id.n_11: set_Background_Speed();
+                l_about.setVisibility(View.GONE);
                 l_menu.setVisibility(View.VISIBLE);
                 Utils.background_Fade_Out();
                 change_index = 2;
@@ -196,7 +207,8 @@ case R.id.n_11: l_about.setVisibility(View.GONE);
                 break;
 
 // Exit -> Menu
-case R.id.n_07: l_exit.setVisibility(View.GONE);
+case R.id.n_07: set_Background_Speed();
+                l_exit.setVisibility(View.GONE);
                 l_menu.setVisibility(View.VISIBLE);
                 Utils.background_Fade_Out();
                 change_index = 2;
@@ -228,7 +240,8 @@ case R.id.n_15: language += language < 2 ? 1 : -2;
                 break;
 
 // Easy or Normal or Hard
-case R.id.n_21: int index = (model_index / 12 + 1) * 12;
+case R.id.n_21: set_Background_Speed();
+                int index = (model_index / 12 + 1) * 12;
                 model_index = index < model_count ? index : 0;
                 background_Fade_Out();
                 model_Available_Test();
@@ -238,6 +251,7 @@ case R.id.n_21: int index = (model_index / 12 + 1) * 12;
 
 // Previous model - <<
 case R.id.l_01: model_index -= model_index > 0 ? 1 : -model_count + 1;
+                set_Background_Speed();
                 background_Fade_Out();
                 model_Available_Test();
                 update_Preview_Text();
@@ -246,6 +260,7 @@ case R.id.l_01: model_index -= model_index > 0 ? 1 : -model_count + 1;
 
 // Next model - >>
 case R.id.l_02: model_index += model_index < (model_count - 1) ? 1 : -model_count + 1;
+                set_Background_Speed();
                 background_Fade_Out();
                 model_Available_Test();
                 update_Preview_Text();
