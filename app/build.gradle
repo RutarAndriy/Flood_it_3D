@@ -3,16 +3,16 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.2"
+
+    compileSdk 31
 
     defaultConfig {
         applicationId "com.rutar.flood_it_3d"
-        minSdkVersion 9
-        targetSdkVersion 30
+        minSdk 9
+        targetSdk 31
         versionCode 21
         versionName "4.1"
-
+        vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -22,19 +22,30 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+//    buildFeatures {
+//        viewBinding true
+//    }
+
 }
 
 dependencies {
 
+    // https://mvnrepository.com/artifact/org.jmonkeyengine/jme3-core
     implementation 'org.jmonkeyengine:jme3-core:3.2.3-stable'
+
+    // https://mvnrepository.com/artifact/org.jmonkeyengine/jme3-android
     implementation 'org.jmonkeyengine:jme3-android:3.2.3-stable'
+
+    // https://mvnrepository.com/artifact/org.jmonkeyengine/jme3-android-native
     implementation 'org.jmonkeyengine:jme3-android-native:3.2.3-stable'
 
-    testImplementation 'junit:junit:4.+'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 }
