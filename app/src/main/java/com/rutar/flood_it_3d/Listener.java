@@ -116,6 +116,7 @@ if (name.equals("y-")) {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Обробка натискань на view компоненти
+
 static void on_View_Click (View view) {
 
 if (view.getId() == R.id.n_34) { view.startAnimation(press_animation);

@@ -221,7 +221,9 @@ quaternion.fromAngleAxis(preview_rotate_angle * DEG_TO_RAD, Vector3f.UNIT_X);
 
 preview_node_child.rotate(0, 0.01f, 0);
 preview_node_main.setLocalRotation(quaternion);
-rotate_index++;
+
+if (rotate_index > 500) { rotate_index = 0; }
+else                    { rotate_index++;   }
 
 // Оновлення гучності звукових вузлів
 for (int z = 0; z < sounds.length; z++) {
