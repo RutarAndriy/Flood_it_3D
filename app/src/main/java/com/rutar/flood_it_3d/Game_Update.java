@@ -33,7 +33,7 @@ static int background_h;                                                        
 static int triangle_count;                                                 // Кількість трикутників
 static int model_count = 48;                                                   // Кількість моделей
 static int color_index = -1;                                            // Індекс активного кольору
-static int change_index = -1;                                             // Індекс зміни стану гри
+static int game_state_index = -1;                                             // Індекс зміни стану гри
 static int sound_future = -1;                                        // Індекс перспективної музики
 static int sound_current = -1;                                          // Індекс актуальної музики
 static int rotate_index = 150;                                      // Індекс повороту логотипу гри
@@ -187,25 +187,37 @@ materials[z].setBoolean("UseMaterialColors",true);
 
 switch (z) {
 
-case 0:  materials[z].setColor("Diffuse", new ColorRGBA(0.2f, 0.2f, 0.2f, 1.0f)); break; // Black
+// Колір початкового трикутника
+case 0:  materials[z].setColor("Diffuse",                                                 // Чорний
+         new ColorRGBA(0.100f, 0.100f, 0.100f, 1.0f)); break;
 
 // Легко
-case 1:  materials[z].setColor("Diffuse", new ColorRGBA(1.0f, 0.0f, 0.0f, 1.0f)); break; // Red
-case 2:  materials[z].setColor("Diffuse", new ColorRGBA(0.0f, 1.0f, 0.0f, 1.0f)); break; // Green
-case 3:  materials[z].setColor("Diffuse", new ColorRGBA(0.0f, 0.0f, 1.0f, 1.0f)); break; // Blue
-case 4:  materials[z].setColor("Diffuse", new ColorRGBA(1.0f, 1.0f, 0.0f, 1.0f)); break; // Yellow
+case 1:  materials[z].setColor("Diffuse",                                               // Червоний
+         new ColorRGBA(1.000f, 0.000f, 0.000f, 1.0f)); break;
+case 2:  materials[z].setColor("Diffuse",                                                  // Синій
+         new ColorRGBA(0.168f, 0.000f, 1.000f, 1.0f)); break;
+case 3:  materials[z].setColor("Diffuse",                                                // Зелений
+         new ColorRGBA(0.000f, 0.941f, 0.188f, 1.0f)); break;
+case 4:  materials[z].setColor("Diffuse",                                                 // Жовтий
+         new ColorRGBA(1.000f, 0.964f, 0.000f, 1.0f)); break;
 
 // Нормально
-case 5:  materials[z].setColor("Diffuse", new ColorRGBA(0.7f, 0.0f, 1.0f, 1.0f)); break; // Magenta
-case 6:  materials[z].setColor("Diffuse", new ColorRGBA(0.0f, 0.8f, 1.0f, 1.0f)); break; // Cyan
+case 5:  materials[z].setColor("Diffuse",
+         new ColorRGBA(1.000f, 1.000f, 1.000f, 1.0f)); break;                              // Білий
+case 6:  materials[z].setColor("Diffuse",
+         new ColorRGBA(0.200f, 0.200f, 0.200f, 1.0f)); break;                        // Темно-сірий
 
 // Важко
-case 7:  materials[z].setColor("Diffuse", new ColorRGBA(0.0f, 0.588f, 0.031f, 1.0f)); break; // Teal
-case 8:  materials[z].setColor("Diffuse", new ColorRGBA(1.0f, 0.596f, 0.0f, 1.0f)); break; // Orange
+case 7:  materials[z].setColor("Diffuse",
+         new ColorRGBA(0.698f, 0.000f, 1.000f, 1.0f)); break;                         // Фіолетовий
+case 8:  materials[z].setColor("Diffuse",
+         new ColorRGBA(0.000f, 0.850f, 1.000f, 1.0f)); break;                          // Лазуровий
 
 // Дуже важко
-case 9:  materials[z].setColor("Diffuse", new ColorRGBA(1.0f, 1.0f, 1.0f, 1.0f)); break; // White
-case 10: materials[z].setColor("Diffuse", new ColorRGBA(0.3f, 0.3f, 0.3f, 1.0f)); break; // Gray
+case 9:  materials[z].setColor("Diffuse",
+         new ColorRGBA(0.596f, 1.000f, 0.000f, 1.0f)); break;                          // Салатовий
+case 10: materials[z].setColor("Diffuse",
+         new ColorRGBA(1.000f, 0.533f, 0.000f, 1.0f)); break;                       // Помаранчевий
 
 }
 }
@@ -240,6 +252,7 @@ sounds[z].setVolume(0);
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Ініціалізація частинок
+
 private static void init_Particles (AssetManager manager) {
 
 Material mat_red = new Material(manager, "Common/MatDefs/Misc/Particle.j3md");
@@ -352,7 +365,7 @@ color_indexes[start_points[model_index]] = 0;             // Задання ко
 // ................................................................................................
 
 set_Neighborhoods();                                                          // Визначення сусідів
-set_Color();                                                    // Задання кольорів для трикутників
+set_Color_For_Triangles();                                      // Задання кольорів для трикутників
 optimization();                                                               // Оптимізація фігури
 
 // Налаштування ParticleEmitter, який вказує розташування початкового трикутника
@@ -372,13 +385,17 @@ private static void optimization() {
 
 for (int z = 0; z < static_parts.length; z++) {
 
+    // Обробляємо лише ту кількість кольорів, яка відповідає складності рівня
     if (z == 4 + model_index/model_per_level * 2) { break; }
 
+    // Тимчасовий меш для збереження оптимізованої моделі
     mesh_temp = new Mesh();
 
+    // Групуємо однакові за кольором трикутники у спільний меш
     if (!static_parts[z].isEmpty())
         { GeometryBatchFactory.mergeGeometries(static_parts[z], mesh_temp); }
 
+    // Заповнюємо існуючі геометрії новими даними
     static_geometries[z] = new Geometry(null, mesh_temp);
     static_geometries[z].setMaterial(materials[z + 1]);
 
@@ -456,7 +473,7 @@ static void repaint_Model() {
     tmp = System.currentTimeMillis();
 
     triangles_Processing();
-    set_Color();
+    set_Color_For_Triangles();
 
     processing_time = System.currentTimeMillis() - tmp;
     tmp = System.currentTimeMillis();
@@ -472,7 +489,7 @@ static void repaint_Model() {
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Метод оновлює кольори трикутників в моделі
 
-private static void set_Color() {
+private static void set_Color_For_Triangles() {
 
 dynamic_parts.clear();
 for (ArrayList parts : static_parts) { parts.clear(); }
@@ -494,6 +511,7 @@ for (int index : dynamic_index_list) {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Обробка трикутників
+
 private static void triangles_Processing() {
 
 int triangle_index;

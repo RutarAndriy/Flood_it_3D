@@ -5,7 +5,7 @@ import android.view.*;
 import android.annotation.*;
 import android.view.animation.*;
 
-import static com.rutar.flood_it_3d.Unificator.*;
+import static com.rutar.flood_it_3d.Unification.*;
 import static com.rutar.flood_it_3d.Game_Update.*;
 import static com.rutar.flood_it_3d.Flood_it_Activity.*;
 
@@ -95,7 +95,7 @@ case -1: set_Background_Speed();
          processing_time = -1;
          optimizing_time = -1;
          pause_is_on = false;
-         change_index = 3;
+         game_state_index = 3;
          game_state = 3;
          play_Sounds(0);
          break;
@@ -118,7 +118,7 @@ case R.id.n_01: set_Background_Speed();
                 Utils.background_Fade_Out();
                 model_Available_Test();
                 game_state = 3;
-                change_index = 3;
+                game_state_index = 3;
                 break;
 
 // Menu -> Score
@@ -127,7 +127,7 @@ case R.id.n_02: set_Background_Speed();
                 l_score.setVisibility(View.VISIBLE);
                 activity.reload_Scores_Table();
                 Utils.background_Fade_Out();
-                change_index = 1;
+                game_state_index = 1;
                 break;
 
 // Menu -> Settings
@@ -135,7 +135,7 @@ case R.id.n_03: set_Background_Speed();
                 l_menu.setVisibility(View.GONE);
                 l_settings.setVisibility(View.VISIBLE);
                 Utils.background_Fade_Out();
-                change_index = 1;
+                game_state_index = 1;
                 break;
 
 // Menu -> About
@@ -143,7 +143,7 @@ case R.id.n_04: set_Background_Speed();
                 l_menu.setVisibility(View.GONE);
                 l_about.setVisibility(View.VISIBLE);
                 Utils.background_Fade_Out();
-                change_index = 1;
+                game_state_index = 1;
                 break;
 
 // Menu -> Exit
@@ -151,7 +151,7 @@ case R.id.n_05: set_Background_Speed();
                 l_menu.setVisibility(View.GONE);
                 l_exit.setVisibility(View.VISIBLE);
                 Utils.background_Fade_Out();
-                change_index = 1;
+                game_state_index = 1;
                 break;
 
 // Choice -> Menu
@@ -162,7 +162,7 @@ case R.id.n_20: set_Background_Speed();
                 lock.setVisibility(View.GONE);
                 activity.save_Settings("model_index", model_index);
                 game_state = 2;
-                change_index = 2;
+                game_state_index = 2;
                 rotate_index = rotate_index > 150 ? 0 : rotate_index;
                 break;
 
@@ -170,9 +170,9 @@ case R.id.n_20: set_Background_Speed();
 case R.id.n_22: set_Background_Speed();
                 l_play.setVisibility(View.GONE);
                 button_board.setVisibility(View.VISIBLE);
-                Unificator.set_Buttons_Width(model_index/model_per_level);
+                Unification.set_Buttons_Width(model_index/model_per_level);
                 play_Sounds(model_index/model_per_level+1);
-                change_index = 4;
+                game_state_index = 4;
                 game_state = 4;
                 break;
 
@@ -181,7 +181,7 @@ case R.id.n_18: set_Background_Speed();
                 l_score.setVisibility(View.GONE);
                 l_menu.setVisibility(View.VISIBLE);
                 Utils.background_Fade_Out();
-                change_index = 2;
+                game_state_index = 2;
                 rotate_index = rotate_index > 150 ? 0 : rotate_index;
                 break;
 
@@ -193,7 +193,7 @@ case R.id.n_16: set_Background_Speed();
                     equals(activity.getString(R.string.n_16_1))) { System.exit(0); }
 
                 else { Utils.background_Fade_Out();
-                       change_index = 2;
+                       game_state_index = 2;
                        rotate_index = rotate_index > 150 ? 0 : rotate_index; }
                 break;
 
@@ -202,7 +202,7 @@ case R.id.n_11: set_Background_Speed();
                 l_about.setVisibility(View.GONE);
                 l_menu.setVisibility(View.VISIBLE);
                 Utils.background_Fade_Out();
-                change_index = 2;
+                game_state_index = 2;
                 rotate_index = rotate_index > 150 ? 0 : rotate_index;
                 break;
 
@@ -211,7 +211,7 @@ case R.id.n_07: set_Background_Speed();
                 l_exit.setVisibility(View.GONE);
                 l_menu.setVisibility(View.VISIBLE);
                 Utils.background_Fade_Out();
-                change_index = 2;
+                game_state_index = 2;
                 rotate_index = rotate_index > 150 ? 0 : rotate_index;
                 break;
 
@@ -246,7 +246,7 @@ case R.id.n_21: set_Background_Speed();
                 background_Fade_Out();
                 model_Available_Test();
                 update_Preview_Text();
-                change_index = 3;
+                game_state_index = 3;
                 break;
 
 // Previous model - <<
@@ -255,7 +255,7 @@ case R.id.l_01: model_index -= model_index > 0 ? 1 : -model_count + 1;
                 background_Fade_Out();
                 model_Available_Test();
                 update_Preview_Text();
-                change_index = 3;
+                game_state_index = 3;
                 break;
 
 // Next model - >>
@@ -264,17 +264,30 @@ case R.id.l_02: model_index += model_index < (model_count - 1) ? 1 : -model_coun
                 background_Fade_Out();
                 model_Available_Test();
                 update_Preview_Text();
-                change_index = 3;
+                game_state_index = 3;
                 break;
 
-case R.id.b_01: if (is_done && color_index != 1) { color_index = 1; change_index = 5; } break;
-case R.id.b_02: if (is_done && color_index != 2) { color_index = 2; change_index = 5; } break;
-case R.id.b_03: if (is_done && color_index != 5) { color_index = 5; change_index = 5; } break;
-case R.id.b_04: if (is_done && color_index != 7) { color_index = 7; change_index = 5; } break;
-case R.id.b_05: if (is_done && color_index != 3) { color_index = 3; change_index = 5; } break;
-case R.id.b_06: if (is_done && color_index != 4) { color_index = 4; change_index = 5; } break;
-case R.id.b_07: if (is_done && color_index != 6) { color_index = 6; change_index = 5; } break;
-case R.id.b_08: if (is_done && color_index != 8) { color_index = 8; change_index = 5; } break;
+// Кнопки зміни кольору
+case R.id.b_01: if (is_done && color_index != 1)
+    { color_index = 1;  game_state_index = 5; } break;
+case R.id.b_02: if (is_done && color_index != 2)
+    { color_index = 2;  game_state_index = 5; } break;
+case R.id.b_03: if (is_done && color_index != 3)
+    { color_index = 3;  game_state_index = 5; } break;
+case R.id.b_04: if (is_done && color_index != 4)
+    { color_index = 4;  game_state_index = 5; } break;
+case R.id.b_05: if (is_done && color_index != 5)
+    { color_index = 5;  game_state_index = 5; } break;
+case R.id.b_06: if (is_done && color_index != 6)
+    { color_index = 6;  game_state_index = 5; } break;
+case R.id.b_07: if (is_done && color_index != 7)
+    { color_index = 7;  game_state_index = 5; } break;
+case R.id.b_08: if (is_done && color_index != 8)
+    { color_index = 8;  game_state_index = 5; } break;
+case R.id.b_09: if (is_done && color_index != 9)
+    { color_index = 9;  game_state_index = 5; } break;
+case R.id.b_10: if (is_done && color_index != 10)
+    { color_index = 10; game_state_index = 5; } break;
 
 case R.id.n_28: handler.sendEmptyMessage(2);
                 break;

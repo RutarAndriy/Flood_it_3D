@@ -1,7 +1,5 @@
 package com.rutar.flood_it_3d;
 
-import android.util.Log;
-
 import com.jme3.ui.*;
 import com.jme3.app.*;
 import com.jme3.math.*;
@@ -14,7 +12,7 @@ import com.jme3.renderer.*;
 import com.jme3.input.controls.*;
 
 import static com.jme3.math.FastMath.DEG_TO_RAD;
-import static com.rutar.flood_it_3d.Unificator.*;
+import static com.rutar.flood_it_3d.Unification.*;
 import static com.rutar.flood_it_3d.Game_Update.*;
 import static com.rutar.flood_it_3d.Flood_it_Activity.*;
 
@@ -261,13 +259,13 @@ if (is_mute) { sounds[sound_future].play();
 
 private void update_Game_State() {
 
-switch (change_index) {
+switch (game_state_index) {
 
 // Видалення всіх моделей
 case 1:
 
     rootNode.detachAllChildren();
-    change_index = -1;
+    game_state_index = -1;
     break;
 
 // Показ заставки
@@ -275,7 +273,7 @@ case 2:
 
     rootNode.detachAllChildren();
     rootNode.attachChild(logo_node);
-    change_index = -1;
+    game_state_index = -1;
     break;
 
 // Показ моделі передперегляду
@@ -288,17 +286,25 @@ case 3:
     preview_model = assetManager.loadModel(path);
 
     ((Node)((Node)((Node)preview_model).getChild(0)).
-             getChild(0)).getChild(0).setMaterial(materials[9]);
+             getChild(0)).getChild(0).setMaterial(materials[5]);
+
+    int color_index = -1;
+    switch (model_index/model_per_level) {
+        case 0: color_index = 2; break; // Синій
+        case 1: color_index = 3; break; // Зелений
+        case 2: color_index = 1; break; // Червоний
+        case 3: color_index = 6; break; // Темно-сірий
+    }
 
     ((Node)((Node)((Node)preview_model).getChild(0)).
-             getChild(0)).getChild(1).setMaterial(materials[3 - model_index/model_per_level]);
+             getChild(0)).getChild(1).setMaterial(materials[color_index]);
 
     preview_node_child.attachChild(preview_model);
     game_node_main.setLocalRotation(quaternions[2]);
     game_node_child.setLocalRotation(quaternions[2]);
     rootNode.attachChild(preview_node_main);
     background_picture.setTexture(assetManager, backgrounds[model_index/model_per_level], false);
-    change_index = -1;
+    game_state_index = -1;
     break;
 
 // Показ ігрової моделі
@@ -317,7 +323,7 @@ case 4:
             handler.sendEmptyMessage(3);
         }
     }).start();
-    change_index = -1;
+    game_state_index = -1;
     break;
 
 // Перемальовування моделі
@@ -325,7 +331,7 @@ case 5:
 
     change_Color();
     emitter.setParticlesPerSec(0);
-    change_index = -1;
+    game_state_index = -1;
     break;
 
 }

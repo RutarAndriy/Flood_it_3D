@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<FrameLayout android:layout_width="match_parent"
+<FrameLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
              android:layout_height="match_parent"
              xmlns:android="http://schemas.android.com/apk/res/android" >
 
 <!--////////////////////////////////////////////////////////////////////////////////////////////-->
-
-<!--<fragment android:id="@+id/jme_Fragment"
-          android:layout_height="match_parent"
-          android:layout_width="match_parent"
-          android:name="com.rutar.flood_it_3d.Flood_it_Activity$JmeFragment"/>-->
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -1124,51 +1120,68 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="left">
+            android:gravity="left"
+            tools:ignore="RtlHardcoded">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:id="@+id/b_01"
-                android:src="@drawable/button_1"
+                android:src="@drawable/button_01"
                 android:layout_weight="1"
                 android:visibility="visible"
                 android:layout_margin="@dimen/b_margin"
                 android:clickable="true"
-                android:onClick="on_View_Click" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:id="@+id/b_02"
-                android:visibility="visible"
-                android:src="@drawable/button_2"
-                android:layout_weight="1"
-                android:layout_margin="@dimen/b_margin"
-                android:clickable="true"
-                android:onClick="on_View_Click" />
+                android:onClick="on_View_Click"
+                android:focusable="true" />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:id="@+id/b_03"
                 android:visibility="visible"
-                android:src="@drawable/button_5"
-                android:layout_weight="1"
-                android:layout_margin="@dimen/b_margin"
-                android:clickable="true"
-                android:onClick="on_View_Click" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:id="@+id/b_04"
-                android:src="@drawable/button_7"
+                android:src="@drawable/button_03"
                 android:layout_weight="1"
                 android:layout_margin="@dimen/b_margin"
                 android:clickable="true"
                 android:onClick="on_View_Click"
-                android:visibility="visible" />
+                android:focusable="true" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/b_05"
+                android:visibility="visible"
+                android:src="@drawable/button_05"
+                android:layout_weight="1"
+                android:layout_margin="@dimen/b_margin"
+                android:clickable="true"
+                android:onClick="on_View_Click"
+                android:focusable="true" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/b_07"
+                android:src="@drawable/button_07"
+                android:layout_weight="1"
+                android:layout_margin="@dimen/b_margin"
+                android:clickable="true"
+                android:onClick="on_View_Click"
+                android:visibility="visible"
+                android:focusable="true" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/b_09"
+                android:src="@drawable/button_09"
+                android:layout_weight="1"
+                android:layout_margin="@dimen/b_margin"
+                android:clickable="true"
+                android:onClick="on_View_Click"
+                android:visibility="visible"
+                android:focusable="true" />
 
         </LinearLayout>
 
@@ -1177,50 +1190,67 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="right">
+            android:gravity="right"
+            tools:ignore="RtlHardcoded">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:id="@+id/b_05"
-                android:src="@drawable/button_3"
+                android:id="@+id/b_02"
+                android:src="@drawable/button_02"
                 android:layout_weight="1"
                 android:visibility="visible"
                 android:layout_margin="@dimen/b_margin"
                 android:clickable="true"
-                android:onClick="on_View_Click" />
+                android:onClick="on_View_Click"
+                android:focusable="true" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/b_04"
+                android:src="@drawable/button_04"
+                android:layout_weight="1"
+                android:layout_margin="@dimen/b_margin"
+                android:clickable="true"
+                android:onClick="on_View_Click"
+                android:focusable="true" />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:id="@+id/b_06"
-                android:src="@drawable/button_4"
-                android:layout_weight="1"
-                android:layout_margin="@dimen/b_margin"
-                android:clickable="true"
-                android:onClick="on_View_Click" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:id="@+id/b_07"
-                android:src="@drawable/button_6"
+                android:src="@drawable/button_06"
                 android:layout_weight="1"
                 android:layout_margin="@dimen/b_margin"
                 android:clickable="true"
                 android:onClick="on_View_Click"
-                android:visibility="visible" />
+                android:visibility="visible"
+                android:focusable="true" />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:id="@+id/b_08"
-                android:src="@drawable/button_8"
+                android:src="@drawable/button_08"
                 android:layout_weight="1"
                 android:layout_margin="@dimen/b_margin"
                 android:clickable="true"
                 android:onClick="on_View_Click"
-                android:visibility="visible" />
+                android:visibility="visible"
+                android:focusable="true" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/b_10"
+                android:src="@drawable/button_10"
+                android:layout_weight="1"
+                android:layout_margin="@dimen/b_margin"
+                android:clickable="true"
+                android:onClick="on_View_Click"
+                android:visibility="visible"
+                android:focusable="true" />
 
         </LinearLayout>
     </LinearLayout>

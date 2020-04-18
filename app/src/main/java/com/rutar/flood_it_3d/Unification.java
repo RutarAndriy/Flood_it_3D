@@ -76,10 +76,10 @@ for (int l = 0; l < l_index; l++) {
     text_Views_Normal[l].setShadowLayer(1, 3 * w_coef, 3 * w_coef, Color.BLACK);
 
 }
+}
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-
-}
+// Метод задає розмір кнопок, залежно від складності рівня
 
 static void set_Buttons_Width (int index) {
 
@@ -88,14 +88,14 @@ for (ImageView button : buttons) {
     button.getLayoutParams().width = (int) (H / (index == 2 ? 4f : 3f));
 }
 
-if (index < 3) { buttons[4].setVisibility(View.GONE);
-                 buttons[8].setVisibility(View.GONE); }
+if (index < 3) { buttons[8].setVisibility(View.GONE);
+                 buttons[9].setVisibility(View.GONE); }
 
-if (index < 2) { buttons[3].setVisibility(View.GONE);
+if (index < 2) { buttons[6].setVisibility(View.GONE);
                  buttons[7].setVisibility(View.GONE); }
 
-if (index < 1) { buttons[2].setVisibility(View.GONE);
-                 buttons[6].setVisibility(View.GONE); }
+if (index < 1) { buttons[4].setVisibility(View.GONE);
+                 buttons[5].setVisibility(View.GONE); }
 
 }
 

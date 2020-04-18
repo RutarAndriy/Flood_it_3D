@@ -20,7 +20,7 @@ import java.util.*;
 import java.util.logging.*;
 
 import static com.rutar.flood_it_3d.Listener.*;
-import static com.rutar.flood_it_3d.Unificator.*;
+import static com.rutar.flood_it_3d.Unification.*;
 import static com.rutar.flood_it_3d.Game_Update.*;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -61,7 +61,7 @@ public static TextView  logo_01;
 public static ImageView logo_02;
 
 public static ImageView lock;
-public static ImageView[] buttons = new ImageView[8];
+public static ImageView[] buttons = new ImageView[10];
 
 public static int sound = 0;
 public static int language = 0;
@@ -212,12 +212,12 @@ l_pause.setVisibility(View.VISIBLE);
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-private static final int hide_navbar_flags = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                                           | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                                           | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                                           | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                                           | View.SYSTEM_UI_FLAG_FULLSCREEN
-                                           | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
+private static final int hide_nav_bar_flags = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                                            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                                            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                                            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                                            | View.SYSTEM_UI_FLAG_FULLSCREEN
+                                            | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Приховування наекранних кнопок
@@ -237,7 +237,7 @@ decor_view.setSystemUiVisibility(View.GONE);
 else if (Build.VERSION.SDK_INT >= 19) {
 
 final View decor_view = getWindow().getDecorView();
-decor_view.setSystemUiVisibility(hide_navbar_flags);
+decor_view.setSystemUiVisibility(hide_nav_bar_flags);
 
 decor_view.setOnSystemUiVisibilityChangeListener
           (new View.OnSystemUiVisibilityChangeListener() {
@@ -245,7 +245,7 @@ decor_view.setOnSystemUiVisibilityChangeListener
     @Override
     public void onSystemUiVisibilityChange (int visibility) {
         if ((visibility & View.SYSTEM_UI_FLAG_FULLSCREEN) == 0)  {
-            decor_view.setSystemUiVisibility(hide_navbar_flags);
+            decor_view.setSystemUiVisibility(hide_nav_bar_flags);
         }
     }
 });
@@ -294,7 +294,7 @@ lock         = findViewById(R.id.lock);
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 for (int z = 0; z < buttons.length; z++) {
-    buttons[z] = findViewById(get_Id("b_0" + (z + 1)));
+    buttons[z] = findViewById(get_Id("b_" + ((z + 1) < 10 ? "0" : "") + (z + 1)));
 }
 
 loading = findViewById(R.id.loading);
@@ -324,7 +324,7 @@ complete_fade_in.setStartOffset(700);
 complete_fade_in.setDuration(700);
 
 activity = this;
-Unificator.init();
+Unification.init();
 
 background_fade_out.setStartOffset(3000);
 Utils.background_Fade_Out();
