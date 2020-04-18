@@ -8,7 +8,7 @@ import android.content.res.*;
 
 import static com.rutar.flood_it_3d.Flood_it_Activity.*;
 
-public class Unificator {
+public class Unification {
 
 static int W;
 static int H;
@@ -83,10 +83,13 @@ for (int l = 0; l < l_index; l++) {
 
 static void set_Buttons_Width (int index) {
 
-for (int z = 0; z < buttons.length; z++) {
-    buttons[z].setVisibility(View.VISIBLE);
-    buttons[z].getLayoutParams().width = (int)(H / (index == 2 ? 4f : 3f));
+for (ImageView button : buttons) {
+    button.setVisibility(View.VISIBLE);
+    button.getLayoutParams().width = (int) (H / (index == 2 ? 4f : 3f));
 }
+
+if (index < 3) { buttons[4].setVisibility(View.GONE);
+                 buttons[8].setVisibility(View.GONE); }
 
 if (index < 2) { buttons[3].setVisibility(View.GONE);
                  buttons[7].setVisibility(View.GONE); }
@@ -96,6 +99,6 @@ if (index < 1) { buttons[2].setVisibility(View.GONE);
 
 }
 
-// Кінець класу <Unificator> //////////////////////////////////////////////////////////////////////
+// Кінець класу <Unification> /////////////////////////////////////////////////////////////////////
 
 }
