@@ -90,7 +90,7 @@
     <string name="play_hard">Трудно</string>
     <string name="play_very_hard">Very Hard</string>
     <string name="play_start">Начать</string>
-    <string name="play_triangle_count">Количество треугольников: 1$s</string>
+    <string name="play_triangle_count">Количество треугольников: %1$d</string>
     <string name="play_not_enough_points">Пройдите предыдущий уровень менее чем за %1$s ходов, чтобы разблокировать этот уровень</string>
 
     <string name="game_level_complete">Уровень завершен</string>

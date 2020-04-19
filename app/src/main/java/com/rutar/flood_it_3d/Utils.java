@@ -11,6 +11,8 @@ import static com.rutar.flood_it_3d.Flood_it_Activity.*;
 
 class Utils {
 
+private static int last_back_button_text = R.string.settings_back;
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Метод затуманює фон
 static void background_Fade_In (final int id) {
@@ -190,7 +192,7 @@ case R.id.n_16: set_Background_Speed();
                 l_settings.setVisibility(View.GONE);
                 l_menu.setVisibility(View.VISIBLE);
                 if (text_Views_Normal[15].getText().
-                    equals(activity.getString(R.string.n_16_1))) { System.exit(0); }
+                    equals(activity.getString(R.string.settings_restart))) { System.exit(0); }
 
                 else { Utils.background_Fade_Out();
                        game_state_index = 2;
@@ -219,25 +221,48 @@ case R.id.n_07: set_Background_Speed();
 case R.id.n_08: System.exit(0);
                 break;
 
-// Settings 1
-case R.id.n_13: sound += sound == 0 ? 1 : -1;
+// Налаштування звуків
+case R.id.n_13: sound -= sound > 0 ? 1 : -2;
+                String sound_value;
+                switch (sound) {
+                    case 0:  sound_value = "settings_sound_off"; break;
+                    case 1:  sound_value = "settings_sound_old"; break;
+                    default: sound_value = "settings_sound_new"; break;
+                }
                 activity.save_Settings("sound", sound);
-                text_Views_Normal[12].setText(activity.get_String_Value("n_13_" + sound));
+                text_Views_Normal[12].setText(activity.get_String_Value(sound_value));
                 break;
 
-// Settings 2
+// Налаштування чутливості керування
 case R.id.n_14: touch_sensitive += touch_sensitive < 4 ? 1 : -4;
                 activity.save_Settings("sensitive", touch_sensitive);
-                text_Views_Normal[13].setText(activity.get_String_Value("n_14_" + touch_sensitive));
+                text_Views_Normal[13].setText(activity
+                    .get_String_Value("settings_sensitive_" + (touch_sensitive + 1)));
                 break;
 
-// Settings 3
-case R.id.n_15: language += language < 2 ? 1 : -2;
-                activity.save_Settings("language", language);
-                text_Views_Normal[14].setText(activity.get_String_Value("n_15_" + language));
-                if (language == def_language) { text_Views_Normal[15].setText(R.string.n_16_0); }
-                else { text_Views_Normal[15].setText(R.string.n_16_1); }
-                break;
+// Налаштування мови
+case R.id.n_15:
+
+    language += language < 2 ? 1 : -2;
+    String game_language;
+    switch (language) {
+        case 1:  game_language = "settings_language_uk"; break;
+        case 2:  game_language = "settings_language_ru"; break;
+        default: game_language = "settings_language_en"; break;
+    }
+
+    int temp = last_back_button_text;
+    activity.save_Settings("language", language);
+    text_Views_Normal[14].setText(activity.get_String_Value(game_language));
+
+    if (language == def_language) { last_back_button_text = R.string.settings_back;
+                                    text_Views_Normal[15].setText(R.string.settings_back); }
+    else                          { last_back_button_text = R.string.settings_restart;
+                                    text_Views_Normal[15].setText(R.string.settings_restart); }
+
+    if (temp != last_back_button_text) { text_Views_Normal[15].startAnimation(press_animation); }
+
+break;
 
 // Easy or Normal or Hard
 case R.id.n_21: set_Background_Speed();
@@ -327,11 +352,25 @@ case R.id.n_34: handler.sendEmptyMessage(7);
 
 static void update_Preview_Text() {
 
-text_Views_Normal[18].setText(activity.get_String_Value("n_19_" + model_index));
-text_Views_Normal[20].setText(activity.get_String_Value("n_21_" + model_index/model_per_level));
+// Назва фігури
+String model_name = "model_" + (model_index < 10 ? "0" : "") + model_index;
+text_Views_Normal[18].setText(activity.get_String_Value(model_name));
 
-String triangle_count = activity.getResources().getString(R.string.s_31);
-text_Views_Small[30].setText(String.format("%s %d", triangle_count, model_triangles_count[model_index]));
+int level_complexity;
+switch (model_index/model_per_level) {
+    case 0:  level_complexity = R.string.play_easy;      break;
+    case 1:  level_complexity = R.string.play_normal;    break;
+    case 2:  level_complexity = R.string.play_hard;      break;
+    default: level_complexity = R.string.play_very_hard; break;
+}
+
+// Складність рівня
+text_Views_Normal[20].setText(activity.get_String(level_complexity));
+
+// Кількість трикутників
+text_Views_Small[30].setText(activity
+                    .get_Formatted_String(R.string.play_triangle_count,
+                                          model_triangles_count[model_index]));
 
 }
 
@@ -374,9 +413,7 @@ fade_in_out_animation.setAnimationListener(new Animation.AnimationListener() {
     public void onAnimationRepeat (Animation animation) {}
 });
 
-text_Views_Normal[29].setText(activity.get_String(R.string.n_30_0) + " " +
-                             (max_steps_count[model_index-1] + 1) + " " +
-                              activity.get_String(R.string.n_30_1));
+text_Views_Normal[29].setText(activity.get_Formatted_String(R.string.play_not_enough_points, max_steps_count[model_index-1] + 1));
 
 l_lock.startAnimation(fade_in_out_animation);
 l_lock.setVisibility(View.VISIBLE);

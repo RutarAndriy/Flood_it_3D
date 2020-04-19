@@ -90,7 +90,7 @@
     <string name="play_hard">Важко</string>
     <string name="play_very_hard">Very Hard</string>
     <string name="play_start">Почати</string>
-    <string name="play_triangle_count">Кількість трикутників: 1$s</string>
+    <string name="play_triangle_count">Кількість трикутників: %1$d</string>
     <string name="play_not_enough_points">Завершіть попередній рівень менш ніж за %1$s ходів щоб розблокувати цей рівень</string>
 
     <string name="game_level_complete">Рівень завершено</string>

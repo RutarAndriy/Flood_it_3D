@@ -56,7 +56,7 @@ if (!pause_is_on) {
     });
 
     text_Views_Normal[25].setText(format("%d/%d", dynamic_parts.size(), triangle_count));
-    text_Views_Normal[26].setText(format("%s %d", activity.get_String(R.string.n_27), step_count));
+    text_Views_Normal[26].setText(format("%s %d", activity.get_String(R.string.game_step_count), step_count));
     l_pause.startAnimation(fade_in);
     l_pause.setVisibility(View.VISIBLE);
 
@@ -116,7 +116,7 @@ complete_fade_in.setAnimationListener(new Animation.AnimationListener() {
 
 });
 
-text_Views_Normal[23].setText(activity.get_String(R.string.n_24) + " " + step_count);
+text_Views_Normal[23].setText(activity.get_Formatted_String(R.string.game_step_count, step_count));
 l_complete.startAnimation(complete_fade_in);
 l_complete.setVisibility(View.VISIBLE);
 if (Build.VERSION.SDK_INT > 10) { l_complete.setAlpha(0); }

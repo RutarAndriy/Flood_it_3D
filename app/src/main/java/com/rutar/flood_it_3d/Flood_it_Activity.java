@@ -170,7 +170,7 @@ hide_NavigationBar();
 
 // Визначення версії гри
 String version_name = "unknown";
-String version_info = getResources().getString(R.string.n_10);
+String version_info = getResources().getString(R.string.about_text);
 
 try { version_name = getPackageManager().getPackageInfo(getPackageName(), 0).versionName; }
 catch (Exception e) { version_name = "1.0"; }
@@ -204,7 +204,7 @@ if (game_state == 4) {
 
 pause_is_on = true;
 text_Views_Normal[25].setText(String.format("%d/%d", dynamic_index_list.size(), triangle_count));
-text_Views_Normal[26].setText(String.format("%s %d", get_String(R.string.n_27), step_count));
+text_Views_Normal[26].setText(String.format("%s %d", get_String(R.string.game_step_count), step_count));
 l_pause.setVisibility(View.VISIBLE);
 
 }
@@ -351,10 +351,31 @@ public void run() {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-text_Views_Normal[12].setText(activity.get_String_Value("n_13_" + sound));
-text_Views_Normal[13].setText(activity.get_String_Value("n_14_" + touch_sensitive));
-text_Views_Normal[14].setText(activity.get_String_Value("n_15_" + language));
+String sound_value;
+switch (sound) {
+    case 0:  sound_value = "settings_sound_off"; break;
+    case 1:  sound_value = "settings_sound_old"; break;
+    default: sound_value = "settings_sound_new"; break;
+}
 
+String game_language;
+switch (language) {
+    case 1:  game_language = "settings_language_uk"; break;
+    case 2:  game_language = "settings_language_ru"; break;
+    default: game_language = "settings_language_en"; break;
+}
+
+// Налаштування звуків
+text_Views_Normal[12].setText(activity.get_String_Value(sound_value));
+
+// Налаштування чутливості керування
+text_Views_Normal[13].setText(activity
+                     .get_String_Value("settings_sensitive_" + (touch_sensitive + 1)));
+
+// Налаштування мови
+text_Views_Normal[14].setText(activity.get_String_Value(game_language));
+
+// Заповнення даних таблиці рекордів
 for (int z = 0; z < 30; z++) { scores[z] = load_Settings("level_" + z, 0); }
 reload_Scores_Table();
 
@@ -390,6 +411,11 @@ public String get_String (int id) { return getResources().getString(id); }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
+public String get_Formatted_String (int id, Object ... values)
+    { return String.format(getResources().getString(id), values); }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
 public int get_String_Value (String value) { return getResources().
                                                     getIdentifier(value, "string",
                                                                   getPackageName()); }
@@ -420,7 +446,7 @@ public void reload_Scores_Table() {
 for (int z = 0; z < 30; z++) {
 
 if (scores[z] == 0) { text_Views_Small[z].setText("" + (z + 1) + ". - "); }
-else { text_Views_Small[z].setText("" + (z + 1) + ". " + scores[z] + " " + get_String(R.string.s_0)); }
+else { text_Views_Small[z].setText("" + (z + 1) + ". " + scores[z] + " " + get_String(R.string.score_step_count)); }
 
 }
 }

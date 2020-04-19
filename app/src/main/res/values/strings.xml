@@ -90,7 +90,7 @@
     <string name="play_hard">Hard</string>
     <string name="play_very_hard">Very Hard</string>
     <string name="play_start">Start</string>
-    <string name="play_triangle_count">Triangle count: 1$s</string>
+    <string name="play_triangle_count">Triangle count: %1$d</string>
     <string name="play_not_enough_points">Complete previous level in less than %1$s steps to unlock this level</string>
 
     <string name="game_level_complete">Level complete</string>
