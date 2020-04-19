@@ -68,7 +68,7 @@
                             android:layout_marginTop="@dimen/n_margin_v"
                             android:clickable="true"
                             android:onClick="on_View_Click"
-                            android:text="@string/n_01"
+                            android:text="@string/menu_play"
                             android:textColor="#ffffff"
                             android:textSize="@dimen/text_size_n"
                             android:visibility="visible" />
@@ -82,7 +82,7 @@
                             android:layout_marginTop="@dimen/n_margin_v"
                             android:clickable="true"
                             android:onClick="on_View_Click"
-                            android:text="@string/n_02"
+                            android:text="@string/menu_score"
                             android:textColor="#ffffff"
                             android:textSize="@dimen/text_size_n"
                             android:visibility="visible" />
@@ -96,7 +96,7 @@
                             android:layout_marginTop="@dimen/n_margin_v"
                             android:clickable="true"
                             android:onClick="on_View_Click"
-                            android:text="@string/n_03"
+                            android:text="@string/menu_settings"
                             android:textColor="#ffffff"
                             android:textSize="@dimen/text_size_n"
                             android:visibility="visible" />
@@ -110,7 +110,7 @@
                             android:layout_marginTop="@dimen/n_margin_v"
                             android:clickable="true"
                             android:onClick="on_View_Click"
-                            android:text="@string/n_04"
+                            android:text="@string/menu_about"
                             android:textColor="#ffffff"
                             android:textSize="@dimen/text_size_n"
                             android:visibility="visible" />
@@ -124,7 +124,7 @@
                             android:layout_marginTop="@dimen/n_margin_v"
                             android:clickable="true"
                             android:onClick="on_View_Click"
-                            android:text="@string/n_05"
+                            android:text="@string/menu_exit"
                             android:textColor="#ffffff"
                             android:textSize="@dimen/text_size_n"
                             android:visibility="visible" />
@@ -191,7 +191,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/n_19_0"
+                    android:text="@string/model_00"
                     android:id="@+id/n_19"
                     android:textColor="#ffffff"
                     android:textSize="@dimen/text_size_n"
@@ -204,7 +204,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/s_31"
+                    android:text="@string/play_triangle_count"
                     android:id="@+id/s_31"
                     android:textColor="#ffffff"
                     android:textSize="@dimen/text_size_s"
@@ -231,7 +231,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/l_01"
+                        android:text="@string/play_prev"
                         android:id="@+id/l_01"
                         android:textColor="#ffffff"
                         android:textSize="@dimen/text_size_l"
@@ -253,7 +253,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/l_02"
+                        android:text="@string/play_next"
                         android:id="@+id/l_02"
                         android:textColor="#ffffff"
                         android:textSize="@dimen/text_size_l"
@@ -282,7 +282,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/n_20"
+                        android:text="@string/play_back"
                         android:id="@+id/n_20"
                         android:textColor="#ffffff"
                         android:textSize="@dimen/text_size_n"
@@ -313,7 +313,7 @@
                         android:clickable="true"
                         android:gravity="bottom|center_horizontal"
                         android:onClick="on_View_Click"
-                        android:text="@string/n_21_0"
+                        android:text="@string/play_easy"
                         android:textColor="#ffffff"
                         android:textSize="@dimen/text_size_n" />
                 </LinearLayout>
@@ -328,7 +328,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/n_22"
+                        android:text="@string/play_start"
                         android:id="@+id/n_22"
                         android:textColor="#ffffff"
                         android:textSize="@dimen/text_size_n"
@@ -353,7 +353,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="@string/n_17"
+                android:text="@string/score_title"
                 android:id="@+id/n_17"
                 android:layout_weight="3.5"
                 android:textSize="@dimen/text_size_n"
@@ -820,7 +820,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="@string/n_18"
+                android:text="@string/score_back"
                 android:id="@+id/n_18"
                 android:layout_weight="3.5"
                 android:textSize="@dimen/text_size_n"
@@ -851,7 +851,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="@string/n_12"
+                    android:text="@string/settings_title"
                     android:id="@+id/n_12"
                     android:textSize="@dimen/text_size_n"
                     android:textColor="#ffffff"
@@ -874,7 +874,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/n_13_1"
+                    android:text="@string/settings_sound_old"
                     android:id="@+id/n_13"
                     android:textSize="@dimen/text_size_n"
                     android:textColor="#ffffff"
@@ -890,7 +890,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/n_14_1"
+                    android:text="@string/settings_sensitive_2"
                     android:id="@+id/n_14"
                     android:textSize="@dimen/text_size_n"
                     android:textColor="#ffffff"
@@ -906,7 +906,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/n_15_1"
+                    android:text="@string/settings_language_uk"
                     android:id="@+id/n_15"
                     android:textSize="@dimen/text_size_n"
                     android:textColor="#ffffff"
@@ -930,7 +930,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="@string/n_16_0"
+                    android:text="@string/settings_back"
                     android:id="@+id/n_16"
                     android:layout_weight="1.8"
                     android:textSize="@dimen/text_size_n"
@@ -963,7 +963,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/n_09"
+                    android:text="@string/about_title"
                     android:id="@+id/n_09"
                     android:textSize="@dimen/text_size_n"
                     android:textColor="#ffffff"
@@ -984,7 +984,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/n_10"
+                    android:text="@string/about_text"
                     android:id="@+id/n_10"
                     android:textSize="@dimen/text_size_n"
                     android:textColor="#ffffff"
@@ -1005,7 +1005,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/n_11"
+                    android:text="@string/about_back"
                     android:id="@+id/n_11"
                     android:textSize="@dimen/text_size_n"
                     android:textColor="#ffffff"
@@ -1038,7 +1038,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/n_06"
+                    android:text="@string/exit_confirm_title"
                     android:id="@+id/n_06"
                     android:textSize="@dimen/text_size_n"
                     android:textColor="#ffffff"
@@ -1068,7 +1068,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/n_07"
+                        android:text="@string/exit_confirm_no"
                         android:id="@+id/n_07"
                         android:textColor="#ffffff"
                         android:textSize="@dimen/text_size_n"
@@ -1090,7 +1090,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/n_08"
+                        android:text="@string/exit_confirm_yes"
                         android:id="@+id/n_08"
                         android:textColor="#ffffff"
                         android:textSize="@dimen/text_size_n"
@@ -1273,7 +1273,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/n_23"
+                android:text="@string/game_level_complete"
                 android:textSize="@dimen/text_size_n"
                 android:layout_marginLeft="@dimen/l_margin_h"
                 android:layout_marginRight="@dimen/l_margin_h"
@@ -1324,7 +1324,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/n_25"
+                android:text="@string/game_pause"
                 android:id="@+id/n_25"
                 android:textSize="@dimen/text_size_n"
                 android:textColor="#ffffff" />
@@ -1340,7 +1340,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/n_26"
+                android:text="@string/game_triangle_count"
                 android:id="@+id/n_26"
                 android:textSize="@dimen/text_size_n"
                 android:textColor="#ffffff"
@@ -1352,7 +1352,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/n_27"
+                android:text="@string/game_step_count"
                 android:id="@+id/n_27"
                 android:textSize="@dimen/text_size_n"
                 android:textColor="#ffffff"
@@ -1372,7 +1372,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/n_28"
+                android:text="@string/game_exit"
                 android:id="@+id/n_28"
                 android:textSize="@dimen/text_size_n"
                 android:textColor="#ffffff"
@@ -1386,7 +1386,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/n_29"
+                android:text="@string/game_resume"
                 android:id="@+id/n_29"
                 android:textSize="@dimen/text_size_n"
                 android:textColor="#ffffff"
@@ -1437,7 +1437,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/n_30_0"
+            android:text="@string/play_not_enough_points"
             android:id="@+id/n_30"
             android:textSize="@dimen/text_size_n"
             android:layout_marginRight="70dp"
@@ -1465,7 +1465,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/n_31"
+                    android:text="@string/help_title"
                     android:id="@+id/n_31"
                     android:layout_marginTop="@dimen/l_margin_v"
                     android:layout_marginBottom="@dimen/l_margin_v"
@@ -1478,7 +1478,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/n_32"
+                    android:text="@string/help_text_01"
                     android:id="@+id/n_32"
                     android:layout_marginTop="@dimen/l_margin_v"
                     android:layout_marginBottom="@dimen/l_margin_v"
@@ -1491,7 +1491,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/n_33"
+                    android:text="@string/help_text_02"
                     android:id="@+id/n_33"
                     android:layout_marginTop="@dimen/l_margin_v"
                     android:layout_marginBottom="@dimen/l_margin_v"
@@ -1504,7 +1504,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/n_34"
+                    android:text="@string/help_ok"
                     android:id="@+id/n_34"
                     android:layout_marginTop="@dimen/l_margin_v"
                     android:layout_marginBottom="@dimen/l_margin_v"
