@@ -19,11 +19,11 @@
     <string name="n_12">Налаштування</string>
     <string name="n_13_0">Звуки: Вимкнені</string>
     <string name="n_13_1">Звуки: Увімкнені</string>
-    <string name="n_14_0">Чутнивість введення: 1</string>
-    <string name="n_14_1">Чутнивість введення: 2</string>
-    <string name="n_14_2">Чутнивість введення: 3</string>
-    <string name="n_14_3">Чутнивість введення: 4</string>
-    <string name="n_14_4">Чутнивість введення: 5</string>
+    <string name="n_14_0">Чутливість керування: 1</string>
+    <string name="n_14_1">Чутливість керування: 2</string>
+    <string name="n_14_2">Чутливість керування: 3</string>
+    <string name="n_14_3">Чутливість керування: 4</string>
+    <string name="n_14_4">Чутливість керування: 5</string>
     <string name="n_15_0">Мова: Англійська</string>
     <string name="n_15_1">Мова: Українська</string>
     <string name="n_15_2">Мова: Російська</string>
@@ -48,7 +48,7 @@
     <string name="n_19_14">Модифікована губка Менгера</string>
     <string name="n_19_15">Усічений ікосододекаедр</string>
     <string name="n_19_16">Модифікована ікосфера</string>
-    <string name="n_19_17">Бжолині соти</string>
+    <string name="n_19_17">Бджолині соти</string>
     <string name="n_19_18">Вигнутий куб</string>
     <string name="n_19_19">Увігнутий куб</string>
     <string name="n_19_20">Усічений додекаедр</string>
