@@ -2,6 +2,7 @@ package com.rutar.flood_it_3d;
 
 import android.util.Log;
 
+import com.jme3.audio.AudioNode;
 import com.jme3.ui.*;
 import com.jme3.app.*;
 import com.jme3.math.*;
@@ -28,6 +29,8 @@ public static Node game_node_child = new Node("game_child");      // Допом�
 public static Node preview_node_main = new Node("preview_main");     // Головний вузол вибору
 public static Node preview_node_child = new Node("preview_child"); // Допоміжний вузол вибору
 
+public static AudioNode[] sounds = new AudioNode[5];                                  // Аудіовузли
+
 public static ColorRGBA color_tmp = null;
 public static ColorRGBA color_prev = null;
 public static ColorRGBA color_next = null;
@@ -38,6 +41,13 @@ private BitmapText debug;                          // Допоміжна інф�
 private int fps = 0;
 private int frame_counter = 0;
 private float second_counter = 0.0f;
+
+private static final float volume_change_speed = 0.001f;
+
+static int sound_future = -1;                                        // Індекс перспективної музики
+static int sound_current = -1;                                          // Індекс актуальної музики
+
+static boolean sound_is_changed = false;
 
 public static int debug_index = 2;
 
@@ -225,35 +235,81 @@ preview_node_main.setLocalRotation(quaternion);
 if (rotate_index > 500) { rotate_index = 0; }
 else                    { rotate_index++;   }
 
-// Оновлення гучності звукових вузлів
-for (int z = 0; z < sounds.length; z++) {
-
-    sound_volume[z] += delta_volume[z];
-    if (sound_volume[z] > 1.0f) {
-        sound_volume[z] = 1.0f;
-        delta_volume[z] = 0;
-    }
-    if (sound_volume[z] < 0) {
-        sound_volume[z] = 0;
-        delta_volume[z] = 0;
-        sound_is_off = true;
-        sounds[z].stop();
-    }
-
-    sounds[z].setVolume(sound_volume[z] * sound > 0 ? 1 : 0);
+update_Sound_Nodes();
 
 }
 
-// Перемикання музики
-if (sound_is_off &&
-    sound_current != sound_future &&
-    sound != 0 && sound_future != -1) { sounds[sound_future].play();
-                                        sound_current = sound_future;
-                                        delta_volume[sound_future] = 0.005f; }
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// Відтворення музики із заданим індексом
 
-for (int z = 0; z < sound_volume.length; z++) {
-    Log.e("TAG", "#" + z + ": " + sound_volume[z]);
+public static void play_Sounds (int id) {
+
+    for (int z = 0; z < sounds.length; z++) { delta_volume[z] = -volume_change_speed; }
+    sound_is_changed = true;
+    sound_future = id;
+
 }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// Оновлення звукових вузлів
+
+private static void update_Sound_Nodes() {
+
+Log.e("TAG", "Sound: " + sound_future);
+
+if (!sound_is_changed &&
+            //sound_current != sound_future &&
+            //sound != 0 &&
+            sound_future != -1
+)
+
+    { sound_is_changed = true;
+      sounds[sound_future].play();
+        //sound_current = sound_future;
+      delta_volume[sound_future] = volume_change_speed; }
+
+else {
+
+    for (int sound = 0; sound < sounds.length; sound++) {
+
+        sound_volume[sound] += delta_volume[sound];
+
+        if (sound_volume[sound] > 1.0f) {
+            sound_volume[sound] = 1.0f;
+            delta_volume[sound] = 0;
+        }
+
+        if (sound_volume[sound] < 0) {
+            sound_volume[sound] = 0;
+            delta_volume[sound] = 0;
+            //init_Sounds(activity.getJmeApplication().getAssetManager());
+            sound_is_changed = false;
+            sounds[sound].stop();
+        }
+
+        sounds[sound].setVolume(sound_volume[sound]);
+
+    }
+}
+
+/*Log.e("TAG", "sound_is_off: " + sound_is_off + "\n" +
+            "sound_current: " + sound_current + "\n" +
+            "sound_future: " + sound_future + "\n" +
+            "sound: " + sound + "\n" +
+            "sound_future: " + sound_future + "\n\n   ");*/
+
+/*for (int z = 0; z < sounds.length; z++) {
+    sounds[z].setVolume(1.0f);
+    if (z == sound_future) { sounds[z].play(); }
+    else { sounds[z].stop(); }
+}*/
+
+
+//for (int z = 0; z < sound_volume.length; z++) {
+//    Log.e("TAG", "#" + z + ": " + sound_volume[z]);
+//}
+//Log.e("TAG", " ");
+
 
 }
 

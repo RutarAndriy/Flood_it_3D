@@ -5,6 +5,7 @@ import android.view.*;
 import android.annotation.*;
 import android.view.animation.*;
 
+import static com.rutar.flood_it_3d.Flood_it_3D.play_Sounds;
 import static com.rutar.flood_it_3d.Unification.*;
 import static com.rutar.flood_it_3d.Game_Update.*;
 import static com.rutar.flood_it_3d.Flood_it_Activity.*;
@@ -229,6 +230,7 @@ case R.id.n_13: sound -= sound > 0 ? 1 : -2;
                     case 1:  sound_value = "settings_sound_old"; break;
                     default: sound_value = "settings_sound_new"; break;
                 }
+                play_Sounds(sound != 0 ? 0 : -1);
                 activity.save_Settings("sound", sound);
                 text_Views_Normal[12].setText(activity.get_String_Value(sound_value));
                 break;

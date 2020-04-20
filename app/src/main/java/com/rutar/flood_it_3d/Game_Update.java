@@ -35,8 +35,6 @@ static int triangle_count;                                                 // К
 static int model_count = 48;                                                   // Кількість моделей
 static int color_index = -1;                                            // Індекс активного кольору
 static int game_state_index = -1;                                             // Індекс зміни стану гри
-static int sound_future = -1;                                        // Індекс перспективної музики
-static int sound_current = -1;                                          // Індекс актуальної музики
 static int rotate_index = 150;                                      // Індекс повороту логотипу гри
 
 static int model_per_level = model_count / 4;              // Кількість моделей у конкретному рівні
@@ -62,7 +60,6 @@ public static Vector3f[] vertices_temp = new Vector3f[3];                // Ти
 public static boolean is_done = true;              // Перемінна вказує на завершення обробки моделі
 public static boolean game_is_running = false;                            // Якщо true - гра триває
 public static boolean work_start = false;
-public static boolean sound_is_off = false;
 
 public static Triangle temp_triangle;                                       // Тимчасовий трикутник
 public static Triangle start_triangle;                                      // Початковий трикутник
@@ -73,8 +70,6 @@ public static Picture background_picture;                                      /
 public static float preview_rotate_angle = 45;                  // Кут нахилу моделі передперегляду
 public static float[] sound_volume = new float[5];       // Масив гучностей окремих звукових вузлів
 public static float[] delta_volume = new float[5];                      // Перемінні зміни гучності
-
-public static AudioNode[] sounds = new AudioNode[5];                                  // Аудіовузли
 
 // ................................................................................................
 
@@ -589,17 +584,6 @@ else if (background_position.y < -background_h)
     { background_picture.move(0, background_h, 0);  }
 
 background_picture.updateGeometricState();
-
-}
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-// Відтворення музики із заданим індексом
-
-public static void play_Sounds (int id) {
-
-    for (int z = 0; z < sounds.length; z++) { delta_volume[z] = -0.005f; }
-    sound_is_off = false;
-    sound_future = id;
 
 }
 
