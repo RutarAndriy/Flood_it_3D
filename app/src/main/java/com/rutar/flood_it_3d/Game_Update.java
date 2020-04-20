@@ -19,6 +19,7 @@ import jme3tools.optimize.*;
 import static com.jme3.math.FastMath.*;
 import static com.jme3.scene.VertexBuffer.*;
 import static com.rutar.flood_it_3d.Flood_it_3D.*;
+import static com.rutar.flood_it_3d.Flood_it_Activity.sound;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -61,6 +62,7 @@ public static Vector3f[] vertices_temp = new Vector3f[3];                // Ти
 public static boolean is_done = true;              // Перемінна вказує на завершення обробки моделі
 public static boolean game_is_running = false;                            // Якщо true - гра триває
 public static boolean work_start = false;
+public static boolean sound_is_off = false;
 
 public static Triangle temp_triangle;                                       // Тимчасовий трикутник
 public static Triangle start_triangle;                                      // Початковий трикутник
@@ -106,8 +108,6 @@ public static Geometry[] geometries_list;                            // Маси
 public static Game_Triangle[] game_triangles_list; // Масив ігрових трикутників
 
 private static Mesh mesh_temp;
-
-public static boolean old_music = false;
 
 // ................................................................................................
 
@@ -231,21 +231,21 @@ public static void init_Sounds (AssetManager manager) {
 
 String file = null;
 
-for (int z = 0; z < sounds.length; z++) {
+for (int index = 0; index < sounds.length; index++) {
 
-    switch (z) {
-        case 0: file = old_music ? "old_menu.ogg"   : "new_menu.ogg";      break;
-        case 1: file = old_music ? "old_easy.ogg"   : "new_easy.ogg";      break;
-        case 2: file = old_music ? "old_medium.ogg" : "new_medium.ogg";    break;
-        case 3: file = old_music ? "old_hard.ogg"   : "new_hard.ogg";      break;
-        case 4: file = old_music ? "old_hard.ogg"   : "new_very_hard.ogg"; break;
-    }
+switch (index) {
+    case 0: file = sound == 1 ? "old_menu.ogg"      : "new_menu.ogg";      break;
+    case 1: file = sound == 1 ? "old_easy.ogg"      : "new_easy.ogg";      break;
+    case 2: file = sound == 1 ? "old_medium.ogg"    : "new_medium.ogg";    break;
+    case 3: file = sound == 1 ? "old_hard.ogg"      : "new_hard.ogg";      break;
+    case 4: file = sound == 1 ? "new_very_hard.ogg" : "new_very_hard.ogg"; break;
+}
 
-sounds[z] = new AudioNode(manager, "sounds/" + file,   AudioData.DataType.Stream);
+sounds[index] = new AudioNode(manager, "sounds/" + file, AudioData.DataType.Stream);
 
-sounds[z].setPositional(false);
-sounds[z].setLooping(true);
-sounds[z].setVolume(0);
+sounds[index].setPositional(false);
+sounds[index].setLooping(true);
+sounds[index].setVolume(0);
 
 }
 }
@@ -594,9 +594,11 @@ background_picture.updateGeometricState();
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Відтворення музики із заданим індексом
+
 public static void play_Sounds (int id) {
 
     for (int z = 0; z < sounds.length; z++) { delta_volume[z] = -0.005f; }
+    sound_is_off = false;
     sound_future = id;
 
 }

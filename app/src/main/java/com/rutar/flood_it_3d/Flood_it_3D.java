@@ -1,5 +1,7 @@
 package com.rutar.flood_it_3d;
 
+import android.util.Log;
+
 import com.jme3.ui.*;
 import com.jme3.app.*;
 import com.jme3.math.*;
@@ -227,31 +229,32 @@ else                    { rotate_index++;   }
 for (int z = 0; z < sounds.length; z++) {
 
     sound_volume[z] += delta_volume[z];
-    if (sound_volume[z] > 0.5f) {
-        sound_volume[z] = 0.5f;
+    if (sound_volume[z] > 1.0f) {
+        sound_volume[z] = 1.0f;
         delta_volume[z] = 0;
     }
     if (sound_volume[z] < 0) {
         sound_volume[z] = 0;
         delta_volume[z] = 0;
+        sound_is_off = true;
         sounds[z].stop();
     }
 
-    sounds[z].setVolume(sound_volume[z] * sound);
+    sounds[z].setVolume(sound_volume[z] * sound > 0 ? 1 : 0);
 
 }
 
 // Перемикання музики
-if (sound_current != sound_future) {
+if (sound_is_off &&
+    sound_current != sound_future &&
+    sound != 0 && sound_future != -1) { sounds[sound_future].play();
+                                        sound_current = sound_future;
+                                        delta_volume[sound_future] = 0.005f; }
 
-boolean is_mute = true;
-for (int z = 0; z < sounds.length; z++) { is_mute = sound_volume[z] == 0; }
-
-if (is_mute) { sounds[sound_future].play();
-               sound_current = sound_future;
-               delta_volume[sound_future] = 0.005f; }
-
+for (int z = 0; z < sound_volume.length; z++) {
+    Log.e("TAG", "#" + z + ": " + sound_volume[z]);
 }
+
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
