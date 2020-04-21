@@ -68,8 +68,6 @@ public static ParticleEmitter emitter;                                        //
 public static Picture background_picture;                                      // Фонове зображення
 
 public static float preview_rotate_angle = 45;                  // Кут нахилу моделі передперегляду
-public static float[] sound_volume = new float[5];       // Масив гучностей окремих звукових вузлів
-public static float[] delta_volume = new float[5];                      // Перемінні зміни гучності
 
 // ................................................................................................
 
@@ -155,7 +153,6 @@ private static final int[] start_points = new int[] {      // Індекси п�
 static void pre_Init (AssetManager manager) {
 
 init_Materials(manager);                                                // Ініціалізація матеріалів
-init_Sounds(manager);                                                       // Ініціалізація звуків
 init_Particles(manager);                                                  // Ініціалізація частинок
 
 set_Background_Speed();
@@ -217,32 +214,6 @@ case 10: materials[z].setColor("Diffuse",
 }
 }
 
-}
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-// Ініціалізація звуків
-
-public static void init_Sounds (AssetManager manager) {
-
-String file = null;
-
-for (int index = 0; index < sounds.length; index++) {
-
-switch (index) {
-    case 0: file = sound == 1 ? "old_menu.ogg"      : "new_menu.ogg";      break;
-    case 1: file = sound == 1 ? "old_easy.ogg"      : "new_easy.ogg";      break;
-    case 2: file = sound == 1 ? "old_medium.ogg"    : "new_medium.ogg";    break;
-    case 3: file = sound == 1 ? "old_hard.ogg"      : "new_hard.ogg";      break;
-    case 4: file = sound == 1 ? "new_very_hard.ogg" : "new_very_hard.ogg"; break;
-}
-
-sounds[index] = new AudioNode(manager, "sounds/" + file, AudioData.DataType.Stream);
-
-sounds[index].setPositional(false);
-sounds[index].setLooping(true);
-sounds[index].setVolume(0);
-
-}
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////

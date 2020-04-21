@@ -27,6 +27,7 @@ import static com.rutar.flood_it_3d.Game_Update.*;
 
 public class Flood_it_Activity extends AndroidHarness implements Animation.AnimationListener {
 
+public static Flood_it_3D flood_it_3D;
 public static Flood_it_Activity activity;
 
 public static Animation fade_in;
@@ -179,11 +180,7 @@ catch (Exception e) { version_name = "1.0"; }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-for (int z = 0; z < sound_volume.length; z++) {
-    sound_volume[z] = 0;
-    delta_volume[z] = 0;
-}
-
+flood_it_3D = (Flood_it_3D) getJmeApplication();
 init_Components();
 
 }

@@ -5,7 +5,6 @@ import android.view.*;
 import android.annotation.*;
 import android.view.animation.*;
 
-import static com.rutar.flood_it_3d.Flood_it_3D.play_Sounds;
 import static com.rutar.flood_it_3d.Unification.*;
 import static com.rutar.flood_it_3d.Game_Update.*;
 import static com.rutar.flood_it_3d.Flood_it_Activity.*;
@@ -95,12 +94,13 @@ case -1: set_Background_Speed();
          l_complete.setVisibility(View.GONE);
          l_pause.setVisibility(View.GONE);
          Utils.background_Fade_Out();
+         flood_it_3D.play_Sounds(0);
          processing_time = -1;
          optimizing_time = -1;
          pause_is_on = false;
          game_state_index = 3;
          game_state = 3;
-         play_Sounds(0);
+
          break;
 
 // Hide JME logo
@@ -108,9 +108,9 @@ case 0: l_menu.setVisibility(View.VISIBLE);
         background_fade_in.setStartOffset(0);
         logo_01.setVisibility(View.GONE);
         logo_02.setVisibility(View.GONE);
-        play_Sounds(0);
         Utils.update_Preview_Text();
         Utils.background_Fade_Out();
+        flood_it_3D.play_Sounds(0);
         rotate_index = 0;
         break;
 
@@ -174,7 +174,7 @@ case R.id.n_22: set_Background_Speed();
                 l_play.setVisibility(View.GONE);
                 button_board.setVisibility(View.VISIBLE);
                 Unification.set_Buttons_Width(model_index/model_per_level);
-                play_Sounds(model_index/model_per_level+1);
+                flood_it_3D.play_Sounds(model_index/model_per_level+1);
                 game_state_index = 4;
                 game_state = 4;
                 break;
@@ -230,8 +230,8 @@ case R.id.n_13: sound -= sound > 0 ? 1 : -2;
                     case 1:  sound_value = "settings_sound_old"; break;
                     default: sound_value = "settings_sound_new"; break;
                 }
-                play_Sounds(sound != 0 ? 0 : -1);
                 activity.save_Settings("sound", sound);
+                flood_it_3D.play_Sounds(sound != 0 ? 0 : -1);
                 text_Views_Normal[12].setText(activity.get_String_Value(sound_value));
                 break;
 
