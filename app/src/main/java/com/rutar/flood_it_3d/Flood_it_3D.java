@@ -1,5 +1,8 @@
 package com.rutar.flood_it_3d;
 
+import android.util.Log;
+
+import com.jme3.effect.ParticleEmitter;
 import com.jme3.ui.*;
 import com.jme3.app.*;
 import com.jme3.math.*;
@@ -207,8 +210,9 @@ if (rotate_index >=     50 &&
 if (work_start && is_done) {
 
 work_start = false;
+
 game_node_child.detachAllChildren();
-if (step_count == 0) { game_node_child.attachChild(emitter); }
+game_node_child.attachChild(emitter);
 
 for (int z = 0; z < 4 + model_index/model_per_level * 2; z++) {
     game_node_child.attachChild(static_geometries[z]);
