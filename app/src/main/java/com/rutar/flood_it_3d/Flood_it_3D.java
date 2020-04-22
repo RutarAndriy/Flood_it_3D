@@ -1,10 +1,5 @@
 package com.rutar.flood_it_3d;
 
-import android.util.Log;
-
-import com.jme3.asset.AssetManager;
-import com.jme3.audio.AudioData;
-import com.jme3.audio.AudioNode;
 import com.jme3.ui.*;
 import com.jme3.app.*;
 import com.jme3.math.*;
@@ -12,6 +7,7 @@ import com.jme3.font.*;
 import com.jme3.input.*;
 import com.jme3.light.*;
 import com.jme3.scene.*;
+import com.jme3.audio.*;
 import com.jme3.texture.*;
 import com.jme3.renderer.*;
 import com.jme3.input.controls.*;
@@ -25,11 +21,11 @@ import static com.rutar.flood_it_3d.Flood_it_Activity.*;
 
 public class Flood_it_3D extends SimpleApplication {
 
-public static Node logo_node = new Node("logo");                     // Вузол з логотипом гри
-public static Node game_node_main = new Node("game_main");          // Головний ігровий вузол
-public static Node game_node_child = new Node("game_child");      // Допоміжний ігровий вузол
-public static Node preview_node_main = new Node("preview_main");     // Головний вузол вибору
-public static Node preview_node_child = new Node("preview_child"); // Допоміжний вузол вибору
+public static Node logo_node = new Node("logo");                           // Вузол з логотипом гри
+public static Node game_node_main = new Node("game_main");                // Головний ігровий вузол
+public static Node game_node_child = new Node("game_child");            // Допоміжний ігровий вузол
+public static Node preview_node_main = new Node("preview_main");           // Головний вузол вибору
+public static Node preview_node_child = new Node("preview_child");       // Допоміжний вузол вибору
 
 public static AudioNode current_sound = new AudioNode();                              // Аудіовузол
 
@@ -53,7 +49,7 @@ private static float delta_volume = 0.0f;               // Перемінна з
 
 private static boolean sound_is_changed = false;
 
-static int debug_index = 2;
+static int debug_index = 0;
 
 private String full_debug = "FPS: %1$d\n" +
                             "Total Memory: %2$.3f Mb\n" +

@@ -20,6 +20,10 @@
     <string name="settings_sound_new">Sound: New</string>
     <string name="settings_sound_old">Sound: Old</string>
     <string name="settings_sound_off">Sound: Off</string>
+    <string name="settings_color_transfusion_fast">Color transfusion: Fast</string>
+    <string name="settings_color_transfusion_normal">Color transfusion: Normal</string>
+    <string name="settings_color_transfusion_slow">Color transfusion: Slow</string>
+    <string name="settings_color_transfusion_off">Color transfusion: Off</string>
     <string name="settings_sensitive_1">Touch sensitive: 1</string>
     <string name="settings_sensitive_2">Touch sensitive: 2</string>
     <string name="settings_sensitive_3">Touch sensitive: 3</string>

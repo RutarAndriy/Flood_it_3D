@@ -133,6 +133,7 @@ Locale locale = null;
 sound = load_Settings("sound", 1);
 need_help = load_Settings("help", 1);
 model_index = load_Settings("model_index", 0);
+func_stages = load_Settings("transfusion", 45);
 touch_sensitive = load_Settings("sensitive", 2);
 def_language = language = load_Settings("language", default_language);
 
@@ -355,6 +356,14 @@ switch (sound) {
     default: sound_value = "settings_sound_new"; break;
 }
 
+String color_transfusion;
+switch (func_stages) {
+    case 30: color_transfusion = "settings_color_transfusion_fast";   break;
+    case 45: color_transfusion = "settings_color_transfusion_normal"; break;
+    case 60: color_transfusion = "settings_color_transfusion_slow";   break;
+    default: color_transfusion = "settings_color_transfusion_off";    break;
+}
+
 String game_language;
 switch (language) {
     case 1:  game_language = "settings_language_uk"; break;
@@ -364,6 +373,9 @@ switch (language) {
 
 // Налаштування звуків
 text_Views_Normal[12].setText(activity.get_String_Value(sound_value));
+
+// Налаштування переливання кольорів
+text_Views_Normal[34].setText(activity.get_String_Value(color_transfusion));
 
 // Налаштування чутливості керування
 text_Views_Normal[13].setText(activity

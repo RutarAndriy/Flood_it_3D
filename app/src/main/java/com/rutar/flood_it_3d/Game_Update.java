@@ -408,6 +408,7 @@ static void calculate_Function() {
 float func_min = -3;
 float func_max =  3;
 
+func_total = 0;
 func_values = new float[func_stages];
 
 // ................................................................................................

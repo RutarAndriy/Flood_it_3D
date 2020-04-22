@@ -890,6 +890,22 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="@string/settings_color_transfusion_normal"
+                    android:id="@+id/n_35"
+                    android:textSize="@dimen/text_size_n"
+                    android:textColor="#ffffff"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:clickable="true"
+                    android:onClick="on_View_Click"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="@dimen/n_margin_h"
+                    android:layout_marginRight="@dimen/n_margin_h"
+                    android:layout_marginTop="@dimen/n_margin_v"
+                    android:layout_marginBottom="@dimen/n_margin_v" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="@string/settings_sensitive_2"
                     android:id="@+id/n_14"
                     android:textSize="@dimen/text_size_n"

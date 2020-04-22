@@ -20,6 +20,10 @@
     <string name="settings_sound_new">Звуки: Включены</string>
     <string name="settings_sound_old">Звуки: Включены</string>
     <string name="settings_sound_off">Звуки: Выключены</string>
+    <string name="settings_color_transfusion_fast">Переливание цветов: Быстро</string>
+    <string name="settings_color_transfusion_normal">Переливание цветов: Нормально</string>
+    <string name="settings_color_transfusion_slow">Переливание цветов: Медленно</string>
+    <string name="settings_color_transfusion_off">Переливание цветов: Выключено</string>
     <string name="settings_sensitive_1">Чуствительность ввода: 1</string>
     <string name="settings_sensitive_2">Чуствительность ввода: 2</string>
     <string name="settings_sensitive_3">Чуствительность ввода: 3</string>

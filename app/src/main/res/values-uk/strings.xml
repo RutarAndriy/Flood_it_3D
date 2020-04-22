@@ -20,6 +20,10 @@
     <string name="settings_sound_new">Звуки: Нові</string>
     <string name="settings_sound_old">Звуки: Старі</string>
     <string name="settings_sound_off">Звуки: Вимкнені</string>
+    <string name="settings_color_transfusion_fast">Переливання кольорів: Швидко</string>
+    <string name="settings_color_transfusion_normal">Переливання кольорів: Нормально</string>
+    <string name="settings_color_transfusion_slow">Переливання кольорів: Повільно</string>
+    <string name="settings_color_transfusion_off">Переливання кольорів: Вимкнено</string>
     <string name="settings_sensitive_1">Чутливість керування: 1</string>
     <string name="settings_sensitive_2">Чутливість керування: 2</string>
     <string name="settings_sensitive_3">Чутливість керування: 3</string>

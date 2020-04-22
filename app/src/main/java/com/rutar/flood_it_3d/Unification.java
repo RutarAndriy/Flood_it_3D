@@ -19,7 +19,7 @@ static float w_coef;
 static float h_coef;
 
 private static int s_index = 31;
-private static int n_index = 34;
+private static int n_index = 35;
 private static int l_index = 2;
 
 static TextView[] text_Views_Small  = new TextView[s_index];

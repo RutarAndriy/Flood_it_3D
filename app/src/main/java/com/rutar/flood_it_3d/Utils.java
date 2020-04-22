@@ -235,6 +235,27 @@ case R.id.n_13: sound -= sound > 0 ? 1 : -2;
                 text_Views_Normal[12].setText(activity.get_String_Value(sound_value));
                 break;
 
+// Налаштування звуків
+case R.id.n_35: String color_transfusion;
+                switch (func_stages) {
+                    case 60: func_stages = 0;
+                             color_transfusion = "settings_color_transfusion_off";
+                             break;
+                    case 45: func_stages = 60;
+                             color_transfusion = "settings_color_transfusion_slow";
+                             break;
+                    case 30: func_stages = 45;
+                             color_transfusion = "settings_color_transfusion_normal";
+                             break;
+                    default: func_stages = 30;
+                             color_transfusion = "settings_color_transfusion_fast";
+                             break;
+                }
+                calculate_Function();
+                activity.save_Settings("transfusion", func_stages);
+                text_Views_Normal[34].setText(activity.get_String_Value(color_transfusion));
+                break;
+
 // Налаштування чутливості керування
 case R.id.n_14: touch_sensitive += touch_sensitive < 4 ? 1 : -4;
                 activity.save_Settings("sensitive", touch_sensitive);
@@ -266,7 +287,7 @@ case R.id.n_15:
 
 break;
 
-// Easy or Normal or Hard
+// Easy or Normal or Hard or Very Hard
 case R.id.n_21: set_Background_Speed();
                 int index = (model_index / 12 + 1) * 12;
                 model_index = index < model_count ? index : 0;
