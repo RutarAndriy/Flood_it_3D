@@ -44,17 +44,16 @@ private int fps = 0;
 private int frame_counter = 0;
 private float second_counter = 0.0f;
 
-private static final float volume_change_speed = 0.001f;
+private static final float volume_change_speed = 0.05f;
 
-static int sound_future = -1;                                        // Індекс перспективної музики
-static int sound_current = -1;                                          // Індекс актуальної музики
+private static int sound_future = -1;                                    // Індекс наступної музики
 
-static float sound_volume = 0.0f;                                       // Гучність звукового вузла
-static float delta_volume = 0.0f;                       // Перемінна зміни гучності звукового вузла
+private static float sound_volume = 0.0f;                               // Гучність звукового вузла
+private static float delta_volume = 0.0f;               // Перемінна зміни гучності звукового вузла
 
-static boolean sound_is_changed = false;
+private static boolean sound_is_changed = false;
 
-public static int debug_index = 2;
+static int debug_index = 2;
 
 private String full_debug = "FPS: %1$d\n" +
                             "Total Memory: %2$.3f Mb\n" +
@@ -85,7 +84,6 @@ getStateManager().getState(StatsAppState.class).setDisplayStatView(false);
 quaternions[2] = new Quaternion();
 
 // Ініціалізація фонового зображення
-
 for (int z = 0; z < backgrounds.length; z++) {
     backgrounds[z] = (Texture2D) assetManager.loadTexture("textures/background_0" + z + ".jpg");
     backgrounds[z].setWrap(Texture.WrapMode.Repeat);
@@ -249,8 +247,6 @@ update_Sound_Nodes();
 
 void play_Sounds (int id) {
 
-    Log.e("TAG", "Sound is change to: " + id);
-
     delta_volume = volume_change_speed * -1;
     sound_is_changed = true;
     sound_future = id;
@@ -263,15 +259,15 @@ void play_Sounds (int id) {
 private void update_Sound_Nodes() {
 
 // Зміна гучності аудіовузлів
-sound_volume += delta_volume;
+if (sound > 0 ||
+    delta_volume < 0) { sound_volume += delta_volume; }
 
 // Спадання гучності музики
 if (sound_is_changed) {
 
     if (sound_volume < 0) { sound_volume = 0;
-                            delta_volume = volume_change_speed;
-                            current_sound.stop();
                             sound_is_changed = false;
+                            delta_volume = volume_change_speed;
                             init_Sounds(sound_future); }
 }
 
@@ -280,7 +276,7 @@ else {
 
     if (sound_future != -1) {
 
-        current_sound.play();
+        if (current_sound != null) { current_sound.play(); }
 
             if (sound_volume > 1.0f) { sound_volume = 1.0f;
                                        delta_volume = 0; }
@@ -291,60 +287,6 @@ else {
 // Задання рівня гучності аудіовузлів
 if (current_sound != null) { current_sound.setVolume(sound_volume); }
 
-/*if (!sound_is_changed &&
-            //sound_current != sound_future &&
-            //sound != 0 &&
-            sound_future != -1
-)
-
-    { sound_is_changed = true;
-      sounds[sound_future].play();
-        //sound_current = sound_future;
-      delta_volume[sound_future] = volume_change_speed; }*/
-
-/*else {
-
-    for (int sound = 0; sound < sounds.length; sound++) {
-
-        sound_volume[sound] += delta_volume[sound];
-
-        if (sound_volume[sound] > 1.0f) {
-            sound_volume[sound] = 1.0f;
-            delta_volume[sound] = 0;
-        }
-
-        if (sound_volume[sound] < 0) {
-            sound_volume[sound] = 0;
-            delta_volume[sound] = 0;
-            //init_Sounds(activity.getJmeApplication().getAssetManager());
-            sound_is_changed = false;
-            sounds[sound].stop();
-        }
-
-        sounds[sound].setVolume(sound_volume[sound]);
-
-    }
-}*/
-
-/*Log.e("TAG", "sound_is_off: " + sound_is_off + "\n" +
-            "sound_current: " + sound_current + "\n" +
-            "sound_future: " + sound_future + "\n" +
-            "sound: " + sound + "\n" +
-            "sound_future: " + sound_future + "\n\n   ");*/
-
-/*for (int z = 0; z < sounds.length; z++) {
-    sounds[z].setVolume(1.0f);
-    if (z == sound_future) { sounds[z].play(); }
-    else { sounds[z].stop(); }
-}*/
-
-
-//for (int z = 0; z < sound_volume.length; z++) {
-//    Log.e("TAG", "#" + z + ": " + sound_volume[z]);
-//}
-//Log.e("TAG", " ");
-
-
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -353,7 +295,7 @@ if (current_sound != null) { current_sound.setVolume(sound_volume); }
 private void init_Sounds (int sound_index) {
 
 String file = null;
-current_sound.stop();
+if (current_sound != null) { current_sound.stop(); }
 
 if (sound_index == -1) { current_sound = null;
                          return; }
