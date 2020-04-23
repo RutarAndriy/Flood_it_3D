@@ -55,8 +55,8 @@ if (!pause_is_on) {
 
     });
 
-    text_Views_Normal[25].setText(format("%d/%d", dynamic_parts.size(), triangle_count));
-    text_Views_Normal[26].setText(format("%s %d", activity.get_String(R.string.game_step_count), step_count));
+    text_Views_Normal[25].setText(activity.get_Formatted_String(R.string.game_triangle_count, dynamic_parts.size(), triangle_count));
+    text_Views_Normal[26].setText(activity.get_Formatted_String(R.string.game_step_count, step_count));
     l_pause.startAnimation(fade_in);
     l_pause.setVisibility(View.VISIBLE);
 

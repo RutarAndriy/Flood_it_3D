@@ -99,8 +99,8 @@
 
     <string name="game_level_complete">Уровень завершен</string>
     <string name="game_pause">Пауза</string>
-    <string name="game_triangle_count">/</string>
-    <string name="game_step_count">Количество ходов:</string>
+    <string name="game_triangle_count">%1$s/%2$s</string>
+    <string name="game_step_count">Количество ходов: %1$s</string>
     <string name="game_exit">Выйти в меню</string>
     <string name="game_resume">Вернуться к игре</string>
 
