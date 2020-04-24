@@ -39,6 +39,7 @@
     <string name="score_step_count">%1$s steps</string>
     <string name="score_back">Back</string>
 
+    <!-- Easy -->
     <string name="model_00">Small cube</string>
     <string name="model_01">Octahedron</string>
     <string name="model_02">Star</string>
@@ -49,8 +50,10 @@
     <string name="model_07">Cuboctahedron</string>
     <string name="model_08">Deltoidal hexecontahedron</string>
     <string name="model_09">Chess board</string>
-    <string name="model_10">Tablet</string>
+    <string name="model_10">Pill</string>
     <string name="model_11">Small tetrahedron</string>
+
+    <!-- Normal -->
     <string name="model_12">Small torus</string>
     <string name="model_13">Diamond</string>
     <string name="model_14">Twisted parallelepiped</string>
@@ -59,34 +62,38 @@
     <string name="model_17">Dodecahedron</string>
     <string name="model_18">Modified torus</string>
     <string name="model_19">Truncated icosidodecahedron</string>
-    <string name="model_20">Modified icosphere</string>
+    <string name="model_20">Convex icosphere</string>
     <string name="model_21">Bullet</string>
     <string name="model_22">Honeycomb</string>
     <string name="model_23">Convex cube</string>
-    <string name="model_24">Combined rings</string>
+
+    <!-- Hard -->
+    <string name="model_24">United rings</string>
     <string name="model_25">Concave cube</string>
     <string name="model_26">Archimedes\' screw</string>
     <string name="model_27">Truncated dodecahedron</string>
-    <string name="model_28">Modified cibe</string>
+    <string name="model_28">Modified cube</string>
     <string name="model_29">Medium torus</string>
     <string name="model_30">Sterosphere</string>
     <string name="model_31">Detail</string>
-    <string name="model_32">Drill</string>
+    <string name="model_32">Drill bit</string>
     <string name="model_33">Gear</string>
-    <string name="model_34">Möbius strip</string>
+    <string name="model_34">Mobius strip</string>
     <string name="model_35">Trefoil</string>
+
+    <!-- Very Hard -->
     <string name="model_36">Egg</string>
     <string name="model_37">Large torus</string>
     <string name="model_38">Concave icosphere</string>
     <string name="model_39">Large icosphere</string>
     <string name="model_40">Large tetrahedron</string>
-    <string name="model_41">Combined cubes</string>
+    <string name="model_41">United cubes</string>
     <string name="model_42">Large torus knot</string>
     <string name="model_43">Modified triangle</string>
     <string name="model_44">Spiral</string>
     <string name="model_45">Large Menger sponge</string>
     <string name="model_46">Closed spiral</string>
-    <string name="model_47">Super torus knot</string>>
+    <string name="model_47">Super knot</string>>
 
     <string name="play_back">Back</string>
     <string name="play_easy">Easy</string>
@@ -95,12 +102,12 @@
     <string name="play_very_hard">Very Hard</string>
     <string name="play_start">Start</string>
     <string name="play_triangle_count">Triangle count: %1$d</string>
-    <string name="play_not_enough_points">Complete previous level in less than %1$s steps to unlock this level</string>
+    <string name="play_not_enough_points">Complete previous level in less than %1$d steps to unlock this level</string>
 
     <string name="game_level_complete">Level complete</string>
     <string name="game_pause">Pause</string>
-    <string name="game_triangle_count">%1$s/%2$s</string>
-    <string name="game_step_count">Step count: %1$s</string>
+    <string name="game_triangle_count">%1$d/%2$d</string>
+    <string name="game_step_count">Step count: %1$d</string>
     <string name="game_exit">Exit to menu</string>
     <string name="game_resume">Back to game</string>
 

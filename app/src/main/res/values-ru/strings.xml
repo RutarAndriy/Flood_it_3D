@@ -5,10 +5,10 @@
     <string name="menu_play">Начать игру</string>
     <string name="menu_score">Таблица рекордов</string>
     <string name="menu_settings">Настройки</string>
-    <string name="menu_about">Про игру</string>
+    <string name="menu_about">Об игре</string>
     <string name="menu_exit">Виход</string>
 
-    <string name="exit_confirm_title">Ви хотите вийти з игри ?</string>
+    <string name="exit_confirm_title">Вы хотите выйти из игры ?</string>
     <string name="exit_confirm_no">Нет</string>
     <string name="exit_confirm_yes">Да</string>
 
@@ -36,71 +36,78 @@
     <string name="settings_restart">Рестарт</string>
 
     <string name="score_title">Таблица рекордов</string>
-    <string name="score_step_count">%1$s ходов</string>
+    <string name="score_step_count">%1$d ходов</string>
     <string name="score_back">Назад</string>
 
+    <!-- Легко -->
     <string name="model_00">Малый куб</string>
     <string name="model_01">Восьмигранник</string>
     <string name="model_02">Звезда</string>
-    <string name="model_03">Триакистетраэдр</string>
-    <string name="model_04">Ромбоикосододекаэдр</string>
-    <string name="model_05">Кубооктаэдр</string>
-    <string name="model_06">Дельтоидальний гексеконтаедр</string>
-    <string name="model_07">Шахматная доска</string>
-    <string name="model_08">Малый тетраэдр</string>
-    <string name="model_09">Малое кольцо</string>
-    <string name="model_10">Бриллиант</string>
-    <string name="model_11">Малый узел</string>
-    <string name="model_12">Додекаэдр</string>
-    <string name="model_13">Модифицированное кольцо</string>
-    <string name="model_14">Модифицированная губка Менгера</string>
-    <string name="model_15">Усеченный икосододекаэдр</string>
-    <string name="model_16">Модифицированная икосфера</string>
-    <string name="model_17">Пчелиные соты</string>
-    <string name="model_18">Выпуклый куб</string>
-    <string name="model_19">Вогнутый куб</string>
-    <string name="model_20">Усеченный додекаэдр</string>
-    <string name="model_21">Среднее кольцо</string>
-    <string name="model_22">Большой узел</string>
-    <string name="model_23">Шестерня</string>
-    <string name="model_24">Большое кольцо</string>
-    <string name="model_25">Большая икосфера</string>
-    <string name="model_26">Большой тетраэдр</string>
-    <string name="model_27">Спираль</string>
-    <string name="model_28">Замкнутая спираль</string>
-    <string name="model_29">Супер узел</string>
-    <string name="model_30">a</string>
-    <string name="model_31">a</string>
-    <string name="model_32">a</string>
-    <string name="model_33">a</string>
-    <string name="model_34">a</string>
-    <string name="model_35">a</string>
-    <string name="model_37">a</string>
-    <string name="model_38">a</string>
-    <string name="model_39">a</string>
-    <string name="model_36">a</string>
-    <string name="model_40">a</string>
-    <string name="model_41">a</string>
-    <string name="model_42">a</string>
-    <string name="model_43">a</string>
-    <string name="model_44">a</string>
-    <string name="model_45">a</string>
-    <string name="model_46">a</string>
-    <string name="model_47">a</string>
+    <string name="model_03">Малая губка Менгера</string>
+    <string name="model_04">Триакистетраэдр</string>
+    <string name="model_05">Ромбоикосододекаэдр</string>
+    <string name="model_06">Круг</string>
+    <string name="model_07">Кубооктаэдр</string>
+    <string name="model_08">Дельтоидальний гексеконтаедр</string>
+    <string name="model_09">Шахматная доска</string>
+    <string name="model_10">Пилюля</string>
+    <string name="model_11">Малый тетраэдр</string>
+
+    <!-- Нормально -->
+    <string name="model_12">Малый торус</string>
+    <string name="model_13">Бриллиант</string>
+    <string name="model_14">Витой параллелепипед</string>
+    <string name="model_15">Малый торический узел</string>
+    <string name="model_16">Обрезанный куб</string>
+    <string name="model_17">Додекаэдр</string>
+    <string name="model_18">Модифицированный торус</string>
+    <string name="model_19">Усеченный икосододекаэдр</string>
+    <string name="model_20">Выпуклая икосфера</string>
+    <string name="model_21">Пуля</string>
+    <string name="model_22">Пчелиные соты</string>
+    <string name="model_23">Выпуклый куб</string>
+
+    <!-- Тяжело -->
+    <string name="model_24">Соединенные кольца</string>
+    <string name="model_25">Вогнутый куб</string>
+    <string name="model_26">Архимедов винт</string>
+    <string name="model_27">Усеченный додекаэдр</string>
+    <string name="model_28">Модифицированный куб</string>
+    <string name="model_29">Средний торус</string>
+    <string name="model_30">Стеросфера</string>
+    <string name="model_31">Деталь</string>
+    <string name="model_32">Сверло</string>
+    <string name="model_33">Шестерня</string>
+    <string name="model_34">Лента Мебиуса</string>
+    <string name="model_35">Трилистник</string>
+
+    <!-- Очень тяжело -->
+    <string name="model_36">Яйцо</string>
+    <string name="model_37">Большой торус</string>
+    <string name="model_38">Вогнутая икосфера</string>
+    <string name="model_39">Большая икосфера</string>
+    <string name="model_40">Большой тетраэдр</string>
+    <string name="model_41">Соединенные кубы</string>
+    <string name="model_42">Большой торический узел</string>
+    <string name="model_43">Модифицированный треугольник</string>
+    <string name="model_44">Спираль</string>
+    <string name="model_45">Большая губка Менгера</string>
+    <string name="model_46">Замкнутая спираль</string>
+    <string name="model_47">Супер узел</string>
 
     <string name="play_back">Назад</string>
     <string name="play_easy">Легко</string>
     <string name="play_normal">Нормально</string>
-    <string name="play_hard">Трудно</string>
-    <string name="play_very_hard">Very Hard</string>
+    <string name="play_hard">Тяжело</string>
+    <string name="play_very_hard">Очень тяжело</string>
     <string name="play_start">Начать</string>
     <string name="play_triangle_count">Количество треугольников: %1$d</string>
-    <string name="play_not_enough_points">Пройдите предыдущий уровень менее чем за %1$s ходов, чтобы разблокировать этот уровень</string>
+    <string name="play_not_enough_points">Пройдите предыдущий уровень менее чем за %1$d ходов, чтобы разблокировать этот уровень</string>
 
     <string name="game_level_complete">Уровень завершен</string>
     <string name="game_pause">Пауза</string>
-    <string name="game_triangle_count">%1$s/%2$s</string>
-    <string name="game_step_count">Количество ходов: %1$s</string>
+    <string name="game_triangle_count">%1$d/%2$d</string>
+    <string name="game_step_count">Количество ходов: %1$d</string>
     <string name="game_exit">Выйти в меню</string>
     <string name="game_resume">Вернуться к игре</string>
 
@@ -112,7 +119,7 @@
     <string name="play_prev">«</string>
     <string name="play_next">»</string>
 
-    <string name="rate_text">Если вам понравилась программа %1$s, пожалуйста, найдите минутку чтобы оценить ее.</string>
+    <string name="rate_text">Если вам понравилась игра %1$s, пожалуйста, найдите минутку чтобы оценить ее.</string>
     <string name="rate_error">Play Market не найдено</string>
     <string name="rate_later">Позже</string>
     <string name="rate_yes">Оценить</string>
