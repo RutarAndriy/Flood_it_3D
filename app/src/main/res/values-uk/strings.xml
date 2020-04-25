@@ -54,13 +54,13 @@
     <string name="model_11">Малий тетраедр</string>
 
     <!-- Нормально -->
-    <string name="model_12">Малий торус</string>
+    <string name="model_12">Малий тор</string>
     <string name="model_13">Діамант</string>
     <string name="model_14">Скручений паралелепіпед</string>
     <string name="model_15">Малий торовий вузол</string>
     <string name="model_16">Обрізаний куб</string>
     <string name="model_17">Додекаедр</string>
-    <string name="model_18">Модифікований торус</string>
+    <string name="model_18">Модифікований тор</string>
     <string name="model_19">Усічений ікосододекаедр</string>
     <string name="model_20">Вигнута ікосфера</string>
     <string name="model_21">Куля</string>
@@ -73,7 +73,7 @@
     <string name="model_26">Гвинт Архімеда</string>
     <string name="model_27">Усічений додекаедр</string>
     <string name="model_28">Модифікований куб</string>
-    <string name="model_29">Середній торус</string>
+    <string name="model_29">Середній тор</string>
     <string name="model_30">Стеросфера</string>
     <string name="model_31">Деталь</string>
     <string name="model_32">Свердло</string>
@@ -83,7 +83,7 @@
 
     <!-- Дуже важко -->
     <string name="model_36">Яйце</string>
-    <string name="model_37">Великий торус</string>
+    <string name="model_37">Великий тор</string>
     <string name="model_38">Увігнута ікосфера</string>
     <string name="model_39">Велика ікосфера</string>
     <string name="model_40">Великий тетраедр</string>
