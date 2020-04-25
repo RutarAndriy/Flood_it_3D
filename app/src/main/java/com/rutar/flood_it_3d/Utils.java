@@ -87,6 +87,7 @@ switch (id) {
 // Play Game -> Choice Model to play
 case -1: set_Background_Speed();
          l_play.setVisibility(View.VISIBLE);
+         set_Model_Preview_Angle();
          model_Available_Test();
          update_Preview_Text();
          activity.save_Settings("model_index", model_index);
@@ -119,6 +120,7 @@ case R.id.n_01: set_Background_Speed();
                 l_menu.setVisibility(View.GONE);
                 l_play.setVisibility(View.VISIBLE);
                 Utils.background_Fade_Out();
+                set_Model_Preview_Angle();
                 model_Available_Test();
                 game_state = 3;
                 game_state_index = 3;
@@ -292,6 +294,7 @@ case R.id.n_21: set_Background_Speed();
                 int index = (model_index / 12 + 1) * 12;
                 model_index = index < model_count ? index : 0;
                 background_Fade_Out();
+                set_Model_Preview_Angle();
                 model_Available_Test();
                 update_Preview_Text();
                 game_state_index = 3;
@@ -301,6 +304,7 @@ case R.id.n_21: set_Background_Speed();
 case R.id.l_01: model_index -= model_index > 0 ? 1 : -model_count + 1;
                 set_Background_Speed();
                 background_Fade_Out();
+                set_Model_Preview_Angle();
                 model_Available_Test();
                 update_Preview_Text();
                 game_state_index = 3;
@@ -310,6 +314,7 @@ case R.id.l_01: model_index -= model_index > 0 ? 1 : -model_count + 1;
 case R.id.l_02: model_index += model_index < (model_count - 1) ? 1 : -model_count + 1;
                 set_Background_Speed();
                 background_Fade_Out();
+                set_Model_Preview_Angle();
                 model_Available_Test();
                 update_Preview_Text();
                 game_state_index = 3;
@@ -395,6 +400,12 @@ text_Views_Small[30].setText(activity
                     .get_Formatted_String(R.string.play_triangle_count,
                                           model_triangles_count[model_index]));
 
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+private static void set_Model_Preview_Angle() {
+    preview_rotate_angle = model_preview_angle[model_index];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////

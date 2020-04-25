@@ -2,7 +2,6 @@ package com.rutar.flood_it_3d;
 
 import android.util.Log;
 
-import com.jme3.effect.ParticleEmitter;
 import com.jme3.ui.*;
 import com.jme3.app.*;
 import com.jme3.math.*;
@@ -186,7 +185,9 @@ else if (func_index >= func_stages) {
 // ................................................................................................
 // Формування debug інформації
 
-if      (debug_index == 1) { debug.setText("FPS: " + fps); }
+if      (debug_index == 1) { debug.setText(String
+                                   .format(full_debug.substring(0,
+                                           full_debug.indexOf("\n")), fps)); }
 else if (debug_index == 2) { debug.setText(String
                                   .format(full_debug, fps,
                                           runtime.totalMemory()/1024/1024f,
@@ -232,7 +233,7 @@ if (game_is_running && dynamic_index_list.size() == triangle_count) { game_is_ru
 // Оновлення інших компонентів
 quaternion.fromAngleAxis(preview_rotate_angle * DEG_TO_RAD, Vector3f.UNIT_X);
 
-preview_node_child.rotate(0, 0.01f, 0);
+preview_node_child.rotate(0, model_index%2 == 0 ? -0.01f : 0.01f, 0);
 preview_node_main.setLocalRotation(quaternion);
 
 if (rotate_index > 500) { rotate_index = 0; }
@@ -343,7 +344,6 @@ case 3:
 
     rootNode.detachAllChildren();
     preview_node_child.detachAllChildren();
-
     String path = "models/m_" + ((model_index < 10 ? "0" : "") + model_index) + ".j3o";
     preview_model = assetManager.loadModel(path);
 

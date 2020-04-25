@@ -9,7 +9,6 @@ import com.jme3.util.*;
 import com.jme3.math.*;
 import com.jme3.scene.*;
 import com.jme3.asset.*;
-import com.jme3.audio.*;
 import com.jme3.effect.*;
 import com.jme3.texture.*;
 import com.jme3.material.*;
@@ -19,7 +18,6 @@ import jme3tools.optimize.*;
 import static com.jme3.math.FastMath.*;
 import static com.jme3.scene.VertexBuffer.*;
 import static com.rutar.flood_it_3d.Flood_it_3D.*;
-import static com.rutar.flood_it_3d.Flood_it_Activity.sound;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -129,12 +127,21 @@ static final int[] model_triangles_count = new int[] {              // Кіль�
 
 };
 
-static final int[] max_steps_count = new int[] {           // Мax кількість ходів для кожної фігури
+static final int[] max_steps_count = new int[] {   // Максимальна кількість ходів для кожної фігури
 
     999,  999,  999,  999,  999,  999,  999,  999,  999,  999,  999,  999,
     999,  999,  999,  999,  999,  999,  999,  999,  999,  999,  999,  999,
     999,  999,  999,  999,  999,  999,  999,  999,  999,  999,  999,  999,
     999,  999,  999,  999,  999,  999,  999,  999,  999,  999,  999,  999
+
+};
+
+static final int[] model_preview_angle = new int[] {  // Кути повороту попереднього перегляду фігур
+
+    30,  15,  55,  30,  15,  30,  50,  30,  40,  45,  25,  25,
+    45,  16,  30,  60,  25,  30,  35,  35,  40,  10,  60,  30,
+    55,  30,  20,  15,  25,  45,  10,  25,  15,  50,  40,  45,
+    25,  45,  40,  45,  25,  25,  70,  50,  20,  25,  45,  45
 
 };
 
