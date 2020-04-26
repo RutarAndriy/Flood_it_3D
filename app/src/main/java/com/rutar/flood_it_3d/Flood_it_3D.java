@@ -1,5 +1,6 @@
 package com.rutar.flood_it_3d;
 
+import android.os.Build;
 import android.util.Log;
 
 import com.jme3.ui.*;
@@ -397,6 +398,19 @@ case 5:
     break;
 
 }
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+void restart_App() {
+
+if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB)
+     { activity.recreate();
+       game_state_index = 2;
+       sound_volume = 0;
+       delta_volume = 0; }
+else { System.exit(0); }
+
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////

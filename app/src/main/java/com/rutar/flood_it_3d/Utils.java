@@ -194,9 +194,9 @@ case R.id.n_18: set_Background_Speed();
 case R.id.n_16: set_Background_Speed();
                 l_settings.setVisibility(View.GONE);
                 l_menu.setVisibility(View.VISIBLE);
-                if (text_Views_Normal[15].getText().
-                    equals(activity.getString(R.string.settings_restart))) { System.exit(0); }
-
+                if (text_Views_Normal[15].getText().equals(activity
+                                         .getString(R.string.settings_restart)))
+                     { flood_it_3D.restart_App(); }
                 else { Utils.background_Fade_Out();
                        game_state_index = 2;
                        rotate_index = rotate_index > 150 ? 0 : rotate_index; }

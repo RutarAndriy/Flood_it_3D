@@ -32,7 +32,7 @@ static int background_h;                                                        
 static int triangle_count;                                                 // Кількість трикутників
 static int model_count = 48;                                                   // Кількість моделей
 static int color_index = -1;                                            // Індекс активного кольору
-static int game_state_index = -1;                                             // Індекс зміни стану гри
+static int game_state_index = -1;                                         // Індекс зміни стану гри
 static int rotate_index = 150;                                      // Індекс повороту логотипу гри
 
 static int model_per_level = model_count / 4;              // Кількість моделей у конкретному рівні
