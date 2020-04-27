@@ -454,8 +454,8 @@ public void reload_Scores_Table() {
 
 for (int z = 0; z < 30; z++) {
 
-if (scores[z] == 0) { text_Views_Small[z].setText("" + (z + 1) + ". - "); }
-else { text_Views_Small[z].setText("" + (z + 1) + ". " + scores[z] + " " + get_String(R.string.score_step_count)); }
+if (scores[z] == 0) { text_Views_Small[z].setText(" - "); }
+else { text_Views_Small[z].setText(get_Formatted_String(R.string.score_step_count, scores[z])); }
 
 }
 }
