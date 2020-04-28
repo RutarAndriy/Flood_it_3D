@@ -6,7 +6,10 @@ import android.widget.*;
 import android.graphics.*;
 import android.content.res.*;
 
+import java.util.ArrayList;
+
 import static com.rutar.flood_it_3d.Flood_it_Activity.*;
+import static com.rutar.flood_it_3d.Game_Update.scores;
 
 public class Unification {
 
@@ -41,7 +44,7 @@ h_coef = H * 1f / etalon_H;
 
 Resources res = activity.getResources();
 
-for (int s = 0; s < s_index; s++) {
+for (int s = 30; s < s_index; s++) {
 
     String index = "s_" + (s < 9 ? "0" : "") + (s + 1);
     int id = res.getIdentifier(index, "id", activity.getPackageName());

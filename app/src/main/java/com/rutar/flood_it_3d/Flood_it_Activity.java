@@ -452,12 +452,40 @@ return getPreferences(MODE_PRIVATE).getInt(key, default_value);
 @SuppressLint("SetTextI18n")
 public void reload_Scores_Table() {
 
-for (int z = 0; z < 30; z++) {
+ListView listView = activity.findViewById(R.id.game_score_list);
+ArrayList <String> scores_list = new ArrayList<>();
+
+for (int s = 0; s < scores.length - 1; s++) {
+
+    String index = "model_" + (s < 9 ? "0" : "") + (s + 1);
+    scores_list.add(activity.get_String(activity.get_String_Value(index)));
+
+    if (scores[s] == 0) { scores_list.add(" - "); }
+    else { scores_list.add(get_Formatted_String(R.string.score_step_count, scores[s])); }
+
+    if (s == scores.length - 2) { continue; }
+    scores_list.add("");
+
+        //String index = "s_" + (s < 9 ? "0" : "") + (s + 1);
+        //int id = res.getIdentifier(index, "id", activity.getPackageName());
+
+        //text_Views_Small[s] = (TextView) activity.findViewById(id);
+        //text_Views_Small[s].setTypeface(typeface);
+        //text_Views_Small[s].setTextSize(TypedValue.COMPLEX_UNIT_PX, 30 * h_coef);
+        //text_Views_Small[s].setShadowLayer(1, 3 * w_coef, 3 * w_coef, Color.BLACK);
+
+}
+
+ArrayAdapter<String> adapter = new ArrayAdapter(activity, android.R.layout.simple_list_item_1, scores_list.toArray(new String[]{}));
+listView.setAdapter(adapter);
+
+
+/*for (int z = 0; z < 30; z++) {
 
 if (scores[z] == 0) { text_Views_Small[z].setText(" - "); }
 else { text_Views_Small[z].setText(get_Formatted_String(R.string.score_step_count, scores[z])); }
 
-}
+}*/
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
