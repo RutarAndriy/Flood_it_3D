@@ -2,6 +2,9 @@ package com.rutar.flood_it_3d;
 
 import android.os.*;
 import android.view.*;
+import android.content.*;
+import android.graphics.*;
+import java.lang.reflect.*;
 import android.annotation.*;
 import android.view.animation.*;
 
@@ -452,6 +455,31 @@ text_Views_Normal[29].setText(activity.get_Formatted_String(R.string.play_not_en
 l_lock.startAnimation(fade_in_out_animation);
 l_lock.setVisibility(View.VISIBLE);
 if (Build.VERSION.SDK_INT > 10) { l_lock.setAlpha(0); }
+
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// Метод для глобальної заміни шрифту в програмі
+// Інформація взята із StackOverflow.com
+
+public static void override_Default_Font (Context context,
+                                          String default_Font_Name_To_Override,
+                                          String custom_Font_File_Name_In_Assets) {
+
+try {
+
+final Typeface customFontTypeface = Typeface.createFromAsset(context.getAssets(), String
+                                   .format("fonts/%1$s.ttf", custom_Font_File_Name_In_Assets));
+
+final Field defaultFontTypefaceField = Typeface.class
+                                      .getDeclaredField(default_Font_Name_To_Override);
+
+defaultFontTypefaceField.setAccessible(true);
+defaultFontTypefaceField.set(null, customFontTypeface);
+
+}
+
+catch (Exception e) {}
 
 }
 

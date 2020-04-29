@@ -111,7 +111,11 @@ finishOnAppStop = true;
 splashPicID = 0;
 appClass = Flood_it_3D.class.getCanonicalName();
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
+// ................................................................................................
+
+Utils.override_Default_Font(getApplicationContext(), "SANS_SERIF", "v_Steadfast_Regular");
+
+// ................................................................................................
 
 SharedPreferences settings_reader = getPreferences(MODE_PRIVATE);
 SharedPreferences.Editor settings_writer = settings_reader.edit();

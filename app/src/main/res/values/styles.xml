@@ -1,9 +1,10 @@
 <resources>
 
     <style name="Game_Theme"
-           parent="android:Theme.Holo.NoActionBar.Fullscreen">
+           parent="android:Theme.NoTitleBar.Fullscreen">
 
-        <item name="android:colorBackground">#ff0000</item>
+        <item name="android:colorBackground">#000000</item>
+        <item name="android:typeface">sans</item>
 
     </style>
 
