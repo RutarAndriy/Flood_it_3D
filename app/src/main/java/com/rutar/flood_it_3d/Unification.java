@@ -50,7 +50,7 @@ for (int s = 30; s < s_index; s++) {
     int id = res.getIdentifier(index, "id", activity.getPackageName());
 
     text_Views_Small[s] = (TextView) activity.findViewById(id);
-    text_Views_Small[s].setTypeface(typeface);
+    //text_Views_Small[s].setTypeface(typeface);
     text_Views_Small[s].setTextSize(TypedValue.COMPLEX_UNIT_PX, 30 * h_coef);
     text_Views_Small[s].setShadowLayer(1, 3 * w_coef, 3 * w_coef, Color.BLACK);
 
@@ -62,7 +62,7 @@ for (int n = 0; n < n_index; n++) {
     int id = res.getIdentifier(index, "id", activity.getPackageName());
 
     text_Views_Normal[n] = (TextView) activity.findViewById(id);
-    text_Views_Normal[n].setTypeface(typeface);
+    //text_Views_Normal[n].setTypeface(typeface);
     text_Views_Normal[n].setTextSize(TypedValue.COMPLEX_UNIT_PX, 40 * h_coef);
     text_Views_Normal[n].setShadowLayer(1, 3 * w_coef, 3 * w_coef, Color.BLACK);
 
@@ -74,7 +74,7 @@ for (int l = 0; l < l_index; l++) {
     int id = res.getIdentifier(index, "id", activity.getPackageName());
 
     text_Views_Normal[l] = (TextView) activity.findViewById(id);
-    text_Views_Normal[l].setTypeface(typeface);
+    //text_Views_Normal[l].setTypeface(typeface);
     text_Views_Normal[l].setTextSize(TypedValue.COMPLEX_UNIT_PX, 120 * h_coef);
     text_Views_Normal[l].setShadowLayer(1, 3 * w_coef, 3 * w_coef, Color.BLACK);
 
