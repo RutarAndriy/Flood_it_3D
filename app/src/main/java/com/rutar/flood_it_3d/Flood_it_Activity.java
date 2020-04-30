@@ -1,6 +1,7 @@
 package com.rutar.flood_it_3d;
 
 import android.os.*;
+import android.util.Log;
 import android.view.*;
 import android.widget.*;
 import android.content.*;
@@ -457,18 +458,20 @@ return getPreferences(MODE_PRIVATE).getInt(key, default_value);
 public void reload_Scores_Table() {
 
 ListView listView = activity.findViewById(R.id.game_score_list);
+
+String[] model_names = new String[48];
+String[] score_values = new String[48];
+
 ArrayList <String> scores_list = new ArrayList<>();
 
-for (int s = 0; s < scores.length - 1; s++) {
+for (int s = 0; s < 48; s++) {
 
-    String index = "model_" + (s < 9 ? "0" : "") + (s + 1);
-    scores_list.add(activity.get_String(activity.get_String_Value(index)));
+    String index = "model_" + (s <= 9 ? "0" : "") + s;
+    Log.e("TAG", index);
+    model_names[s] = get_String(activity.get_String_Value(index));
 
-    if (scores[s] == 0) { scores_list.add(" - "); }
-    else { scores_list.add(get_Formatted_String(R.string.score_step_count, scores[s])); }
-
-    if (s == scores.length - 2) { continue; }
-    scores_list.add("");
+    if (scores[s] == 0) { score_values[s] = " - "; }
+    else { score_values[s] = get_Formatted_String(R.string.score_step_count, scores[s]); }
 
         //String index = "s_" + (s < 9 ? "0" : "") + (s + 1);
         //int id = res.getIdentifier(index, "id", activity.getPackageName());
@@ -480,9 +483,11 @@ for (int s = 0; s < scores.length - 1; s++) {
 
 }
 
-ArrayAdapter<String> adapter = new ArrayAdapter(activity, android.R.layout.simple_list_item_1, scores_list.toArray(new String[]{}));
-listView.setAdapter(adapter);
+Scores_List_Adapter adapter = Scores_List_Adapter.get_Instance(activity)
+                                                 .set_Model_Names(model_names)
+                                                 .set_Score_Values(score_values);
 
+listView.setAdapter(adapter);
 
 /*for (int z = 0; z < 30; z++) {
 
