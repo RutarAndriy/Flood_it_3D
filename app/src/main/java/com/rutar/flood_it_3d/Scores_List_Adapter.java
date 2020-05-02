@@ -102,6 +102,7 @@ switch (position/(model_count/4)) {
     case 3: model.setTextColor(0xff747474);break;
 }
 
+view.setTag(position);
 view.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT,
                                                    list_view.getHeight()/elements_per_display));
 

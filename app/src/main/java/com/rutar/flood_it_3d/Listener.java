@@ -2,6 +2,7 @@ package com.rutar.flood_it_3d;
 
 import android.util.Log;
 import android.view.*;
+import android.widget.AdapterView;
 
 import com.jme3.math.*;
 import com.jme3.input.event.*;
@@ -18,6 +19,8 @@ public class Listener {
 private static float delta;
 private static float scale;
 private static float distance;
+
+static int list_item_position = -1;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Обробка Android клавіш - Back та Home а також обробка жестів
@@ -130,6 +133,8 @@ if (view.getId() == R.id.n_05 &&
      Flood_it_Activity.app_load_count > 3) { Rate_Dialog.show_Rate_Dialog();
                                              return; }
 
+if (view.getId() == R.id.score_list_item) { list_item_position = (int)(view.getTag()); }
+
 if (hide_off && !anim_is_running && !second_anim_run) {
 
 view.startAnimation(press_animation);
@@ -145,6 +150,7 @@ case R.id.n_07: // Exit -> No
 case R.id.n_08: // Exit -> Yes
 case R.id.n_11: // About -> Back
 case R.id.n_16: // Settings -> Back
+case R.id.score_list_item: // High Score -> List Item
 case R.id.n_18: // High Score -> Back
 case R.id.n_20: // Start Game -> Back
 case R.id.n_21: // Start Game -> Easy or Normal or Hard
@@ -183,6 +189,15 @@ break;
 
 }
 }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+static AdapterView.OnItemClickListener list_view_listener = new AdapterView.OnItemClickListener() {
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        on_View_Click(view);
+    }
+};
 
 // Кінець класу <Listener> ////////////////////////////////////////////////////////////////////////
 

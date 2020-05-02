@@ -457,7 +457,7 @@ return getPreferences(MODE_PRIVATE).getInt(key, default_value);
 @SuppressLint("SetTextI18n")
 public void reload_Scores_Table() {
 
-ListView listView = activity.findViewById(R.id.game_score_list);
+ListView list_view = activity.findViewById(R.id.game_score_list);
 
 String[] model_names = new String[48];
 String[] score_values = new String[48];
@@ -475,7 +475,9 @@ for (int index = 0; index < 48; index++) {
 Scores_List_Adapter adapter = new Scores_List_Adapter(activity);
 adapter.set_Model_Names(model_names);
 adapter.set_Score_Values(score_values);
-listView.setAdapter(adapter);
+
+list_view.setOnItemClickListener(list_view_listener);
+list_view.setAdapter(adapter);
 
 }
 

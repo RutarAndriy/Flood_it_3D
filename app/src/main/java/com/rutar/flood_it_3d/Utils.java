@@ -1,6 +1,7 @@
 package com.rutar.flood_it_3d;
 
 import android.os.*;
+import android.util.Log;
 import android.view.*;
 import android.content.*;
 import android.graphics.*;
@@ -8,6 +9,7 @@ import java.lang.reflect.*;
 import android.annotation.*;
 import android.view.animation.*;
 
+import static com.rutar.flood_it_3d.Listener.*;
 import static com.rutar.flood_it_3d.Unification.*;
 import static com.rutar.flood_it_3d.Game_Update.*;
 import static com.rutar.flood_it_3d.Flood_it_Activity.*;
@@ -184,7 +186,7 @@ case R.id.n_22: set_Background_Speed();
                 game_state = 4;
                 break;
 
-// Score -> Menu
+// High Score -> Menu
 case R.id.n_18: set_Background_Speed();
                 l_score.setVisibility(View.GONE);
                 l_menu.setVisibility(View.VISIBLE);
@@ -192,6 +194,19 @@ case R.id.n_18: set_Background_Speed();
                 game_state_index = 2;
                 rotate_index = rotate_index > 150 ? 0 : rotate_index;
                 break;
+
+// High Score -> List Item
+case R.id.score_list_item: model_index = list_item_position;
+                           l_score.setVisibility(View.GONE);
+                           l_play.setVisibility(View.VISIBLE);
+                           set_Background_Speed();
+                           background_Fade_Out();
+                           set_Model_Preview_Angle();
+                           model_Available_Test();
+                           update_Preview_Text();
+                           game_state_index = 3;
+                           game_state = 3;
+                           break;
 
 // Settings -> Menu
 case R.id.n_16: set_Background_Speed();
