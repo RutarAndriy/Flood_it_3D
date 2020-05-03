@@ -27,7 +27,15 @@ case 0:
 
 for (int z = 0; z < buttons.length; z++) {
     if (Build.VERSION.SDK_INT > 10) {
-        buttons[z].setRotation(rotate_angle * (z%2 == 0 ? 1 : -1));
+        switch (z) {
+            case 0:
+            case 1:
+            case 4:
+            case 5:
+            case 8:
+            case 9:  buttons[z].setRotation(rotate_angle * 1);  break;
+            default: buttons[z].setRotation(rotate_angle * -1); break;
+        }
     }
 }
 
