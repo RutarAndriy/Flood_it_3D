@@ -1,7 +1,6 @@
 package com.rutar.flood_it_3d;
 
 import android.os.*;
-import android.util.Log;
 import android.view.*;
 import android.widget.*;
 import android.content.*;
@@ -63,7 +62,8 @@ public static TextView  logo_01;
 public static ImageView logo_02;
 
 public static ImageView lock;
-public static ImageView[] buttons = new ImageView[10];
+public static ImageView[] buttons_l = new ImageView[10];
+public static ImageView[] buttons_s = new ImageView[10];
 
 public static int sound = 0;
 public static int language = 0;
@@ -296,8 +296,9 @@ lock         = findViewById(R.id.lock);
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-for (int z = 0; z < buttons.length; z++) {
-    buttons[z] = findViewById(get_Id("b_" + ((z + 1) < 10 ? "0" : "") + (z + 1) + "_l"));
+for (int z = 0; z < buttons_l.length; z++) {
+    buttons_l[z] = findViewById(get_Id("b_" + ((z + 1) < 10 ? "0" : "") + (z + 1) + "_l"));
+    buttons_s[z] = findViewById(get_Id("b_" + ((z + 1) < 10 ? "0" : "") + (z + 1) + "_s"));
 }
 
 loading = findViewById(R.id.loading);

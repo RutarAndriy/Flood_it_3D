@@ -666,27 +666,26 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="#E91E63"
                 android:clickable="true"
-                android:onClick="on_View_Click"
-                android:focusable="true">
+                android:focusable="true"
+                android:onClick="on_View_Click">
 
                 <ImageView
                     android:id="@+id/b_01_l"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:src="@drawable/button_01"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/button_1_01_l"
                     tools:ignore="ContentDescription" />
 
                 <ImageView
                     android:id="@+id/b_01_s"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:src="@drawable/icon"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/button_1_01_s"
                     tools:ignore="ContentDescription" />
 
             </FrameLayout>
@@ -706,16 +705,16 @@
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:src="@drawable/button_03"
+                    android:src="@drawable/button_1_03_l"
                     tools:ignore="ContentDescription" />
 
                 <ImageView
                     android:id="@+id/b_03_s"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:src="@drawable/icon"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/button_1_03_s"
                     tools:ignore="ContentDescription" />
 
             </FrameLayout>
@@ -735,16 +734,16 @@
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:src="@drawable/button_05"
+                    android:src="@drawable/button_1_05_l"
                     tools:ignore="ContentDescription" />
 
                 <ImageView
                     android:id="@+id/b_05_s"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:src="@drawable/icon"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/button_1_05_s"
                     tools:ignore="ContentDescription" />
 
             </FrameLayout>
@@ -764,16 +763,16 @@
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:src="@drawable/button_07"
+                    android:src="@drawable/button_1_07_l"
                     tools:ignore="ContentDescription" />
 
                 <ImageView
                     android:id="@+id/b_07_s"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:src="@drawable/icon"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/button_1_07_s"
                     tools:ignore="ContentDescription" />
 
             </FrameLayout>
@@ -793,16 +792,16 @@
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:src="@drawable/button_09"
+                    android:src="@drawable/button_1_09_l"
                     tools:ignore="ContentDescription" />
 
                 <ImageView
                     android:id="@+id/b_09_s"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:src="@drawable/icon"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/button_1_09_s"
                     tools:ignore="ContentDescription" />
 
             </FrameLayout>
@@ -820,27 +819,26 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="#E91E63"
                 android:clickable="true"
-                android:onClick="on_View_Click"
-                android:focusable="true">
+                android:focusable="true"
+                android:onClick="on_View_Click">
 
                 <ImageView
                     android:id="@+id/b_02_l"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:src="@drawable/button_02"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/button_1_02_l"
                     tools:ignore="ContentDescription" />
 
                 <ImageView
                     android:id="@+id/b_02_s"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:src="@drawable/icon"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/button_1_02_s"
                     tools:ignore="ContentDescription" />
 
             </FrameLayout>
@@ -860,16 +858,16 @@
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:src="@drawable/button_04"
+                    android:src="@drawable/button_1_04_l"
                     tools:ignore="ContentDescription" />
 
                 <ImageView
                     android:id="@+id/b_04_s"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:src="@drawable/icon"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/button_1_04_s"
                     tools:ignore="ContentDescription" />
 
             </FrameLayout>
@@ -889,16 +887,16 @@
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:src="@drawable/button_06"
+                    android:src="@drawable/button_1_06_l"
                     tools:ignore="ContentDescription" />
 
                 <ImageView
                     android:id="@+id/b_06_s"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:src="@drawable/icon"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/button_1_06_s"
                     tools:ignore="ContentDescription" />
 
             </FrameLayout>
@@ -918,16 +916,16 @@
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:src="@drawable/button_08"
+                    android:src="@drawable/button_1_08_l"
                     tools:ignore="ContentDescription" />
 
                 <ImageView
                     android:id="@+id/b_08_s"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:src="@drawable/icon"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/button_1_08_s"
                     tools:ignore="ContentDescription" />
 
             </FrameLayout>
@@ -947,16 +945,16 @@
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:src="@drawable/button_10"
+                    android:src="@drawable/button_1_10_l"
                     tools:ignore="ContentDescription" />
 
                 <ImageView
                     android:id="@+id/b_10_s"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:src="@drawable/icon"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/button_1_10_s"
                     tools:ignore="ContentDescription" />
 
             </FrameLayout>
