@@ -297,7 +297,7 @@ lock         = findViewById(R.id.lock);
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 for (int z = 0; z < buttons.length; z++) {
-    buttons[z] = findViewById(get_Id("b_" + ((z + 1) < 10 ? "0" : "") + (z + 1)));
+    buttons[z] = findViewById(get_Id("b_" + ((z + 1) < 10 ? "0" : "") + (z + 1) + "_l"));
 }
 
 loading = findViewById(R.id.loading);

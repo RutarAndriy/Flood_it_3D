@@ -86,19 +86,30 @@ for (int l = 0; l < l_index; l++) {
 
 static void set_Buttons_Width (int index) {
 
-for (ImageView button : buttons) {
+activity.findViewById(R.id.b_01).setVisibility(View.VISIBLE);
+activity.findViewById(R.id.b_02).setVisibility(View.VISIBLE);
+activity.findViewById(R.id.b_03).setVisibility(View.VISIBLE);
+activity.findViewById(R.id.b_04).setVisibility(View.VISIBLE);
+activity.findViewById(R.id.b_05).setVisibility(View.VISIBLE);
+activity.findViewById(R.id.b_06).setVisibility(View.VISIBLE);
+activity.findViewById(R.id.b_07).setVisibility(View.VISIBLE);
+activity.findViewById(R.id.b_08).setVisibility(View.VISIBLE);
+activity.findViewById(R.id.b_09).setVisibility(View.VISIBLE);
+activity.findViewById(R.id.b_10).setVisibility(View.VISIBLE);
+
+/*for (ImageView button : buttons) {
     button.setVisibility(View.VISIBLE);
-    button.getLayoutParams().width = (int) (H / (index == 2 ? 4f : 3f));
-}
+    //button.getLayoutParams().width = (int) (H / (index == 2 ? 4f : 3f));
+}*/
 
-if (index < 3) { buttons[8].setVisibility(View.GONE);
-                 buttons[9].setVisibility(View.GONE); }
+if (index < 3) { activity.findViewById(R.id.b_09).setVisibility(View.GONE);
+                 activity.findViewById(R.id.b_10).setVisibility(View.GONE); }
 
-if (index < 2) { buttons[6].setVisibility(View.GONE);
-                 buttons[7].setVisibility(View.GONE); }
+if (index < 2) { activity.findViewById(R.id.b_07).setVisibility(View.GONE);
+                 activity.findViewById(R.id.b_08).setVisibility(View.GONE); }
 
-if (index < 1) { buttons[4].setVisibility(View.GONE);
-                 buttons[5].setVisibility(View.GONE); }
+if (index < 1) { activity.findViewById(R.id.b_05).setVisibility(View.GONE);
+                 activity.findViewById(R.id.b_06).setVisibility(View.GONE); }
 
 }
 

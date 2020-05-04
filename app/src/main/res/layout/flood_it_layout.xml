@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<FrameLayout xmlns:tools="http://schemas.android.com/tools"
+<FrameLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
              android:layout_height="match_parent"
              xmlns:android="http://schemas.android.com/apk/res/android" >
@@ -646,7 +647,7 @@
         </LinearLayout>
     </FrameLayout>
 
-    <LinearLayout
+    <FrameLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -655,144 +656,314 @@
         android:baselineAligned="false">
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="left"
-            tools:ignore="RtlHardcoded">
+            android:gravity="left|center_vertical"
+            android:orientation="vertical">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+            <FrameLayout
                 android:id="@+id/b_01"
-                android:src="@drawable/button_01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:visibility="visible"
-                android:layout_margin="@dimen/b_margin"
+                android:background="#E91E63"
                 android:clickable="true"
                 android:onClick="on_View_Click"
-                android:focusable="true" />
+                android:focusable="true">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                <ImageView
+                    android:id="@+id/b_01_l"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:src="@drawable/button_01"
+                    tools:ignore="ContentDescription" />
+
+                <ImageView
+                    android:id="@+id/b_01_s"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:src="@drawable/icon"
+                    tools:ignore="ContentDescription" />
+
+            </FrameLayout>
+
+            <FrameLayout
                 android:id="@+id/b_03"
-                android:visibility="visible"
-                android:src="@drawable/button_03"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_margin="@dimen/b_margin"
                 android:clickable="true"
                 android:onClick="on_View_Click"
-                android:focusable="true" />
+                android:focusable="true">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                <ImageView
+                    android:id="@+id/b_03_l"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:src="@drawable/button_03"
+                    tools:ignore="ContentDescription" />
+
+                <ImageView
+                    android:id="@+id/b_03_s"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:src="@drawable/icon"
+                    tools:ignore="ContentDescription" />
+
+            </FrameLayout>
+
+            <FrameLayout
                 android:id="@+id/b_05"
-                android:visibility="visible"
-                android:src="@drawable/button_05"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_margin="@dimen/b_margin"
                 android:clickable="true"
                 android:onClick="on_View_Click"
-                android:focusable="true" />
+                android:focusable="true">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                <ImageView
+                    android:id="@+id/b_05_l"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:src="@drawable/button_05"
+                    tools:ignore="ContentDescription" />
+
+                <ImageView
+                    android:id="@+id/b_05_s"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:src="@drawable/icon"
+                    tools:ignore="ContentDescription" />
+
+            </FrameLayout>
+
+            <FrameLayout
                 android:id="@+id/b_07"
-                android:src="@drawable/button_07"
-                android:layout_weight="1"
-                android:layout_margin="@dimen/b_margin"
-                android:clickable="true"
-                android:onClick="on_View_Click"
-                android:visibility="visible"
-                android:focusable="true" />
-
-            <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:id="@+id/b_09"
-                android:src="@drawable/button_09"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_margin="@dimen/b_margin"
                 android:clickable="true"
                 android:onClick="on_View_Click"
-                android:visibility="visible"
-                android:focusable="true" />
+                android:focusable="true">
+
+                <ImageView
+                    android:id="@+id/b_07_l"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:src="@drawable/button_07"
+                    tools:ignore="ContentDescription" />
+
+                <ImageView
+                    android:id="@+id/b_07_s"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:src="@drawable/icon"
+                    tools:ignore="ContentDescription" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/b_09"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:onClick="on_View_Click"
+                android:focusable="true">
+
+                <ImageView
+                    android:id="@+id/b_09_l"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:src="@drawable/button_09"
+                    tools:ignore="ContentDescription" />
+
+                <ImageView
+                    android:id="@+id/b_09_s"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:src="@drawable/icon"
+                    tools:ignore="ContentDescription" />
+
+            </FrameLayout>
 
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="right"
-            tools:ignore="RtlHardcoded">
+            android:gravity="right|center_vertical"
+            android:orientation="vertical">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+            <FrameLayout
                 android:id="@+id/b_02"
-                android:src="@drawable/button_02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:visibility="visible"
-                android:layout_margin="@dimen/b_margin"
+                android:background="#E91E63"
                 android:clickable="true"
                 android:onClick="on_View_Click"
-                android:focusable="true" />
+                android:focusable="true">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                <ImageView
+                    android:id="@+id/b_02_l"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:src="@drawable/button_02"
+                    tools:ignore="ContentDescription" />
+
+                <ImageView
+                    android:id="@+id/b_02_s"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:src="@drawable/icon"
+                    tools:ignore="ContentDescription" />
+
+            </FrameLayout>
+
+            <FrameLayout
                 android:id="@+id/b_04"
-                android:src="@drawable/button_04"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_margin="@dimen/b_margin"
                 android:clickable="true"
                 android:onClick="on_View_Click"
-                android:focusable="true" />
+                android:focusable="true">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                <ImageView
+                    android:id="@+id/b_04_l"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:src="@drawable/button_04"
+                    tools:ignore="ContentDescription" />
+
+                <ImageView
+                    android:id="@+id/b_04_s"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:src="@drawable/icon"
+                    tools:ignore="ContentDescription" />
+
+            </FrameLayout>
+
+            <FrameLayout
                 android:id="@+id/b_06"
-                android:src="@drawable/button_06"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_margin="@dimen/b_margin"
                 android:clickable="true"
                 android:onClick="on_View_Click"
-                android:visibility="visible"
-                android:focusable="true" />
+                android:focusable="true">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                <ImageView
+                    android:id="@+id/b_06_l"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:src="@drawable/button_06"
+                    tools:ignore="ContentDescription" />
+
+                <ImageView
+                    android:id="@+id/b_06_s"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:src="@drawable/icon"
+                    tools:ignore="ContentDescription" />
+
+            </FrameLayout>
+
+            <FrameLayout
                 android:id="@+id/b_08"
-                android:src="@drawable/button_08"
-                android:layout_weight="1"
-                android:layout_margin="@dimen/b_margin"
-                android:clickable="true"
-                android:onClick="on_View_Click"
-                android:visibility="visible"
-                android:focusable="true" />
-
-            <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:id="@+id/b_10"
-                android:src="@drawable/button_10"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_margin="@dimen/b_margin"
                 android:clickable="true"
                 android:onClick="on_View_Click"
-                android:visibility="visible"
-                android:focusable="true" />
+                android:focusable="true">
+
+                <ImageView
+                    android:id="@+id/b_08_l"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:src="@drawable/button_08"
+                    tools:ignore="ContentDescription" />
+
+                <ImageView
+                    android:id="@+id/b_08_s"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:src="@drawable/icon"
+                    tools:ignore="ContentDescription" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/b_10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:onClick="on_View_Click"
+                android:focusable="true">
+
+                <ImageView
+                    android:id="@+id/b_10_l"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:src="@drawable/button_10"
+                    tools:ignore="ContentDescription" />
+
+                <ImageView
+                    android:id="@+id/b_10_s"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:src="@drawable/icon"
+                    tools:ignore="ContentDescription" />
+
+            </FrameLayout>
 
         </LinearLayout>
-    </LinearLayout>
+
+    </FrameLayout>
 
     <LinearLayout
         android:orientation="vertical"
