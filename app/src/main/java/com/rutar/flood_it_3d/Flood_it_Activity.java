@@ -67,6 +67,7 @@ public static ImageView[] buttons_s = new ImageView[10];
 
 public static int sound = 0;
 public static int language = 0;
+public static int buttons_type = 0;
 public static int def_language = 0;
 public static int touch_sensitive = 0;
 
@@ -137,6 +138,7 @@ else                        { default_language = 0; }
 Locale locale = null;
 sound = load_Settings("sound", 1);
 need_help = load_Settings("help", 1);
+buttons_type = load_Settings("buttons", 0);
 model_index = load_Settings("model_index", 0);
 func_stages = load_Settings("transfusion", 45);
 touch_sensitive = load_Settings("sensitive", 2);
@@ -362,6 +364,16 @@ switch (sound) {
     default: sound_value = "settings_sound_new"; break;
 }
 
+String buttons_style;
+switch (buttons_type) {
+    case 0:  buttons_style = "settings_buttons_type_1"; break;
+    case 1:  buttons_style = "settings_buttons_type_2"; break;
+    case 2:  buttons_style = "settings_buttons_type_3"; break;
+    case 3:  buttons_style = "settings_buttons_type_4"; break;
+    case 4:  buttons_style = "settings_buttons_type_5"; break;
+    default: buttons_style = "settings_buttons_type_6"; break;
+}
+
 String color_transfusion;
 switch (func_stages) {
     case 30: color_transfusion = "settings_color_transfusion_fast";   break;
@@ -379,6 +391,9 @@ switch (language) {
 
 // Налаштування звуків
 text_Views_Normal[12].setText(activity.get_String_Value(sound_value));
+
+// Налаштування вигляду кнопок
+text_Views_Normal[35].setText(activity.get_String_Value(buttons_style));
 
 // Налаштування переливання кольорів
 text_Views_Normal[34].setText(activity.get_String_Value(color_transfusion));

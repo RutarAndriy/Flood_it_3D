@@ -255,7 +255,14 @@ case R.id.n_13: sound -= sound > 0 ? 1 : -2;
                 text_Views_Normal[12].setText(activity.get_String_Value(sound_value));
                 break;
 
-// Налаштування звуків
+// Налаштування вигляду кнопок
+case R.id.n_36: buttons_type += buttons_type < 5 ? 1 : -5;
+                activity.save_Settings("buttons", buttons_type);
+                text_Views_Normal[35].setText(activity
+                    .get_String_Value("settings_buttons_type_" + (buttons_type + 1)));
+                break;
+
+// Налаштування переливання кольорів
 case R.id.n_35: String color_transfusion;
                 switch (func_stages) {
                     case 60: func_stages = 0;
