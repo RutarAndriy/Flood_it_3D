@@ -146,37 +146,37 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="5.3"
-                android:gravity="center_vertical|center_horizontal">
+                android:gravity="center_vertical|center_horizontal"
+                android:orientation="vertical">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/model_00"
                     android:id="@+id/n_19"
-                    android:textColor="#ffffff"
-                    android:textSize="@dimen/text_size_n"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:layout_marginLeft="@dimen/n_margin_h"
-                    android:layout_marginRight="@dimen/n_margin_h"
-                    android:layout_marginTop="-5dp"
-                    android:layout_marginBottom="@dimen/n_margin_v" />
-
-                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/play_triangle_count"
-                    android:id="@+id/s_31"
-                    android:textColor="#ffffff"
-                    android:textSize="@dimen/text_size_s"
+                    android:layout_marginLeft="@dimen/n_margin_h"
+                    android:layout_marginTop="-5dp"
+                    android:layout_marginRight="@dimen/n_margin_h"
+                    android:layout_marginBottom="@dimen/n_margin_v"
                     android:gravity="center_vertical|center_horizontal"
+                    android:text="@string/model_00"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/text_size_n" />
+
+                <TextView
+                    android:id="@+id/s_31"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/s_margin_h"
+                    android:layout_marginTop="-5dp"
                     android:layout_marginRight="@dimen/s_margin_h"
                     android:layout_marginBottom="@dimen/s_margin_v"
-                    android:layout_marginTop="-5dp" />
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="@string/play_triangle_count"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/text_size_s" />
             </LinearLayout>
 
             <LinearLayout
@@ -230,81 +230,59 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <LinearLayout
-                android:orientation="horizontal"
+            <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="5.9">
 
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="left|center_vertical">
+                <TextView
+                    android:id="@+id/n_20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|left"
+                    android:layout_marginLeft="@dimen/n_margin_h"
+                    android:layout_marginTop="@dimen/n_margin_v"
+                    android:layout_marginRight="@dimen/n_margin_h"
+                    android:layout_marginBottom="@dimen/n_margin_v"
+                    android:clickable="true"
+                    android:onClick="on_View_Click"
+                    android:text="@string/play_back"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/text_size_n"
+                    android:focusable="true" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/play_back"
-                        android:id="@+id/n_20"
-                        android:textColor="#ffffff"
-                        android:textSize="@dimen/text_size_n"
-                        android:gravity="left|bottom"
-                        android:clickable="true"
-                        android:onClick="on_View_Click"
-                        android:layout_marginLeft="@dimen/n_margin_h"
-                        android:layout_marginRight="@dimen/n_margin_h"
-                        android:layout_marginTop="@dimen/n_margin_v"
-                        android:layout_marginBottom="@dimen/n_margin_v" />
-                </LinearLayout>
+                <TextView
+                    android:id="@+id/n_21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_marginLeft="@dimen/n_margin_h"
+                    android:layout_marginTop="@dimen/n_margin_v"
+                    android:layout_marginRight="@dimen/n_margin_h"
+                    android:layout_marginBottom="@dimen/n_margin_v"
+                    android:clickable="true"
+                    android:onClick="on_View_Click"
+                    android:text="@string/play_easy"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/text_size_n"
+                    android:focusable="true" />
 
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical|center_horizontal">
-
-                    <TextView
-                        android:id="@+id/n_21"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/n_margin_h"
-                        android:layout_marginTop="@dimen/n_margin_v"
-                        android:layout_marginRight="@dimen/n_margin_h"
-                        android:layout_marginBottom="@dimen/n_margin_v"
-                        android:clickable="true"
-                        android:gravity="bottom|center_horizontal"
-                        android:onClick="on_View_Click"
-                        android:text="@string/play_easy"
-                        android:textColor="#ffffff"
-                        android:textSize="@dimen/text_size_n" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical|right">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/play_start"
-                        android:id="@+id/n_22"
-                        android:textColor="#ffffff"
-                        android:textSize="@dimen/text_size_n"
-                        android:gravity="bottom|right"
-                        android:clickable="true"
-                        android:onClick="on_View_Click"
-                        android:layout_marginLeft="@dimen/n_margin_h"
-                        android:layout_marginRight="@dimen/n_margin_h"
-                        android:layout_marginTop="@dimen/n_margin_v"
-                        android:layout_marginBottom="@dimen/n_margin_v" />
-                </LinearLayout>
-            </LinearLayout>
+                <TextView
+                    android:id="@+id/n_22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|right"
+                    android:layout_marginLeft="@dimen/n_margin_h"
+                    android:layout_marginTop="@dimen/n_margin_v"
+                    android:layout_marginRight="@dimen/n_margin_h"
+                    android:layout_marginBottom="@dimen/n_margin_v"
+                    android:clickable="true"
+                    android:onClick="on_View_Click"
+                    android:text="@string/play_start"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/text_size_n"
+                    android:focusable="true" />
+            </FrameLayout>
         </LinearLayout>
 
         <LinearLayout
@@ -380,7 +358,7 @@
                     android:textSize="@dimen/text_size_n"
                     android:textColor="#ffffff"
                     android:gravity="center_vertical|center_horizontal"
-                    android:layout_weight="1.7"
+                    android:layout_weight="1.85"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginLeft="@dimen/n_margin_h"
                     android:layout_marginRight="@dimen/n_margin_h"
@@ -400,6 +378,22 @@
                     android:layout_height="wrap_content"
                     android:text="@string/settings_sound_old"
                     android:id="@+id/n_13"
+                    android:textSize="@dimen/text_size_n"
+                    android:textColor="#ffffff"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:clickable="true"
+                    android:onClick="on_View_Click"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="@dimen/n_margin_h"
+                    android:layout_marginRight="@dimen/n_margin_h"
+                    android:layout_marginTop="@dimen/n_margin_v"
+                    android:layout_marginBottom="@dimen/n_margin_v" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/settings_buttons_type_1"
+                    android:id="@+id/n_36"
                     android:textSize="@dimen/text_size_n"
                     android:textColor="#ffffff"
                     android:gravity="center_vertical|center_horizontal"
@@ -465,7 +459,7 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1.7">
+                android:layout_weight="1.85">
 
                 <TextView
                     android:layout_width="wrap_content"
