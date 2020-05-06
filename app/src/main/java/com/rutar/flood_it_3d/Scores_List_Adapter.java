@@ -7,8 +7,9 @@ import android.content.*;
 import android.graphics.*;
 import android.annotation.*;
 
+import static com.rutar.flood_it_3d.Constants.*;
 import static com.rutar.flood_it_3d.Unification.*;
-import static com.rutar.flood_it_3d.Game_Update.model_count;
+
 import static com.rutar.flood_it_3d.Flood_it_Activity.activity;
 
 // ................................................................................................
@@ -95,7 +96,7 @@ score.setText(score_values[position]);
 score.setTextSize(TypedValue.COMPLEX_UNIT_PX, 26 * h_coef);
 score.setShadowLayer(1, 3 * w_coef, 3 * w_coef, Color.BLACK);
 
-switch (position/(model_count/4)) {
+switch (position/(model_per_level)) {
     case 0: model.setTextColor(0xff7E65FE);break;
     case 1: model.setTextColor(0xff65F475);break;
     case 2: model.setTextColor(0xffFE6565);break;
