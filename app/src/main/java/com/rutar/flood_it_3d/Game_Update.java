@@ -534,10 +534,10 @@ while (!temp_set.isEmpty());
 public static void set_Background_Speed() {
 
 do { dx = (float) (Math.random() * 3) - 1.5f; }
-while (dx < 0.2f && dx > -0.2f);
+while (dx < 0.3f && dx > -0.3f);
 
 do { dy = (float) (Math.random() * 3) - 1.5f; }
-while (dy < 0.2f && dy > -0.2f);
+while (dy < 0.3f && dy > -0.3f);
 
 }
 
