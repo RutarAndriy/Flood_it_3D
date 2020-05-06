@@ -11,17 +11,17 @@ import static com.rutar.flood_it_3d.Flood_it_Activity.*;
 
 // ................................................................................................
 
-public class Rate_Dialog {
+class Rate_Dialog {
 
-public static boolean app_is_rated = false;
-public static boolean rate_is_show = false;
+static boolean app_is_rated = false;
+static boolean rate_is_show = false;
 
-public static boolean show_rate_dialog = true;
+static boolean show_rate_dialog = true;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Показ діалогового вікна оцінювання
 
-public static void show_Rate_Dialog() {
+static void show_Rate_Dialog() {
 
 String app_name = activity.getString(R.string.app_name);
 String rate_message = activity.getString(R.string.rate_text);
@@ -109,7 +109,7 @@ show_rate_dialog = false;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-public static void save_Rate_Settings() {
+static void save_Rate_Settings() {
 
 SharedPreferences settings_reader = activity.getPreferences(MODE_PRIVATE);
 SharedPreferences.Editor settings_writer = settings_reader.edit();

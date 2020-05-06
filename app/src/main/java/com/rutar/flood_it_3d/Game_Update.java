@@ -20,7 +20,7 @@ import static com.jme3.scene.VertexBuffer.*;
 import static com.rutar.flood_it_3d.Constants.*;
 import static com.rutar.flood_it_3d.Flood_it_3D.*;
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
+// ................................................................................................
 
 class Game_Update {
 
@@ -42,62 +42,62 @@ private static int color_now;                                     // Актив�
 private static int[] color_indexes;                                      // Масив індексів кольорів
 private static int[] vertex_indexes = { 0,1,2 };                       // Масив вершин в трикутнику
 
-public static int[] scores = new int[model_count];
+static int[] scores = new int[model_count];
 
-public static long tmp;                                                      // Допоміжна перемінна
-public static long processing_time = -1;                                      // Час обробки моделі
-public static long optimizing_time = -1;                                  // Час оптимізації моделі
+static long tmp;                                                      // Допоміжна перемінна
+static long processing_time = -1;                                      // Час обробки моделі
+static long optimizing_time = -1;                                  // Час оптимізації моделі
 
-public static Mesh temp_mesh = new Mesh();                                     // Тимчасовий каркас
-public static Mesh[] model_meshes = new Mesh[2];                                   // Каркас моделі
+static Mesh temp_mesh = new Mesh();                                     // Тимчасовий каркас
+static Mesh[] model_meshes = new Mesh[2];                                   // Каркас моделі
 
-public static Vector3f background_position;                          // Позиція фонового зображення
+static Vector3f background_position;                          // Позиція фонового зображення
 
-public static Vector3f[] normals = new Vector3f[3];                               // Масив нормалей
-public static Vector3f[] vertices_temp = new Vector3f[3];                // Тимчасовий масив вершин
+static Vector3f[] normals = new Vector3f[3];                               // Масив нормалей
+static Vector3f[] vertices_temp = new Vector3f[3];                // Тимчасовий масив вершин
 
-public static boolean is_done = true;              // Перемінна вказує на завершення обробки моделі
-public static boolean game_is_running = false;                            // Якщо true - гра триває
-public static boolean work_start = false;
+static boolean is_done = true;              // Перемінна вказує на завершення обробки моделі
+static boolean game_is_running = false;                            // Якщо true - гра триває
+static boolean work_start = false;
 
-public static Triangle temp_triangle;                                       // Тимчасовий трикутник
-public static Triangle start_triangle;                                      // Початковий трикутник
+static Triangle temp_triangle;                                       // Тимчасовий трикутник
+static Triangle start_triangle;                                      // Початковий трикутник
 
-public static ParticleEmitter emitter;                                        // Генератор частинок
-public static Picture background_picture;                                      // Фонове зображення
+static ParticleEmitter emitter;                                        // Генератор частинок
+static Picture background_picture;                                      // Фонове зображення
 
-public static float preview_rotate_angle = 45;                  // Кут нахилу моделі передперегляду
+static float preview_rotate_angle = 45;                  // Кут нахилу моделі передперегляду
 
 // ................................................................................................
 
-public static LinkedHashSet<Integer> dynamic_index_list    // Масив індексів динамічних трикутників
+static LinkedHashSet<Integer> dynamic_index_list    // Масив індексів динамічних трикутників
         = new LinkedHashSet<>();
 
-public static ArrayList<Geometry> dynamic_parts                   // Масив динамічних частин фігури
+static ArrayList<Geometry> dynamic_parts                   // Масив динамічних частин фігури
         = new ArrayList<>();
 
-public static ArrayList<Geometry>[] static_parts                  // Масив кольорових частин фігури
+static ArrayList<Geometry>[] static_parts                  // Масив кольорових частин фігури
         = new ArrayList[10];
 
 // ................................................................................................
 
-public static Quaternion quaternion = new Quaternion();             // Кватерніон повороту логотипу
-public static Quaternion[] quaternions = new Quaternion[3];                   // Масив кватерніонів
+static Quaternion quaternion = new Quaternion();             // Кватерніон повороту логотипу
+static Quaternion[] quaternions = new Quaternion[3];                   // Масив кватерніонів
 
-public static Texture2D[] backgrounds = new Texture2D[4];                  // Масив фонових текстур
+static Texture2D[] backgrounds = new Texture2D[4];                  // Масив фонових текстур
 
-public static Material[] materials = new Material[11];                          // Масив матеріалів
-public static Material dynamic_material = null;                              // Динамічний матеріал
+static Material[] materials = new Material[11];                          // Масив матеріалів
+static Material dynamic_material = null;                              // Динамічний матеріал
 
 
-public static Geometry[] static_geometries = new Geometry[10];                // Статичні геометрії
-public static Geometry dynamic_geometry = null;                              // Динамічна геометрія
+static Geometry[] static_geometries = new Geometry[10];                // Статичні геометрії
+static Geometry dynamic_geometry = null;                              // Динамічна геометрія
 
-public static Spatial logo;                                                          // Логотип гри
-public static Spatial preview_model;                               // Модель попереднього перегляду
-public static Triangle[] triangles_list;                           // Масив усіх трикутників фігури
-public static Geometry[] geometries_list;                            // Масив геометрій трикутників
-public static Game_Triangle[] game_triangles_list; // Масив ігрових трикутників
+static Spatial logo;                                                          // Логотип гри
+static Spatial preview_model;                               // Модель попереднього перегляду
+static Triangle[] triangles_list;                           // Масив усіх трикутників фігури
+static Geometry[] geometries_list;                            // Масив геометрій трикутників
+static Game_Triangle[] game_triangles_list; // Масив ігрових трикутників
 
 private static Mesh mesh_temp;
 

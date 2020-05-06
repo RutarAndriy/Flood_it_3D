@@ -1,6 +1,5 @@
 package com.rutar.flood_it_3d;
 
-import android.util.Log;
 import android.view.*;
 import android.widget.AdapterView;
 
@@ -12,9 +11,9 @@ import static com.rutar.flood_it_3d.Flood_it_3D.*;
 import static com.rutar.flood_it_3d.Game_Update.*;
 import static com.rutar.flood_it_3d.Flood_it_Activity.*;
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
+// ................................................................................................
 
-public class Listener {
+class Listener {
 
 private static float delta;
 private static float scale;

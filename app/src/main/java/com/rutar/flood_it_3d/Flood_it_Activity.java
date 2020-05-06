@@ -23,69 +23,69 @@ import static com.rutar.flood_it_3d.Listener.*;
 import static com.rutar.flood_it_3d.Unification.*;
 import static com.rutar.flood_it_3d.Game_Update.*;
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
+// ................................................................................................
 
 public class Flood_it_Activity extends AndroidHarness implements Animation.AnimationListener {
 
-public static Flood_it_3D flood_it_3D;
-public static Flood_it_Activity activity;
+static Flood_it_3D flood_it_3D;
+static Flood_it_Activity activity;
 
-public static Animation fade_in;
-public static Animation fade_out;
-public static Animation help_fade_in;
-public static Animation press_animation;
-public static Animation complete_fade_in;
-public static Animation background_fade_in;
-public static Animation background_fade_out;
-public static Animation fade_in_out_animation;
+static Animation fade_in;
+static Animation fade_out;
+static Animation help_fade_in;
+static Animation press_animation;
+static Animation complete_fade_in;
+static Animation background_fade_in;
+static Animation background_fade_out;
+static Animation fade_in_out_animation;
 
-public static ViewGroup l_menu;
-public static ViewGroup l_play;
-public static ViewGroup l_score;
-public static ViewGroup l_settings;
-public static ViewGroup l_about;
-public static ViewGroup l_exit;
-public static ViewGroup l_complete;
-public static ViewGroup l_pause;
-public static ViewGroup l_lock;
-public static ViewGroup l_help;
+static ViewGroup l_menu;
+static ViewGroup l_play;
+static ViewGroup l_score;
+static ViewGroup l_settings;
+static ViewGroup l_about;
+static ViewGroup l_exit;
+static ViewGroup l_complete;
+static ViewGroup l_pause;
+static ViewGroup l_lock;
+static ViewGroup l_help;
 
-public static ViewGroup button_board;
+static ViewGroup button_board;
 
-public static int game_state = -1;
+static int game_state = -1;
 
-public static Typeface typeface;
-public static TextView background;
-public static ProgressBar loading;
+static Typeface typeface;
+static TextView background;
+static ProgressBar loading;
 
-public static TextView  logo_01;
-public static ImageView logo_02;
+static TextView  logo_01;
+static ImageView logo_02;
 
-public static ImageView lock;
-public static ImageView[] buttons_l = new ImageView[10];
-public static ImageView[] buttons_s = new ImageView[10];
+static ImageView lock;
+static ImageView[] buttons_l = new ImageView[10];
+static ImageView[] buttons_s = new ImageView[10];
 
-public static int sound = 0;
-public static int language = 0;
-public static int buttons_type = 0;
-public static int def_language = 0;
-public static int touch_sensitive = 0;
+static int sound = 0;
+static int language = 0;
+static int buttons_type = 0;
+static int def_language = 0;
+static int touch_sensitive = 0;
 
-public static int app_load_count = 0;
+static int app_load_count = 0;
 
-public static boolean hide_off = true;
+static boolean hide_off = true;
 
-public static Handler handler;
-public static float rotate_angle = 0;
+static Handler handler;
+static float rotate_angle = 0;
 
-public static boolean pause_is_on = false;
-public static boolean level_is_lock = false;
-public static SharedPreferences.Editor editor;
+static boolean pause_is_on = false;
+static boolean level_is_lock = false;
+static SharedPreferences.Editor editor;
 
-public static boolean thread_is_alive;
+static boolean thread_is_alive;
 
-public static boolean anim_is_running = false;
-public static boolean second_anim_run = false;
+static boolean anim_is_running = false;
+static boolean second_anim_run = false;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -200,6 +200,7 @@ protected void onStop() { super.onStop(); }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
+@SuppressLint("DefaultLocale")
 @Override
 protected void onResume() {
 

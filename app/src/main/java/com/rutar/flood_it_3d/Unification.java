@@ -6,12 +6,11 @@ import android.widget.*;
 import android.graphics.*;
 import android.content.res.*;
 
-import java.util.ArrayList;
-
 import static com.rutar.flood_it_3d.Flood_it_Activity.*;
-import static com.rutar.flood_it_3d.Game_Update.scores;
 
-public class Unification {
+// ................................................................................................
+
+class Unification {
 
 static int W;
 static int H;

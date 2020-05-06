@@ -1,8 +1,6 @@
 package com.rutar.flood_it_3d;
 
-import android.os.Build;
-import android.util.Log;
-
+import android.os.*;
 import com.jme3.ui.*;
 import com.jme3.app.*;
 import com.jme3.math.*;
@@ -15,27 +13,27 @@ import com.jme3.texture.*;
 import com.jme3.renderer.*;
 import com.jme3.input.controls.*;
 
-import static com.jme3.math.FastMath.DEG_TO_RAD;
+import static com.jme3.math.FastMath.*;
 import static com.rutar.flood_it_3d.Constants.*;
 import static com.rutar.flood_it_3d.Unification.*;
 import static com.rutar.flood_it_3d.Game_Update.*;
 import static com.rutar.flood_it_3d.Flood_it_Activity.*;
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
+// ................................................................................................
 
 public class Flood_it_3D extends SimpleApplication {
 
-public static Node logo_node = new Node("logo");                           // Вузол з логотипом гри
-public static Node game_node_main = new Node("game_main");                // Головний ігровий вузол
-public static Node game_node_child = new Node("game_child");            // Допоміжний ігровий вузол
-public static Node preview_node_main = new Node("preview_main");           // Головний вузол вибору
-public static Node preview_node_child = new Node("preview_child");       // Допоміжний вузол вибору
+static Node logo_node = new Node("logo");                           // Вузол з логотипом гри
+static Node game_node_main = new Node("game_main");                // Головний ігровий вузол
+static Node game_node_child = new Node("game_child");            // Допоміжний ігровий вузол
+static Node preview_node_main = new Node("preview_main");           // Головний вузол вибору
+static Node preview_node_child = new Node("preview_child");       // Допоміжний вузол вибору
 
-public static AudioNode current_sound = new AudioNode();                              // Аудіовузол
+static AudioNode current_sound = new AudioNode();                              // Аудіовузол
 
-public static ColorRGBA color_tmp = null;
-public static ColorRGBA color_prev = null;
-public static ColorRGBA color_next = null;
+static ColorRGBA color_tmp = null;
+static ColorRGBA color_prev = null;
+static ColorRGBA color_next = null;
 
 private final Runtime runtime = Runtime.getRuntime();
 private BitmapText debug;                          // Допоміжна інформація про використання пам'яті

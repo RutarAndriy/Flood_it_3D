@@ -1,17 +1,14 @@
 package com.rutar.flood_it_3d;
 
-import android.annotation.SuppressLint;
-
 import android.os.*;
 import android.view.*;
+import android.annotation.*;
 import android.view.animation.*;
 
 import static com.rutar.flood_it_3d.Constants.*;
 import static com.rutar.flood_it_3d.Unification.*;
 import static com.rutar.flood_it_3d.Game_Update.*;
 import static com.rutar.flood_it_3d.Flood_it_Activity.*;
-
-import static java.lang.String.format;
 
 // ................................................................................................
 

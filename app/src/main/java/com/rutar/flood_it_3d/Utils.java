@@ -1,7 +1,6 @@
 package com.rutar.flood_it_3d;
 
 import android.os.*;
-import android.util.Log;
 import android.view.*;
 import android.content.*;
 import android.graphics.*;
@@ -14,6 +13,8 @@ import static com.rutar.flood_it_3d.Constants.*;
 import static com.rutar.flood_it_3d.Unification.*;
 import static com.rutar.flood_it_3d.Game_Update.*;
 import static com.rutar.flood_it_3d.Flood_it_Activity.*;
+
+// ................................................................................................
 
 class Utils {
 
