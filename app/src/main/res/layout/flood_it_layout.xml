@@ -19,7 +19,7 @@
         android:orientation="vertical"
         android:visibility="gone">
 
-        <LinearLayout
+        <FrameLayout
             android:id="@+id/logo_3d"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -39,7 +39,7 @@
                 android:focusable="true"
                 tools:ignore="RtlHardcoded" />
 
-        </LinearLayout>
+        </FrameLayout>
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -231,6 +231,19 @@
                 android:paddingBottom="@dimen/l_margin_v"
                 android:focusable="true"
                 tools:ignore="NestedWeights,RtlHardcoded,RtlSymmetry" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/lock"
+                android:src="@mipmap/lock"
+                android:layout_gravity="center"
+                android:padding="25dp"
+                android:visibility="gone"
+                android:clickable="true"
+                android:onClick="on_View_Click"
+                android:focusable="true"
+                tools:ignore="ContentDescription" />
 
         </FrameLayout>
 
@@ -490,74 +503,51 @@
         android:id="@+id/l_about"
         android:orientation="vertical" >
 
-        <LinearLayout
-            android:orientation="vertical"
+        <TextView
+            android:layout_weight="1.8"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="5"
-            android:gravity="center_vertical|center_horizontal">
+            android:text="@string/about_title"
+            android:id="@+id/n_09"
+            android:textSize="@dimen/text_size_n"
+            android:textColor="#ffffff"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_marginLeft="@dimen/n_margin_h"
+            android:layout_marginRight="@dimen/n_margin_h"
+            android:layout_marginTop="@dimen/n_margin_v"
+            android:layout_marginBottom="@dimen/n_margin_v" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/about_title"
-                android:id="@+id/n_09"
-                android:textSize="@dimen/text_size_n"
-                android:textColor="#ffffff"
-                android:gravity="center_vertical|center_horizontal"
-                android:layout_marginLeft="@dimen/n_margin_h"
-                android:layout_marginRight="@dimen/n_margin_h"
-                android:layout_marginTop="@dimen/n_margin_v"
-                android:layout_marginBottom="@dimen/n_margin_v" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="vertical"
+        <TextView
+            android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="2"
-            android:gravity="center_vertical|center_horizontal">
+            android:text="@string/about_text"
+            android:id="@+id/n_10"
+            android:textSize="@dimen/text_size_n"
+            android:textColor="#ffffff"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_marginLeft="@dimen/n_margin_h"
+            android:layout_marginRight="@dimen/n_margin_h"
+            android:layout_marginTop="@dimen/n_margin_v"
+            android:layout_marginBottom="@dimen/n_margin_v" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/about_text"
-                android:id="@+id/n_10"
-                android:textSize="@dimen/text_size_n"
-                android:textColor="#ffffff"
-                android:gravity="center_vertical|center_horizontal"
-                android:layout_marginLeft="@dimen/n_margin_h"
-                android:layout_marginRight="@dimen/n_margin_h"
-                android:layout_marginTop="@dimen/n_margin_v"
-                android:layout_marginBottom="@dimen/n_margin_v" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="vertical"
+        <TextView
+            android:layout_weight="1.8"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="5"
-            android:gravity="center_vertical|center_horizontal">
+            android:text="@string/about_back"
+            android:id="@+id/n_11"
+            android:textSize="@dimen/text_size_n"
+            android:textColor="#ffffff"
+            android:gravity="center_vertical|center_horizontal"
+            android:clickable="true"
+            android:onClick="on_View_Click"
+            android:layout_marginLeft="@dimen/n_margin_h"
+            android:layout_marginRight="@dimen/n_margin_h"
+            android:layout_marginTop="@dimen/n_margin_v"
+            android:layout_marginBottom="@dimen/n_margin_v"
+            android:focusable="true" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/about_back"
-                android:id="@+id/n_11"
-                android:textSize="@dimen/text_size_n"
-                android:textColor="#ffffff"
-                android:gravity="center_vertical|center_horizontal"
-                android:clickable="true"
-                android:onClick="on_View_Click"
-                android:layout_marginLeft="@dimen/n_margin_h"
-                android:layout_marginRight="@dimen/n_margin_h"
-                android:layout_marginTop="@dimen/n_margin_v"
-                android:layout_marginBottom="@dimen/n_margin_v"
-                android:focusable="true" />
-
-        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -948,48 +938,33 @@
     android:id="@+id/l_complete"
     android:visibility="gone">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <TextView
+        android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:text="@string/game_level_complete"
+        android:textSize="@dimen/text_size_n"
+        android:layout_marginLeft="@dimen/l_margin_h"
+        android:layout_marginRight="@dimen/l_margin_h"
+        android:layout_marginTop="@dimen/l_margin_v"
+        android:gravity="bottom|center_horizontal"
+        android:textColor="#ffffff"
+        android:id="@+id/n_23" />
+
+    <TextView
         android:layout_weight="1"
-        android:gravity="center_vertical|bottom">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/game_level_complete"
-            android:textSize="@dimen/text_size_n"
-            android:layout_marginLeft="@dimen/l_margin_h"
-            android:layout_marginRight="@dimen/l_margin_h"
-            android:layout_marginTop="@dimen/l_margin_v"
-            android:layout_gravity="center"
-            android:textColor="#ffffff"
-            android:id="@+id/n_23" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="top|center_horizontal">
+        android:text="@string/app_name"
+        android:id="@+id/n_24"
+        android:textSize="@dimen/text_size_n"
+        android:layout_marginLeft="@dimen/l_margin_h"
+        android:layout_marginRight="@dimen/l_margin_h"
+        android:layout_marginBottom="@dimen/l_margin_v"
+        android:gravity="top|center_horizontal"
+        android:textColor="#ffffff"
+        android:layout_marginTop="@dimen/l_margin_v" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/app_name"
-            android:id="@+id/n_24"
-            android:textSize="@dimen/text_size_n"
-            android:layout_marginLeft="@dimen/l_margin_h"
-            android:layout_marginRight="@dimen/l_margin_h"
-            android:layout_marginBottom="@dimen/l_margin_v"
-            android:layout_gravity="center"
-            android:textColor="#ffffff"
-            android:layout_marginTop="@dimen/l_margin_v" />
-
-    </LinearLayout>
 </LinearLayout>
 
 <LinearLayout
@@ -1000,22 +975,15 @@
     android:id="@+id/l_pause"
     android:visibility="gone">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <TextView
+        android:layout_weight="1.2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1.2"
-        android:gravity="center_vertical|center_horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/game_pause"
-            android:id="@+id/n_25"
-            android:textSize="@dimen/text_size_n"
-            android:textColor="#ffffff" />
-
-    </LinearLayout>
+        android:text="@string/game_pause"
+        android:id="@+id/n_25"
+        android:textSize="@dimen/text_size_n"
+        android:gravity="center"
+        android:textColor="#ffffff" />
 
     <LinearLayout
         android:orientation="vertical"
@@ -1090,57 +1058,6 @@
     </LinearLayout>
 </LinearLayout>
 
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#383838"
-    android:id="@+id/logo_01"
-    android:visibility="visible" />
-
-<ImageView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/logo_02"
-    android:src="@mipmap/jme_logo"
-    android:scaleType="fitCenter"
-    android:visibility="visible"
-    tools:ignore="ContentDescription" />
-
-<ImageView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:id="@+id/lock"
-    android:src="@mipmap/lock"
-    android:layout_gravity="center"
-    android:padding="25dp"
-    android:visibility="gone"
-    android:clickable="true"
-    android:onClick="on_View_Click"
-    android:focusable="true"
-    tools:ignore="ContentDescription" />
-
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center_vertical|center_horizontal"
-    android:id="@+id/l_lock"
-    android:orientation="vertical"
-    android:visibility="gone"
-    android:background="#cc000000">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/play_not_enough_points"
-        android:id="@+id/n_30"
-        android:textSize="@dimen/text_size_n"
-        android:layout_marginRight="70dp"
-        android:layout_marginLeft="70dp"
-        android:gravity="center_vertical|center_horizontal"
-        android:textColor="#ffffff" />
-
-</LinearLayout>
-
 <FrameLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -1156,6 +1073,8 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingTop="@dimen/l_margin_v"
+            android:paddingBottom="@dimen/l_margin_v"
             android:background="#cc000000" >
 
             <TextView
@@ -1216,6 +1135,39 @@
         </LinearLayout>
     </ScrollView>
 </FrameLayout>
+
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical|center_horizontal"
+    android:id="@+id/l_lock"
+    android:orientation="vertical"
+    android:visibility="gone"
+    android:background="#cc000000">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/play_not_enough_points"
+        android:id="@+id/n_30"
+        android:textSize="@dimen/text_size_n"
+        android:layout_marginRight="70dp"
+        android:layout_marginLeft="70dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="#ffffff" />
+
+</FrameLayout>
+
+    <ImageView
+        android:id="@+id/jme_logo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#383838"
+        android:scaleType="fitCenter"
+        android:src="@mipmap/jme_logo"
+        android:visibility="visible"
+        tools:ignore="ContentDescription" />
 
 <TextView
     android:layout_width="match_parent"

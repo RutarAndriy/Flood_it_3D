@@ -58,8 +58,7 @@ static Typeface typeface;
 static TextView background;
 static ProgressBar loading;
 
-static TextView  logo_01;
-static ImageView logo_02;
+static ImageView jme_logo;
 
 static ImageView lock;
 static ImageView[] buttons_l = new ImageView[10];
@@ -291,10 +290,7 @@ l_lock       = findViewById(R.id.l_lock);
 l_help       = findViewById(R.id.l_help);
 
 button_board = findViewById(R.id.button_board);
-
-logo_01      = findViewById(R.id.logo_01);
-logo_02      = findViewById(R.id.logo_02);
-
+jme_logo     = findViewById(R.id.jme_logo);
 lock         = findViewById(R.id.lock);
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////

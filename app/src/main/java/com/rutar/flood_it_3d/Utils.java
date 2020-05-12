@@ -114,8 +114,7 @@ case -1: set_Background_Speed();
 // Hide JME logo
 case 0: l_menu.setVisibility(View.VISIBLE);
         background_fade_in.setStartOffset(0);
-        logo_01.setVisibility(View.GONE);
-        logo_02.setVisibility(View.GONE);
+        jme_logo.setVisibility(View.GONE);
         Utils.update_Preview_Text();
         Utils.background_Fade_Out();
         flood_it_3D.play_Sounds(0);
