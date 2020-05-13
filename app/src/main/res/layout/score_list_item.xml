@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/model_00"
-        android:textColor="#ffffff" />
+        android:textColor="@color/text_color" />
 
     <TextView
         android:id="@+id/score_value"
@@ -20,6 +20,6 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/score_step_count"
-        android:textColor="#ffffff" />
+        android:textColor="@color/text_color" />
 
 </LinearLayout>

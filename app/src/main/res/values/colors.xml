@@ -1,54 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="b_01_c_01">#FF0000</color>
-    <color name="b_01_c_02">#FF0000</color>
-    <color name="b_01_c_03">#FF0000</color>
-    <color name="b_01_c_04">#FF0000</color>
+    <color name="text_color">#FFFFFFFF</color>
+    <color name="divider_color">#66535353</color>
+    <color name="text_background_color">#cc000000</color>
+    <color name="fade_background_color">#FF000000</color>
+    <color name="scores_background_color">#66000000</color>
 
-    <color name="b_02_c_01">#0000FF</color>
-    <color name="b_02_c_02">#0000FF</color>
-    <color name="b_02_c_03">#0000FF</color>
-    <color name="b_02_c_04">#0000FF</color>
+    <color name="b_01_c_01">#FFFE1100</color>
+    <color name="b_01_c_02">#43FB1100</color>
+    <color name="b_01_c_03">#86FF0000</color>
 
-    <color name="b_03_c_01">#00FF00</color>
-    <color name="b_03_c_02">#00FF00</color>
-    <color name="b_03_c_03">#00FF00</color>
-    <color name="b_03_c_04">#00FF00</color>
+    <color name="b_02_c_01">#FF1912FE</color>
+    <color name="b_02_c_02">#432414FA</color>
+    <color name="b_02_c_03">#862414FA</color>
 
-    <color name="b_04_c_01">#FFFF00</color>
-    <color name="b_04_c_02">#FFFF00</color>
-    <color name="b_04_c_03">#FFFF00</color>
-    <color name="b_04_c_04">#FFFF00</color>
+    <color name="b_03_c_01">#FF06F033</color>
+    <color name="b_03_c_02">#4308EC3D</color>
+    <color name="b_03_c_03">#8608EC3D</color>
 
-    <color name="b_05_c_01">#FFFFFF</color>
-    <color name="b_05_c_02">#FFFFFF</color>
-    <color name="b_05_c_03">#FFFFFF</color>
-    <color name="b_05_c_04">#FFFFFF</color>
+    <color name="b_04_c_01">#FFFFF200</color>
+    <color name="b_04_c_02">#43FBF300</color>
+    <color name="b_04_c_03">#86FBF300</color>
 
-    <color name="b_06_c_01">#252525</color>
-    <color name="b_06_c_02">#252525</color>
-    <color name="b_06_c_03">#252525</color>
-    <color name="b_06_c_04">#252525</color>
+    <color name="b_05_c_01">#FFFFFFFF</color>
+    <color name="b_05_c_02">#43FFFFFF</color>
+    <color name="b_05_c_03">#86FFFFFF</color>
 
-    <color name="b_07_c_01">#FF00FF</color>
-    <color name="b_07_c_02">#FF00FF</color>
-    <color name="b_07_c_03">#FF00FF</color>
-    <color name="b_07_c_04">#FF00FF</color>
+    <color name="b_06_c_01">#FF747474</color>
+    <color name="b_06_c_02">#43777777</color>
+    <color name="b_06_c_03">#86777777</color>
 
-    <color name="b_08_c_01">#00FFFF</color>
-    <color name="b_08_c_02">#00FFFF</color>
-    <color name="b_08_c_03">#00FFFF</color>
-    <color name="b_08_c_04">#00FFFF</color>
+    <color name="b_07_c_01">#FFAF00FF</color>
+    <color name="b_07_c_02">#43AC00FB</color>
+    <color name="b_07_c_03">#86AC00FB</color>
 
-    <color name="b_09_c_01">#84DC1F</color>
-    <color name="b_09_c_02">#84DC1F</color>
-    <color name="b_09_c_03">#84DC1F</color>
-    <color name="b_09_c_04">#84DC1F</color>
+    <color name="b_08_c_01">#FF35D8E6</color>
+    <color name="b_08_c_02">#4336CFE3</color>
+    <color name="b_08_c_03">#8636CFE3</color>
 
-    <color name="b_10_c_01">#FFC107</color>
-    <color name="b_10_c_02">#FFC107</color>
-    <color name="b_10_c_03">#FFC107</color>
-    <color name="b_10_c_04">#FFC107</color>
+    <color name="b_09_c_01">#FF84FF00</color>
+    <color name="b_09_c_02">#437CFF00</color>
+    <color name="b_09_c_03">#867CFF00</color>
+
+    <color name="b_10_c_01">#FFFF8800</color>
+    <color name="b_10_c_02">#43FF9000</color>
+    <color name="b_10_c_03">#86FF9000</color>
 
 </resources>
