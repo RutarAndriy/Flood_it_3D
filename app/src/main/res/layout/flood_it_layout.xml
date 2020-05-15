@@ -3,6 +3,7 @@
 <FrameLayout android:layout_width="match_parent"
              android:layout_height="match_parent"
              xmlns:tools="http://schemas.android.com/tools"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
              xmlns:android="http://schemas.android.com/apk/res/android" >
 
 <!--////////////////////////////////////////////////////////////////////////////////////////////-->
@@ -233,16 +234,16 @@
                 tools:ignore="NestedWeights,RtlHardcoded,RtlSymmetry" />
 
             <ImageView
+                app:srcCompat="@drawable/lock"
+                android:id="@+id/lock"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/lock"
-                android:src="@mipmap/lock"
                 android:layout_gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="on_View_Click"
                 android:padding="25dp"
                 android:visibility="gone"
-                android:clickable="true"
-                android:onClick="on_View_Click"
-                android:focusable="true"
                 tools:ignore="ContentDescription" />
 
         </FrameLayout>

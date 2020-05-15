@@ -10,6 +10,7 @@ android {
         targetSdkVersion 28
         versionCode 21
         versionName "5.0-alpha"
+        vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
         release {
@@ -21,6 +22,7 @@ android {
 
 dependencies {
     //compile fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:design:28.0.0'
     implementation 'org.jmonkeyengine:jme3-core:3.2.3-stable'
     implementation 'org.jmonkeyengine:jme3-android:3.2.3-stable'
     implementation 'org.jmonkeyengine:jme3-android-native:3.2.3-stable'
