@@ -233,19 +233,23 @@
                 android:focusable="true"
                 tools:ignore="NestedWeights,RtlHardcoded,RtlSymmetry" />
 
-            <ImageView
-                app:srcCompat="@drawable/lock"
+            <FrameLayout
                 android:id="@+id/lock"
+                android:clickable="true"
+                android:focusable="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:clickable="true"
-                android:focusable="true"
                 android:onClick="on_View_Click"
-                android:padding="25dp"
-                android:visibility="gone"
-                tools:ignore="ContentDescription" />
+                android:visibility="gone" >
 
+                <android.support.v7.widget.AppCompatImageView
+                    app:srcCompat="@drawable/lock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="25dp" />
+
+            </FrameLayout>
         </FrameLayout>
 
         <FrameLayout

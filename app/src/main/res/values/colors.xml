@@ -3,7 +3,7 @@
 
     <color name="text_color">#FFFFFFFF</color>
     <color name="divider_color">#66535353</color>
-    <color name="text_background_color">#cc000000</color>
+    <color name="text_background_color">#CC000000</color>
     <color name="fade_background_color">#FF000000</color>
     <color name="scores_background_color">#66000000</color>
 

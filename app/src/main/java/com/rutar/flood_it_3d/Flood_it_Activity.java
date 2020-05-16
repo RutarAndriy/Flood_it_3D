@@ -60,7 +60,7 @@ static ProgressBar loading;
 
 static ImageView jme_logo;
 
-static ImageView lock;
+static FrameLayout lock;
 static ImageView[] buttons_l = new ImageView[10];
 static ImageView[] buttons_s = new ImageView[10];
 
