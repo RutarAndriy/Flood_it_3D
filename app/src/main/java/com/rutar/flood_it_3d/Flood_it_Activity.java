@@ -61,8 +61,8 @@ static ProgressBar loading;
 static ImageView jme_logo;
 
 static FrameLayout lock;
-static ImageView[] buttons_l = new ImageView[10];
-static ImageView[] buttons_s = new ImageView[10];
+static FrameLayout[] buttons_l = new FrameLayout[10];
+static FrameLayout[] buttons_s = new FrameLayout[10];
 
 static int sound = 0;
 static int language = 0;
