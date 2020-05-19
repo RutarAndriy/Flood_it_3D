@@ -654,7 +654,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
-                    app:srcCompat="@drawable/button_1_01_l"
+                    app:srcCompat="@drawable/button_a_red_external"
                     tools:ignore="ContentDescription" />
 
             </FrameLayout>
@@ -669,7 +669,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
-                    app:srcCompat="@drawable/button_1_01_s"
+                    app:srcCompat="@drawable/button_a_red_internal"
                     tools:ignore="ContentDescription" />
 
             </FrameLayout>
@@ -694,7 +694,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
-                    app:srcCompat="@drawable/button_1_03_l"
+                    app:srcCompat="@drawable/button_a_green_external"
                     tools:ignore="ContentDescription" />
 
             </FrameLayout>
@@ -709,7 +709,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
-                    app:srcCompat="@drawable/button_1_03_s"
+                    app:srcCompat="@drawable/button_a_green_internal"
                     tools:ignore="ContentDescription" />
 
             </FrameLayout>
@@ -734,7 +734,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
-                    app:srcCompat="@drawable/button_1_05_l"
+                    app:srcCompat="@drawable/button_a_white_external"
                     tools:ignore="ContentDescription" />
 
             </FrameLayout>
@@ -749,7 +749,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
-                    app:srcCompat="@drawable/button_1_05_s"
+                    app:srcCompat="@drawable/button_a_white_internal"
                     tools:ignore="ContentDescription" />
 
             </FrameLayout>
@@ -774,7 +774,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
-                    app:srcCompat="@drawable/button_1_07_l"
+                    app:srcCompat="@drawable/button_a_violet_external"
                     tools:ignore="ContentDescription" />
 
             </FrameLayout>
@@ -789,7 +789,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
-                    app:srcCompat="@drawable/button_1_07_s"
+                    app:srcCompat="@drawable/button_a_violet_internal"
                     tools:ignore="ContentDescription" />
 
             </FrameLayout>
@@ -814,7 +814,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
-                    app:srcCompat="@drawable/button_1_09_l"
+                    app:srcCompat="@drawable/button_a_lime_external"
                     tools:ignore="ContentDescription" />
 
             </FrameLayout>
@@ -829,7 +829,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
-                    app:srcCompat="@drawable/button_1_09_s"
+                    app:srcCompat="@drawable/button_a_lime_internal"
                     tools:ignore="ContentDescription" />
 
             </FrameLayout>
@@ -862,7 +862,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
-                    app:srcCompat="@drawable/button_1_02_l"
+                    app:srcCompat="@drawable/button_a_blue_external"
                     tools:ignore="ContentDescription" />
 
             </FrameLayout>
@@ -877,7 +877,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
-                    app:srcCompat="@drawable/button_1_02_s"
+                    app:srcCompat="@drawable/button_a_blue_internal"
                     tools:ignore="ContentDescription" />
 
             </FrameLayout>
@@ -902,7 +902,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
-                    app:srcCompat="@drawable/button_1_04_l"
+                    app:srcCompat="@drawable/button_a_yellow_external"
                     tools:ignore="ContentDescription" />
 
             </FrameLayout>
@@ -917,7 +917,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
-                    app:srcCompat="@drawable/button_1_04_s"
+                    app:srcCompat="@drawable/button_a_yellow_internal"
                     tools:ignore="ContentDescription" />
 
             </FrameLayout>
@@ -942,7 +942,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
-                    app:srcCompat="@drawable/button_1_06_l"
+                    app:srcCompat="@drawable/button_a_gray_external"
                     tools:ignore="ContentDescription" />
 
             </FrameLayout>
@@ -957,7 +957,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
-                    app:srcCompat="@drawable/button_1_06_s"
+                    app:srcCompat="@drawable/button_a_gray_internal"
                     tools:ignore="ContentDescription" />
 
             </FrameLayout>
@@ -982,7 +982,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
-                    app:srcCompat="@drawable/button_1_08_l"
+                    app:srcCompat="@drawable/button_a_cyan_external"
                     tools:ignore="ContentDescription" />
 
             </FrameLayout>
@@ -997,7 +997,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
-                    app:srcCompat="@drawable/button_1_08_s"
+                    app:srcCompat="@drawable/button_a_cyan_internal"
                     tools:ignore="ContentDescription" />
 
             </FrameLayout>
@@ -1022,7 +1022,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
-                    app:srcCompat="@drawable/button_1_10_l"
+                    app:srcCompat="@drawable/button_a_orange_external"
                     tools:ignore="ContentDescription" />
 
             </FrameLayout>
@@ -1037,7 +1037,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
-                    app:srcCompat="@drawable/button_1_10_s"
+                    app:srcCompat="@drawable/button_a_orange_internal"
                     tools:ignore="ContentDescription" />
 
             </FrameLayout>
