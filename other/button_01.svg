@@ -7,13 +7,13 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="560"
-   height="560"
-   viewBox="0 0 560 560"
-   version="1.1"
-   id="svg14"
+   inkscape:version="1.0 (4035a4f, 2020-05-01)"
    sodipodi:docname="button_01.svg"
-   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+   id="svg14"
+   version="1.1"
+   viewBox="0 0 560 560"
+   height="560"
+   width="560">
   <metadata
      id="metadata20">
     <rdf:RDF>
@@ -29,42 +29,43 @@
   <defs
      id="defs18" />
   <sodipodi:namedview
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1"
-     objecttolerance="10"
-     gridtolerance="10"
-     guidetolerance="10"
-     inkscape:pageopacity="0"
-     inkscape:pageshadow="2"
-     inkscape:window-width="1600"
-     inkscape:window-height="839"
-     id="namedview16"
-     showgrid="false"
-     inkscape:snap-center="true"
-     fit-margin-top="0"
-     fit-margin-left="0"
-     fit-margin-right="0"
-     fit-margin-bottom="0"
-     inkscape:zoom="0.78666667"
-     inkscape:cx="34.55615"
-     inkscape:cy="282.73187"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="svg14"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg14" />
+     inkscape:window-y="0"
+     inkscape:window-x="0"
+     inkscape:cy="239.04927"
+     inkscape:cx="165.06278"
+     inkscape:zoom="0.78666667"
+     fit-margin-bottom="0"
+     fit-margin-right="0"
+     fit-margin-left="0"
+     fit-margin-top="0"
+     inkscape:snap-center="true"
+     showgrid="false"
+     id="namedview16"
+     inkscape:window-height="835"
+     inkscape:window-width="1600"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
   <title
      id="title2">Produce by Acme CAD Converter</title>
   <desc
      id="desc4">Produce by Acme CAD Converter</desc>
   <polyline
-     points="400,52.59 139.9,241.57 239.26,547.41 560.74,547.41 660.1,241.57 400,52.59 400,52.59"
-     style="fill:#636363;stroke:#000000;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stroke-linecap:round;stroke-linejoin:miter;fill-opacity:1"
+     transform="matrix(0.94655106,0,0,0.94655106,-98.620419,-30.115306)"
      id="polyline8"
-     transform="translate(-119.99999,-46.149987)" />
+     style="fill:#63be63;fill-opacity:1;stroke:#000000;stroke-width:10;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     points="400,52.59 139.9,241.57 239.26,547.41 560.74,547.41 660.1,241.57 400,52.59 400,52.59" />
   <polyline
-     points="400,104.9 189.69,257.76 270,505.06 530,505.06 610.31,257.76 400,104.9 400,104.9"
-     style="fill:#636363;stroke:#000000;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-linejoin:miter;stroke-linecap:round;fill-opacity:1"
+     transform="matrix(0.94655106,0,0,0.94655106,-98.620419,-30.115306)"
      id="polyline10"
-     transform="translate(-119.99999,-46.149987)" />
+     style="fill:#be6363;fill-opacity:1;stroke:#000000;stroke-width:10;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none"
+     points="400,104.9 189.69,257.76 270,505.06 530,505.06 610.31,257.76 400,104.9 400,104.9" />
 </svg>
