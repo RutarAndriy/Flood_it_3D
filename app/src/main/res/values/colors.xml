@@ -7,44 +7,34 @@
     <color name="fade_background_color">#FF000000</color>
     <color name="scores_background_color">#66000000</color>
 
-    <color name="b_01_c_01">#FFFE1100</color>
-    <color name="b_01_c_02">#43FB1100</color>
-    <color name="b_01_c_03">#86FF0000</color>
+    <color name="b_red_external">#FFFE1100</color>
+    <color name="b_red_internal">#43FB1100</color>
 
-    <color name="b_02_c_01">#FF1912FE</color>
-    <color name="b_02_c_02">#432414FA</color>
-    <color name="b_02_c_03">#862414FA</color>
+    <color name="b_blue_external">#FF1912FE</color>
+    <color name="b_blue_internal">#432414FA</color>
 
-    <color name="b_03_c_01">#FF06F033</color>
-    <color name="b_03_c_02">#4308EC3D</color>
-    <color name="b_03_c_03">#8608EC3D</color>
+    <color name="b_green_external">#FF06F033</color>
+    <color name="b_green_internal">#4308EC3D</color>
 
-    <color name="b_04_c_01">#FFFFF200</color>
-    <color name="b_04_c_02">#43FBF300</color>
-    <color name="b_04_c_03">#86FBF300</color>
+    <color name="b_yellow_external">#FFFFF200</color>
+    <color name="b_yellow_internal">#43FBF300</color>
 
-    <color name="b_05_c_01">#FFFFFFFF</color>
-    <color name="b_05_c_02">#43FFFFFF</color>
-    <color name="b_05_c_03">#86FFFFFF</color>
+    <color name="b_white_external">#FFFFFFFF</color>
+    <color name="b_white_internal">#43FFFFFF</color>
 
-    <color name="b_06_c_01">#FF747474</color>
-    <color name="b_06_c_02">#43777777</color>
-    <color name="b_06_c_03">#86777777</color>
+    <color name="b_gray_external">#FF747474</color>
+    <color name="b_gray_internal">#43777777</color>
 
-    <color name="b_07_c_01">#FFAF00FF</color>
-    <color name="b_07_c_02">#43AC00FB</color>
-    <color name="b_07_c_03">#86AC00FB</color>
+    <color name="b_violet_external">#FFAF00FF</color>
+    <color name="b_violet_internal">#43AC00FB</color>
 
-    <color name="b_08_c_01">#FF35D8E6</color>
-    <color name="b_08_c_02">#4336CFE3</color>
-    <color name="b_08_c_03">#8636CFE3</color>
+    <color name="b_cyan_external">#FF35D8E6</color>
+    <color name="b_cyan_internal">#4336CFE3</color>
 
-    <color name="b_09_c_01">#FF84FF00</color>
-    <color name="b_09_c_02">#437CFF00</color>
-    <color name="b_09_c_03">#867CFF00</color>
+    <color name="b_lime_external">#FF84FF00</color>
+    <color name="b_lime_internal">#437CFF00</color>
 
-    <color name="b_10_c_01">#FFFF8800</color>
-    <color name="b_10_c_02">#43FF9000</color>
-    <color name="b_10_c_03">#86FF9000</color>
+    <color name="b_orange_external">#FFFF8800</color>
+    <color name="b_orange_internal">#43FF9000</color>
 
 </resources>
