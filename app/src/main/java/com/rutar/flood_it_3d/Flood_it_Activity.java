@@ -343,7 +343,7 @@ new Thread(new Runnable() {
 @Override
 public void run() {
     while (thread_is_alive) {
-        rotate_angle += 1.5f;
+        rotate_angle += 1.0f;
         handler.sendEmptyMessage(0);
 
         try { Thread.sleep(25); }
