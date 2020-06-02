@@ -55,6 +55,7 @@ static ViewGroup l_help;
 static ViewGroup button_board;
 
 static int game_state = -1;
+static int rotation_direction = 0;
 
 static Typeface typeface;
 static TextView background;
@@ -369,7 +370,8 @@ switch (buttons_type) {
     case 2:  buttons_style = "settings_buttons_type_3"; break;
     case 3:  buttons_style = "settings_buttons_type_4"; break;
     case 4:  buttons_style = "settings_buttons_type_5"; break;
-    default: buttons_style = "settings_buttons_type_6"; break;
+    case 5:  buttons_style = "settings_buttons_type_6"; break;
+    default: buttons_style = "settings_buttons_type_7"; break;
 }
 
 String color_transfusion;
@@ -420,7 +422,11 @@ String layout_id = null;
 FrameLayout frame_layout = null;
 AppCompatImageView image_view = null;
 
-String type = buttons_type > 3 ? "c" : buttons_type > 1 ? "b" : "a";
+int temp = buttons_type;
+if (temp == 6) { temp = (int)(Math.random() * 6); }
+
+rotation_direction = (temp % 2 == 0 ? 1 : -1);
+String type = temp > 3 ? "c" : temp > 1 ? "b" : "a";
 
 String [] colors = { "red",  "blue",   "green", "yellow", "white",
                      "gray", "violet", "cyan",  "lime",   "orange" };

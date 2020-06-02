@@ -31,10 +31,10 @@ for (int z = 0; z < buttons_l.length; z++) {
         case 5:
         case 8:
         case 9:  buttons_l[z].setRotation(rotate_angle * 1);
-                 buttons_s[z].setRotation(rotate_angle * (buttons_type % 2 == 0 ? 1 : -1));
+                 buttons_s[z].setRotation(rotate_angle * rotation_direction);
                  break;
 
-        default: buttons_l[z].setRotation(rotate_angle * (buttons_type % 2 == 0 ? 1 : -1));
+        default: buttons_l[z].setRotation(rotate_angle * rotation_direction);
                  buttons_s[z].setRotation(rotate_angle * 1);
                  break;
     }

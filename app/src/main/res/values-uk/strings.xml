@@ -26,6 +26,7 @@
     <string name="settings_buttons_type_4">Вигляд кнопок: Варіант 4</string>
     <string name="settings_buttons_type_5">Вигляд кнопок: Варіант 5</string>
     <string name="settings_buttons_type_6">Вигляд кнопок: Варіант 6</string>
+    <string name="settings_buttons_type_7">Вигляд кнопок: Випадковий</string>
     <string name="settings_color_transfusion_fast">Переливання кольорів: Швидко</string>
     <string name="settings_color_transfusion_normal">Переливання кольорів: Нормально</string>
     <string name="settings_color_transfusion_slow">Переливання кольорів: Повільно</string>

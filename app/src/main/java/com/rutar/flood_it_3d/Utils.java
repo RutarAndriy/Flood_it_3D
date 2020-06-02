@@ -183,6 +183,7 @@ case R.id.n_22: set_Background_Speed();
                 button_board.setVisibility(View.VISIBLE);
                 Unification.set_Buttons_Width(model_index/model_per_level);
                 flood_it_3D.play_Sounds(model_index/model_per_level+1);
+                if (buttons_type == 6) { activity.init_Game_Buttons(); }
                 game_state_index = 4;
                 game_state = 4;
                 break;
@@ -257,11 +258,11 @@ case R.id.n_13: sound -= sound > 0 ? 1 : -2;
                 break;
 
 // Налаштування вигляду кнопок
-case R.id.n_36: buttons_type += buttons_type < 5 ? 1 : -5;
+case R.id.n_36: buttons_type += buttons_type < 6 ? 1 : -6;
                 activity.save_Settings("buttons", buttons_type);
                 text_Views_Normal[35].setText(activity
                     .get_String_Value("settings_buttons_type_" + (buttons_type + 1)));
-                activity.init_Game_Buttons();
+                if (buttons_type != 6) { activity.init_Game_Buttons(); }
                 break;
 
 // Налаштування переливання кольорів

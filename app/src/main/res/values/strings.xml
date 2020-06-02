@@ -26,6 +26,7 @@
     <string name="settings_buttons_type_4">Type of buttons: Option 4</string>
     <string name="settings_buttons_type_5">Type of buttons: Option 5</string>
     <string name="settings_buttons_type_6">Type of buttons: Option 6</string>
+    <string name="settings_buttons_type_7">Type of buttons: Random</string>
     <string name="settings_color_transfusion_fast">Color transfusion: Fast</string>
     <string name="settings_color_transfusion_normal">Color transfusion: Normal</string>
     <string name="settings_color_transfusion_slow">Color transfusion: Slow</string>
