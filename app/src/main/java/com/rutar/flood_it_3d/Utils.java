@@ -261,6 +261,7 @@ case R.id.n_36: buttons_type += buttons_type < 5 ? 1 : -5;
                 activity.save_Settings("buttons", buttons_type);
                 text_Views_Normal[35].setText(activity
                     .get_String_Value("settings_buttons_type_" + (buttons_type + 1)));
+                activity.init_Game_Buttons();
                 break;
 
 // Налаштування переливання кольорів

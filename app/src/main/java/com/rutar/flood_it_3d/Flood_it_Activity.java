@@ -1,6 +1,8 @@
 package com.rutar.flood_it_3d;
 
 import android.os.*;
+import android.support.v7.widget.AppCompatImageView;
+import android.util.Log;
 import android.view.*;
 import android.widget.*;
 import android.content.*;
@@ -128,16 +130,15 @@ settings_writer.commit();
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 game_state = 1;
-int default_language = -1;
+int default_language = 0;
 String lang = Locale.getDefault().getLanguage();
 if      (lang.equals("uk")) { default_language = 1; }
 else if (lang.equals("ru")) { default_language = 2; }
-else                        { default_language = 0; }
 
 Locale locale = null;
-sound = load_Settings("sound", 1);
+sound = load_Settings("sound", 2);
 need_help = load_Settings("help", 1);
-buttons_type = load_Settings("buttons", 0);
+buttons_type = load_Settings("buttons", 1);
 model_index = load_Settings("model_index", 0);
 func_stages = load_Settings("transfusion", 45);
 touch_sensitive = load_Settings("sensitive", 2);
@@ -406,6 +407,43 @@ text_Views_Normal[14].setText(activity.get_String_Value(game_language));
 for (int z = 0; z < 30; z++) { scores[z] = load_Settings("level_" + z, 0); }
 reload_Scores_Table();
 
+// Ініціалізація ігрових кнопок
+init_Game_Buttons();
+
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+public void init_Game_Buttons() {
+
+String layout_id = null;
+FrameLayout frame_layout = null;
+AppCompatImageView image_view = null;
+
+String type = buttons_type > 3 ? "c" : buttons_type > 1 ? "b" : "a";
+
+String [] colors = { "red",  "blue",   "green", "yellow", "white",
+                     "gray", "violet", "cyan",  "lime",   "orange" };
+
+// ................................................................................................
+
+for (int z = 1; z <= 10; z++) {
+
+    String id = z < 10 ? "0" + z : "" + z;
+
+    layout_id = String.format("b_%1$s_l", id);
+    frame_layout = findViewById(get_Id(layout_id));
+    image_view = (AppCompatImageView) frame_layout.getChildAt(0);
+    image_view.setImageResource(get_Drawable_Id(String
+              .format("button_%1$s_%2$s_external", type, colors[z-1])));
+
+    layout_id = String.format("b_%1$s_s", id);
+    frame_layout = findViewById(get_Id(layout_id));
+    image_view = (AppCompatImageView) frame_layout.getChildAt(0);
+    image_view.setImageResource(get_Drawable_Id(String
+              .format("button_%1$s_%2$s_internal", type, colors[z-1])));
+
+}
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -429,8 +467,13 @@ public void on_View_Click (View view) { Listener.on_View_Click(view); }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-public int get_Id (String value) { return getResources().
-                                          getIdentifier(value, "id", getPackageName()); }
+public int get_Id (String value)
+    { return getResources().getIdentifier(value, "id", getPackageName()); }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+public int get_Drawable_Id (String value)
+    { return getResources().getIdentifier(value, "drawable", getPackageName()); }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 

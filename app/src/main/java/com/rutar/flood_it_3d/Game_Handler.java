@@ -24,18 +24,19 @@ switch (msg.what) {
 case 0:
 
 for (int z = 0; z < buttons_l.length; z++) {
-    if (Build.VERSION.SDK_INT > 10) {
-        switch (z) {
-            case 0:
-            case 1:
-            case 4:
-            case 5:
-            case 8:
-            case 9:  buttons_l[z].setRotation(rotate_angle * 1);
-                     buttons_s[z].setRotation(rotate_angle * -1); break;
-            default: buttons_l[z].setRotation(rotate_angle * -1);
-                     buttons_s[z].setRotation(rotate_angle * 1);  break;
-        }
+    switch (z) {
+        case 0:
+        case 1:
+        case 4:
+        case 5:
+        case 8:
+        case 9:  buttons_l[z].setRotation(rotate_angle * 1);
+                 buttons_s[z].setRotation(rotate_angle * (buttons_type % 2 == 0 ? 1 : -1));
+                 break;
+
+        default: buttons_l[z].setRotation(rotate_angle * (buttons_type % 2 == 0 ? 1 : -1));
+                 buttons_s[z].setRotation(rotate_angle * 1);
+                 break;
     }
 }
 
