@@ -18,10 +18,9 @@ public class Scores_List_Adapter extends BaseAdapter {
 
 private final int adapter_size = 48;
 
-private ListView list_view = null;
-private LayoutInflater inflater = null;
-private Scores_List_Adapter adapter = null;
+private LayoutInflater inflater;
 
+private ListView list_view = null;
 private String[] model_names = null;
 private String[] score_values = null;
 
@@ -104,7 +103,7 @@ switch (position/(model_per_level)) {
 }
 
 view.setTag(position);
-view.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT,
+view.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
                                                    list_view.getHeight()/elements_per_display));
 
 return view;

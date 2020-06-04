@@ -53,7 +53,7 @@ if (!pause_is_on) {
         @Override
         public void onAnimationStart (Animation animation) {
             pause_is_on = true;
-            if (Build.VERSION.SDK_INT > 10) { l_pause.setAlpha(1); }
+            l_pause.setAlpha(1);
         }
 
         @Override
@@ -68,8 +68,7 @@ if (!pause_is_on) {
     text_Views_Normal[26].setText(activity.get_Formatted_String(R.string.game_step_count, step_count));
     l_pause.startAnimation(fade_in);
     l_pause.setVisibility(View.VISIBLE);
-
-    if (Build.VERSION.SDK_INT > 10) { l_pause.setAlpha(0); }
+    l_pause.setAlpha(0);
 
 }
 
@@ -104,7 +103,7 @@ complete_fade_in.setAnimationListener(new Animation.AnimationListener() {
 
     @Override
     public void onAnimationStart (Animation animation) {
-        if (Build.VERSION.SDK_INT > 10) { l_complete.setAlpha(1); }
+        l_complete.setAlpha(1);
     }
 
     @Override
@@ -128,7 +127,7 @@ complete_fade_in.setAnimationListener(new Animation.AnimationListener() {
 text_Views_Normal[23].setText(activity.get_Formatted_String(R.string.game_step_count, step_count));
 l_complete.startAnimation(complete_fade_in);
 l_complete.setVisibility(View.VISIBLE);
-if (Build.VERSION.SDK_INT > 10) { l_complete.setAlpha(0); }
+l_complete.setAlpha(0);
 
 break;
 
@@ -143,7 +142,7 @@ help_fade_in.setAnimationListener(new Animation.AnimationListener() {
 
     @Override
     public void onAnimationStart (Animation animation) {
-        if (Build.VERSION.SDK_INT > 10) { l_help.setAlpha(1); }
+        l_help.setAlpha(1);
     }
 
     @Override
@@ -156,7 +155,7 @@ help_fade_in.setAnimationListener(new Animation.AnimationListener() {
 
 l_help.startAnimation(help_fade_in);
 l_help.setVisibility(View.VISIBLE);
-if (Build.VERSION.SDK_INT > 10) { l_help.setAlpha(0); }
+l_help.setAlpha(0);
 
 break;
 

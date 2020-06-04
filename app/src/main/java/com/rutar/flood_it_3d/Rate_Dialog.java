@@ -116,7 +116,7 @@ SharedPreferences.Editor settings_writer = settings_reader.edit();
 
 settings_writer.putBoolean("app_is_rated", app_is_rated);
 settings_writer.putInt("app_load_count", app_load_count);
-settings_writer.commit();
+settings_writer.apply();
 
 }
 

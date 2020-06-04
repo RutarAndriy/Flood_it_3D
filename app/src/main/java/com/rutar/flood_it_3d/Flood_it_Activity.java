@@ -232,8 +232,7 @@ private static final int hide_nav_bar_flags = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
 public void hide_NavigationBar() {
 
 // Для старих версій Android
-if (Build.VERSION.SDK_INT > 11 &&
-    Build.VERSION.SDK_INT < 19) {
+if (Build.VERSION.SDK_INT < 19) {
 
 View decor_view = getWindow().getDecorView();
 decor_view.setSystemUiVisibility(View.GONE);
@@ -241,7 +240,7 @@ decor_view.setSystemUiVisibility(View.GONE);
 }
 
 // Для нових версій Android
-else if (Build.VERSION.SDK_INT >= 19) {
+else {
 
 final View decor_view = getWindow().getDecorView();
 decor_view.setSystemUiVisibility(hide_nav_bar_flags);
@@ -267,8 +266,7 @@ public void onWindowFocusChanged (boolean has_focus) {
 
 super.onWindowFocusChanged(has_focus);
 
-if (!has_focus) { return; }
-else { hide_NavigationBar(); }
+if (has_focus) { hide_NavigationBar(); }
 
 }
 
@@ -349,7 +347,7 @@ public void run() {
         handler.sendEmptyMessage(0);
 
         try { Thread.sleep(25); }
-        catch (Exception e) {}
+        catch (Exception ignored) {}
     }
 }
 }).start();

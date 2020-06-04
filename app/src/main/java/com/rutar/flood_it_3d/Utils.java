@@ -465,7 +465,7 @@ fade_in_out_animation.setAnimationListener(new Animation.AnimationListener() {
     @Override
     public void onAnimationStart (Animation animation) {
         second_anim_run = true;
-        if (Build.VERSION.SDK_INT > 10) { l_lock.setAlpha(1); }
+        l_lock.setAlpha(1);
     }
     @Override
     public void onAnimationEnd (Animation animation) { anim_is_running = false;
@@ -479,7 +479,7 @@ text_Views_Normal[29].setText(activity.get_Formatted_String(R.string.play_not_en
 
 l_lock.startAnimation(fade_in_out_animation);
 l_lock.setVisibility(View.VISIBLE);
-if (Build.VERSION.SDK_INT > 10) { l_lock.setAlpha(0); }
+l_lock.setAlpha(0);
 
 }
 
@@ -504,7 +504,7 @@ defaultFontTypefaceField.set(null, customFontTypeface);
 
 }
 
-catch (Exception e) {}
+catch (Exception ignored) {}
 
 }
 

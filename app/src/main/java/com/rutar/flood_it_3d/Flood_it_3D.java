@@ -381,7 +381,7 @@ case 4:
         @Override
         public void run() {
             try { Thread.sleep(300); }
-            catch (Exception e) {}
+            catch (Exception ignored) {}
             handler.sendEmptyMessage(3);
         }
     }).start();
@@ -403,12 +403,10 @@ case 5:
 
 void restart_App() {
 
-if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB)
-     { activity.recreate();
-       game_state_index = 2;
-       sound_volume = 0;
-       delta_volume = 0; }
-else { System.exit(0); }
+activity.recreate();
+game_state_index = 2;
+sound_volume = 0;
+delta_volume = 0;
 
 }
 
