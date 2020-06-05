@@ -1,6 +1,5 @@
 package com.rutar.flood_it_3d;
 
-import android.os.*;
 import com.jme3.ui.*;
 import com.jme3.app.*;
 import com.jme3.math.*;
