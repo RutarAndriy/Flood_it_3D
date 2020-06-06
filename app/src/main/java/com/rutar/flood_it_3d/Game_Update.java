@@ -322,7 +322,7 @@ game_node_main.rotate(0, model_game_y_rotation_angle[index] * DEG_TO_RAD, 0);
 Vector3f xAxis = game_node_child.worldToLocal(Vector3f.UNIT_X, null);
 Quaternion quaternion = new Quaternion();
 game_node_child.rotate(quaternion
-               .fromAngleAxis(model_game_x_rotation_angle[index] * DEG_TO_RAD, xAxis));
+               .fromAngleAxis(model_game_x_rotation_angle[index] * DEG_TO_RAD * -1, xAxis));
 
 }
 
