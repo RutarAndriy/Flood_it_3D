@@ -85,21 +85,26 @@ for (int l = 0; l < l_index; l++) {
 
 static void set_Buttons_Width (int index) {
 
-activity.findViewById(R.id.b_01).setVisibility(View.VISIBLE);
-activity.findViewById(R.id.b_02).setVisibility(View.VISIBLE);
-activity.findViewById(R.id.b_03).setVisibility(View.VISIBLE);
-activity.findViewById(R.id.b_04).setVisibility(View.VISIBLE);
-activity.findViewById(R.id.b_05).setVisibility(View.VISIBLE);
-activity.findViewById(R.id.b_06).setVisibility(View.VISIBLE);
-activity.findViewById(R.id.b_07).setVisibility(View.VISIBLE);
-activity.findViewById(R.id.b_08).setVisibility(View.VISIBLE);
-activity.findViewById(R.id.b_09).setVisibility(View.VISIBLE);
-activity.findViewById(R.id.b_10).setVisibility(View.VISIBLE);
+int button_width = (int)(H / 2.5f);;
 
-/*for (ImageView button : buttons) {
-    button.setVisibility(View.VISIBLE);
-    //button.getLayoutParams().width = (int) (H / (index == 2 ? 4f : 3f));
-}*/
+switch (index) {
+    case 1:  button_width = (int)(H / 3f); break;
+    case 2:  button_width = (int)(H / 4f); break;
+    case 3:  button_width = (int)(H / 5f); break;
+}
+
+// ................................................................................................
+
+for (int z = 1; z <= 10; z++) {
+
+    int id = activity.get_Id("b_" + (z != 10 ? "0" : "") + z);
+
+    activity.findViewById(id).setVisibility(View.VISIBLE);
+    activity.findViewById(id).getLayoutParams().width = button_width;
+
+}
+
+// ................................................................................................
 
 if (index < 3) { activity.findViewById(R.id.b_09).setVisibility(View.GONE);
                  activity.findViewById(R.id.b_10).setVisibility(View.GONE); }
