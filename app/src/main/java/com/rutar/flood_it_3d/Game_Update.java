@@ -260,7 +260,7 @@ game_triangles_list = new Game_Triangle[triangle_count];
 
 game_node_child.detachAllChildren();
 
-game_node_child.setLocalScale(1);
+game_node_child.setLocalScale(model_game_scale_value[index]);
 game_node_child.setLocalRotation(new Quaternion());
 
 // ................................................................................................

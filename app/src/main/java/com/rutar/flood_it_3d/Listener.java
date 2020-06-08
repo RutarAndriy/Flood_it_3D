@@ -41,8 +41,8 @@ if (event.getType() == TouchEvent.Type.SCALE_MOVE ||
 
     float scale_factor = scale * (event.getScaleSpan() / distance);
 
-    if (scale_factor > 1.45) { scale_factor = 1.45f; }
-    if (scale_factor < 0.8) { scale_factor = 0.8f; }
+    if (scale_factor > 1.5) { scale_factor = 1.5f; }
+    if (scale_factor < 0.7) { scale_factor = 0.7f; }
 
 game_node_child.setLocalScale(scale_factor);
 
