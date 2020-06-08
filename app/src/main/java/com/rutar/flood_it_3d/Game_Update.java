@@ -316,13 +316,13 @@ model_meshes[0] = model_meshes[1] = null;
 work_start = true;
 
 // Поворот моделі по осі Y
-game_node_main.rotate(0, model_game_y_rotation_angle[index] * DEG_TO_RAD, 0);
+game_node_main.rotate(0, model_game_y_rotation_angle[index] * DEG_TO_RAD * -1, 0);
 
 // Поворот моделі по осі X
 Vector3f xAxis = game_node_child.worldToLocal(Vector3f.UNIT_X, null);
 Quaternion quaternion = new Quaternion();
 game_node_child.rotate(quaternion
-               .fromAngleAxis(model_game_x_rotation_angle[index] * DEG_TO_RAD * -1, xAxis));
+               .fromAngleAxis(model_game_x_rotation_angle[index] * DEG_TO_RAD, xAxis));
 
 }
 
