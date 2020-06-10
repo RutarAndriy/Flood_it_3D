@@ -86,7 +86,7 @@
     <string name="model_32">Drill bit</string>
     <string name="model_33">Gear</string>
     <string name="model_34">Mobius strip</string>
-    <string name="model_35">Trefoil</string>
+    <string name="model_35">Small triangular prism</string>
 
     <!-- Very Hard -->
     <string name="model_36">Egg</string>
@@ -96,7 +96,7 @@
     <string name="model_40">Large tetrahedron</string>
     <string name="model_41">United cubes</string>
     <string name="model_42">Large torus knot</string>
-    <string name="model_43">Modified triangle</string>
+    <string name="model_43">Large triangular prism</string>
     <string name="model_44">Spiral</string>
     <string name="model_45">Large Menger sponge</string>
     <string name="model_46">Closed spiral</string>

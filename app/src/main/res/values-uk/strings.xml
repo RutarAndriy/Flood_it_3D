@@ -86,7 +86,7 @@
     <string name="model_32">Свердло</string>
     <string name="model_33">Шестірня</string>
     <string name="model_34">Стрічка Мебіуса</string>
-    <string name="model_35">Трилисник</string>
+    <string name="model_35">Мала трикутна призма</string>
 
     <!-- Дуже важко -->
     <string name="model_36">Яйце</string>
@@ -96,7 +96,7 @@
     <string name="model_40">Великий тетраедр</string>
     <string name="model_41">Об’єднані куби</string>
     <string name="model_42">Великий торовий вузол</string>
-    <string name="model_43">Модифікований трикутник</string>
+    <string name="model_43">Велика трикутна призма</string>
     <string name="model_44">Спіраль</string>
     <string name="model_45">Велика губка Менгера</string>
     <string name="model_46">Замкнута спіраль</string>

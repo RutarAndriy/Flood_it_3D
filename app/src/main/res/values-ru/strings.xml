@@ -86,7 +86,7 @@
     <string name="model_32">Сверло</string>
     <string name="model_33">Шестерня</string>
     <string name="model_34">Лента Мебиуса</string>
-    <string name="model_35">Трилистник</string>
+    <string name="model_35">Малая треугольная призма</string>
 
     <!-- Очень тяжело -->
     <string name="model_36">Яйцо</string>
@@ -96,7 +96,7 @@
     <string name="model_40">Большой тетраэдр</string>
     <string name="model_41">Соединенные кубы</string>
     <string name="model_42">Большой торический узел</string>
-    <string name="model_43">Модифицированный треугольник</string>
+    <string name="model_43">Большая треугольная призма</string>
     <string name="model_44">Спираль</string>
     <string name="model_45">Большая губка Менгера</string>
     <string name="model_46">Замкнутая спираль</string>
