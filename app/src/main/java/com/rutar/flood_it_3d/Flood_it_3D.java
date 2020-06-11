@@ -63,6 +63,9 @@ private String full_debug = "FPS: %1$d\n" +
 @Override
 public void simpleInitApp() {
 
+// 35 -> 08
+// 43 -> 30
+
 flyCam.setMoveSpeed(10);
 flyCam.setDragToRotate(false);
 flyCam.setEnabled(false);
