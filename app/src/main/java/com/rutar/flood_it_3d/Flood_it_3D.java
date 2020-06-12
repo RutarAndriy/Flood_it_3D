@@ -63,9 +63,6 @@ private String full_debug = "FPS: %1$d\n" +
 @Override
 public void simpleInitApp() {
 
-// 35 -> 08
-// 43 -> 30
-
 flyCam.setMoveSpeed(10);
 flyCam.setDragToRotate(false);
 flyCam.setEnabled(false);
@@ -349,8 +346,10 @@ case 3:
     String path = "models/m_" + ((model_index < 10 ? "0" : "") + model_index) + ".j3o";
     preview_model = assetManager.loadModel(path);
 
+    int color = (model_index/model_per_level == 1 || model_index/model_per_level == 2) ? 6 : 5;
+
     ((Node)((Node)((Node)preview_model).getChild(0)).
-             getChild(0)).getChild(0).setMaterial(materials[5]);
+             getChild(0)).getChild(0).setMaterial(materials[color]);
 
     int color_index = -1;
     switch (model_index/model_per_level) {
