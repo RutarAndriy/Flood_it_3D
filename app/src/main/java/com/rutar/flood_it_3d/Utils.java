@@ -1,6 +1,5 @@
 package com.rutar.flood_it_3d;
 
-import android.os.*;
 import android.view.*;
 import android.content.*;
 import android.graphics.*;
@@ -12,6 +11,7 @@ import static com.rutar.flood_it_3d.Listener.*;
 import static com.rutar.flood_it_3d.Constants.*;
 import static com.rutar.flood_it_3d.Unification.*;
 import static com.rutar.flood_it_3d.Game_Update.*;
+import static com.rutar.flood_it_3d.Flood_it_3D.*;
 import static com.rutar.flood_it_3d.Flood_it_Activity.*;
 
 // ................................................................................................
@@ -88,6 +88,22 @@ case 4: loading.setVisibility(View.GONE);
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 static void click_processing (int id) {
+
+if (debug_mode == 3 &&
+   (id == R.id.b_01 || id == R.id.b_02)) {
+
+if (id == R.id.b_01) { debug_index--; }
+if (id == R.id.b_02) { debug_index++; }
+
+if (debug_index >= model_triangles_count[model_index]) { debug_index = 0; }
+if (debug_index <= -1) { debug_index = model_triangles_count[model_index] - 1; }
+
+game_state_index = 6;
+return;
+
+}
+
+// ................................................................................................
 
 switch (id) {
 

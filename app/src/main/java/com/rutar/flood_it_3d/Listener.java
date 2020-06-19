@@ -174,7 +174,7 @@ break;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-case R.id.debug: debug_index += (debug_index < 2 ? 1 : -2); break;
+case R.id.debug: debug_mode += (debug_mode < 3 ? 1 : -3); break;
 
 case R.id.logo_3d: rotate_index = rotate_index > 90 ? 40 : rotate_index; break;
 

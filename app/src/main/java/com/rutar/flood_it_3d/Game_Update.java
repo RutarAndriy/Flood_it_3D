@@ -12,6 +12,7 @@ import com.jme3.asset.*;
 import com.jme3.effect.*;
 import com.jme3.texture.*;
 import com.jme3.material.*;
+import com.jme3.scene.shape.*;
 
 import jme3tools.optimize.*;
 
@@ -35,8 +36,6 @@ static int triangle_count;                                                 // К
 static int color_index = -1;                                            // Індекс активного кольору
 static int game_state_index = -1;                                         // Індекс зміни стану гри
 static int rotate_index = 150;                                      // Індекс повороту логотипу гри
-
-
 
 private static int color_now;                                     // Активний на даний момент колір
 private static int[] color_indexes;                                      // Масив індексів кольорів
@@ -187,6 +186,25 @@ case 10: materials[z].setColor("Diffuse",
 }
 }
 
+for (int z = 0; z < debug_materials.length; z++) {
+
+    debug_materials[z] = new Material(manager, "Common/MatDefs/Light/Lighting.j3md");
+    debug_materials[z].setBoolean("UseMaterialColors", true);
+    debug_materials[z].getAdditionalRenderState().setLineWidth(5);
+
+    switch (z) {
+
+        case 0:  debug_materials[z].setColor("Diffuse",
+                new ColorRGBA(0.100f, 0.100f, 0.100f, 1.0f)); break;
+        case 1:  debug_materials[z].setColor("Diffuse",
+                new ColorRGBA(1.000f, 0.000f, 0.000f, 1.0f)); break;
+        case 2:  debug_materials[z].setColor("Diffuse",
+                new ColorRGBA(0.000f, 1.000f, 0.000f, 1.0f)); break;
+        case 3:  debug_materials[z].setColor("Diffuse",
+                new ColorRGBA(0.000f, 0.000f, 1.000f, 1.0f)); break;
+    }
+}
+
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -227,6 +245,7 @@ static void load_Model (int index, AssetManager manager) {
 tab_count = -1;
 
 step_count = 0;
+debug_index = 0;
 color_index = 0;
 color_now = 0;
 
@@ -323,6 +342,8 @@ Vector3f xAxis = game_node_child.worldToLocal(Vector3f.UNIT_X, null);
 Quaternion quaternion = new Quaternion();
 game_node_child.rotate(quaternion
                .fromAngleAxis(model_game_x_rotation_angle[index] * DEG_TO_RAD, xAxis));
+
+update_Debug_View();                                                  // Оновлення debug-інформації
 
 }
 
@@ -538,6 +559,45 @@ else if (background_position.y < -background_h)
     { background_picture.move(0, background_h, 0);  }
 
 background_picture.updateGeometricState();
+
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// Оновлення debug-інформації
+
+static void update_Debug_View() {
+
+for (int z = 0; z < debug_meshes.length; z++) {
+
+    Sphere sphere = new Sphere(7, 7, get_Debug_Sphere_Radius(triangles_list[0]));
+    sphere.setMode(Mesh.Mode.Lines);
+
+    debug_meshes[z].setMesh(sphere);
+    debug_meshes[z].setMaterial(debug_materials[z]);
+
+    Vector3f local_translation = (z == 0 ? triangles_list[debug_index].getCenter() :
+                                           triangles_list[game_triangles_list[debug_index]
+                                          .get_Neighborhoods()[z-1]].getCenter());
+
+    debug_meshes[z].setLocalTranslation(local_translation);
+
+}
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//
+
+static float get_Debug_Sphere_Radius (Triangle triangle) {
+
+float a = triangle.get1().distance(triangle.get2());
+float b = triangle.get2().distance(triangle.get3());
+float c = triangle.get3().distance(triangle.get1());
+
+float P = (a + b + c) / 2;
+
+float S = FastMath.sqrt(P * (P - a) * (P - b) * (P - c));
+
+return S / P;
 
 }
 

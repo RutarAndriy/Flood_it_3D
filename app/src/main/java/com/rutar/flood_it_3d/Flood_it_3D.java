@@ -10,6 +10,7 @@ import com.jme3.scene.*;
 import com.jme3.audio.*;
 import com.jme3.texture.*;
 import com.jme3.renderer.*;
+import com.jme3.material.*;
 import com.jme3.input.controls.*;
 
 import static com.jme3.math.FastMath.*;
@@ -34,6 +35,9 @@ static ColorRGBA color_tmp = null;
 static ColorRGBA color_prev = null;
 static ColorRGBA color_next = null;
 
+static Geometry[] debug_meshes = new Geometry[4];                                 // Debug елементи
+static Material[] debug_materials = new Material[4];                    // Матеріали debug елемнтів
+
 private final Runtime runtime = Runtime.getRuntime();
 private BitmapText debug;                          // Допоміжна інформація про використання пам'яті
 
@@ -50,6 +54,7 @@ private static float delta_volume = 0.0f;               // Перемінна з
 
 private static boolean sound_is_changed = false;
 
+static int debug_mode = 0;
 static int debug_index = 0;
 
 private String full_debug = "FPS: %1$d\n" +
@@ -131,6 +136,14 @@ else                   { logo.setLocalScale(1.1f); }
 logo_node.attachChild(logo);
 rootNode.attachChild(logo_node);
 
+for (int z = 0; z < debug_meshes.length; z++)
+    { debug_meshes[z] = new Geometry("Debug mesh " + z); }
+
+for (int z = 0; z < debug_materials.length; z++)
+    { debug_materials[z] = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
+      debug_materials[z].setColor("Color", ColorRGBA.Blue);
+      debug_materials[z].getAdditionalRenderState().setLineWidth(5); }
+
 Game_Update.pre_Init(assetManager);
 
 }
@@ -184,16 +197,22 @@ else if (func_index >= func_stages) {
 // ................................................................................................
 // Формування debug інформації
 
-if      (debug_index == 1) { debug.setText(String
-                                   .format(full_debug.substring(0,
-                                           full_debug.indexOf("\n")), fps)); }
-else if (debug_index == 2) { debug.setText(String
-                                  .format(full_debug, fps,
-                                          runtime.totalMemory()/1024/1024f,
-                                          runtime.freeMemory()/1024/1024f,
-                                          processing_time, optimizing_time)); }
-else                       { debug.setText(""); }
+switch (debug_mode) {
 
+case 1: debug.setText(String.format(full_debug.substring(0,
+                                    full_debug.indexOf("\n")), fps)); break;
+
+case 2: debug.setText(String.format(full_debug, fps,
+                                    runtime.totalMemory()/1024/1024f,
+                                    runtime.freeMemory()/1024/1024f,
+                                    processing_time, optimizing_time)); break;
+
+case 3: debug.setText("Game debug mode" + "\n" +
+                      "Debug triangle: " + debug_index); break;
+
+default: debug.setText(""); break;
+
+}
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -214,9 +233,12 @@ work_start = false;
 game_node_child.detachAllChildren();
 game_node_child.attachChild(emitter);
 
-for (int z = 0; z < 4 + model_index/model_per_level * 2; z++) {
-    game_node_child.attachChild(static_geometries[z]);
+if (debug_mode == 3) {
+    for (Geometry debug_mesh : debug_meshes) { game_node_child.attachChild(debug_mesh); }
 }
+
+for (int z = 0; z < 4 + model_index/model_per_level * 2; z++)
+    { game_node_child.attachChild(static_geometries[z]); }
 
 game_node_child.attachChild(dynamic_geometry);
 is_done = true;
@@ -226,8 +248,9 @@ is_done = true;
 // ................................................................................................
 
 // Перевірка на завершення рівня
-if (game_is_running && dynamic_index_list.size() == triangle_count) { game_is_running = false;
-                                                                 handler.sendEmptyMessage(4); }
+if (game_is_running &&
+    dynamic_index_list.size() == triangle_count) { game_is_running = false;
+                                                   handler.sendEmptyMessage(4); }
 
 // Оновлення інших компонентів
 quaternion.fromAngleAxis(preview_rotate_angle * DEG_TO_RAD, Vector3f.UNIT_X);
@@ -397,6 +420,11 @@ case 5:
     game_state_index = -1;
     break;
 
+// Оновлення debug-інформації
+case 6: game_state_index = -1;
+        update_Debug_View();
+        break;
+
 }
 }
 
@@ -416,7 +444,8 @@ delta_volume = 0;
 
 private void update_FPS() {
 
-if (debug_index > 0) {
+if (debug_mode == 1 ||
+    debug_mode == 2) {
 
 second_counter += getTimer().getTimePerFrame();
 frame_counter++;
