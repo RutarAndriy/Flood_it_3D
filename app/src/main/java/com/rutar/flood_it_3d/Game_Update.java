@@ -569,23 +569,24 @@ static void update_Debug_View() {
 
 for (int z = 0; z < debug_meshes.length; z++) {
 
-    Sphere sphere = new Sphere(7, 7, get_Debug_Sphere_Radius(triangles_list[0]));
+    Triangle temp = (z == 0) ?
+        triangles_list[debug_index] :
+        triangles_list[game_triangles_list[debug_index].get_Neighborhoods()[z-1]];
+
+    Sphere sphere = new Sphere(12, 12, get_Debug_Sphere_Radius(temp));
     sphere.setMode(Mesh.Mode.Lines);
 
     debug_meshes[z].setMesh(sphere);
     debug_meshes[z].setMaterial(debug_materials[z]);
 
-    Vector3f local_translation = (z == 0 ? triangles_list[debug_index].getCenter() :
-                                           triangles_list[game_triangles_list[debug_index]
-                                          .get_Neighborhoods()[z-1]].getCenter());
-
+    Vector3f local_translation = get_Triangle_Incenter(temp);
     debug_meshes[z].setLocalTranslation(local_translation);
 
 }
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+// Розрахунок радіуса вписаного кола у трикутник
 
 static float get_Debug_Sphere_Radius (Triangle triangle) {
 
@@ -597,7 +598,28 @@ float P = (a + b + c) / 2;
 
 float S = FastMath.sqrt(P * (P - a) * (P - b) * (P - c));
 
-return S / P;
+return S / P * 0.9f;
+
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// Розрахунок інцентру трикутника
+
+static Vector3f get_Triangle_Incenter (Triangle triangle) {
+
+Vector3f A = triangle.get1();
+Vector3f B = triangle.get2();
+Vector3f C = triangle.get3();
+
+float a = B.distance(C);
+float b = A.distance(C);
+float c = B.distance(A);
+
+float x = (a * A.x + b * B.x + c * C.x) / (a + b + c);
+float y = (a * A.y + b * B.y + c * C.y) / (a + b + c);
+float z = (a * A.z + b * B.z + c * C.z) / (a + b + c);
+
+return new Vector3f(x, y, z);
 
 }
 

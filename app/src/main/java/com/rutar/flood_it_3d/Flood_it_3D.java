@@ -141,8 +141,7 @@ for (int z = 0; z < debug_meshes.length; z++)
 
 for (int z = 0; z < debug_materials.length; z++)
     { debug_materials[z] = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
-      debug_materials[z].setColor("Color", ColorRGBA.Blue);
-      debug_materials[z].getAdditionalRenderState().setLineWidth(5); }
+      debug_materials[z].setColor("Color", ColorRGBA.Blue); }
 
 Game_Update.pre_Init(assetManager);
 
