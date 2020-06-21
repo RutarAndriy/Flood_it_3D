@@ -68,6 +68,11 @@ private String full_debug = "FPS: %1$d\n" +
 @Override
 public void simpleInitApp() {
 
+// - Score bug
+// - Change game difficult bug
+// - Calculate triangle neighbours bug
+// - Color change bug
+
 flyCam.setMoveSpeed(10);
 flyCam.setDragToRotate(false);
 flyCam.setEnabled(false);
