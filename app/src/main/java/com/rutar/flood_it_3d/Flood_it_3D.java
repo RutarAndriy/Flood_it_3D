@@ -69,7 +69,6 @@ private String full_debug = "FPS: %1$d\n" +
 public void simpleInitApp() {
 
 // - Score bug
-// - Change game difficult bug
 // - Calculate triangle neighbours bug
 // - Color change bug
 
@@ -242,7 +241,9 @@ if (debug_mode == 3) {
 }
 
 for (int z = 0; z < 4 + model_index/model_per_level * 2; z++)
-    { game_node_child.attachChild(static_geometries[z]); }
+    { if (static_geometries[z] != null)
+        { game_node_child.attachChild(static_geometries[z]); }
+    }
 
 game_node_child.attachChild(dynamic_geometry);
 is_done = true;
