@@ -71,6 +71,8 @@ public void simpleInitApp() {
 // - Score bug
 // - Calculate triangle neighbours bug
 // - Color change bug
+// - Model that need change [ m_03, m_08, m_11, m_15, m_17, m_21,
+//                            m_28, m_30, m_32, m_33, m_39, m_45 ]
 
 flyCam.setMoveSpeed(10);
 flyCam.setDragToRotate(false);
