@@ -68,9 +68,9 @@ private String full_debug = "FPS: %1$d\n" +
 @Override
 public void simpleInitApp() {
 
-// - Score bug
 // - Calculate triangle neighbours bug
-// - Color change bug
+// - Color change bug (some accidental event)
+// - Score bug (not save score after level complate)
 // - Model that need change [ m_03 (e), m_08 (e), m_11 (e), m_15 (e), m_17 (r), m_21 (e),
 //                            m_28 (r), m_30 (e), m_32 (e), m_33 (e), m_39 (r), m_45 (e) ]
 
