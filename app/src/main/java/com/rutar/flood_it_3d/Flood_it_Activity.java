@@ -1,7 +1,6 @@
 package com.rutar.flood_it_3d;
 
 import android.os.*;
-import android.support.v7.widget.AppCompatImageView;
 import android.util.Log;
 import android.view.*;
 import android.widget.*;
@@ -12,6 +11,8 @@ import android.content.res.*;
 import android.view.animation.*;
 
 import android.os.Handler;
+
+import androidx.appcompat.widget.AppCompatImageView;
 
 import com.jme3.app.*;
 import com.jme3.input.*;
